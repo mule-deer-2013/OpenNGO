@@ -1,8 +1,8 @@
 OpenNGO::Application.routes.draw do
 
-
   resources :orgs, only: [:index,:show]
-
+  
+  root to: 'orgs#index'  
 
 
   # The priority is based upon order of creation:

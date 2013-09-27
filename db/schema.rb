@@ -11,12 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130927070951) do
+ActiveRecord::Schema.define(:version => 20130927185357) do
 
   create_table "orgs", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
     t.string   "initials"
     t.string   "address"
     t.string   "province"
@@ -43,6 +43,17 @@ ActiveRecord::Schema.define(:version => 20130927070951) do
     t.integer  "no_emp_part"
     t.integer  "no_volunteers_perm"
     t.boolean  "code_conduct"
+    t.string   "external_auditor"
+    t.string   "annual_financials"
+    t.string   "external_program_audit"
+    t.string   "written_trans_policy"
+    t.integer  "num_programs_indv"
+    t.integer  "num_programs_orgs"
+    t.integer  "num_programs_public"
+    t.string   "certifier_name1"
+    t.string   "certifier_name2"
+    t.string   "certifier_title1"
+    t.string   "certifier_title2"
   end
 
   add_index "orgs", ["name"], :name => "index_orgs_on_name"

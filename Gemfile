@@ -32,6 +32,7 @@ group :test, :development do
   gem "faker"
   gem 'better_errors'
   gem 'sunspot_solr'
+  gem 'faker'
 end
 
 

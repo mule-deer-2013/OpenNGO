@@ -1,2 +1,13 @@
 <h1> This is the homepage! </h1>
 <%= link_to "link to sample org", "/orgs/1" %>
+
+<%= form_tag root_path, method: :get do %>
+  <p>
+    <%= text_field_tag :search %>
+    <%= submit_tag "Search" %>
+  </p>
+<% end %>
+
+<% @search_results.each do |result| %>
+<p><%= result.name %> - <%= result.content %></p>
+<% end %>

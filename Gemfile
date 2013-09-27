@@ -31,10 +31,10 @@ group :test, :development do
   gem "factory_girl_rails"
   gem "faker"
   gem 'better_errors'
-  gem 'sunspot_solr'
   gem 'faker'
   gem 'progress_bar'
   gem 'thin'
+  gem 'sunspot_solr'
 end
 
 

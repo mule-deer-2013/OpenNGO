@@ -44,13 +44,15 @@ class CreateOrgs < ActiveRecord::Migration
     end
 
 
-  create_table :provinces do |t|
+  create_table :locations do |t|
     t.string :name
+
+    t.timestamps
   end
 
-  create_table :orgs_provinces do |t|
+  create_table :locations_orgs do |t|
     t.belongs_to :org
-    t.belongs_to :province
+    t.belongs_to :location
   end
 
  end

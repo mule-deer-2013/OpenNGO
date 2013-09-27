@@ -35,5 +35,8 @@ PROVINCES = [
   'Tucuman'
 ]
 
-PROVINCES.each {|prov| Province.create(name: prov)}
+PROVINCES.each {|prov| Location.create(name: prov)}
 
+Org.all.each do |seed_org|
+  seed_org.locations << Location.find_by_name(PROVINCES.sample)
+end

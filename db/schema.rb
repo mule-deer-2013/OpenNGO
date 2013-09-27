@@ -13,6 +13,17 @@
 
 ActiveRecord::Schema.define(:version => 20130926204753) do
 
+  create_table "locations", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "locations_orgs", :force => true do |t|
+    t.integer "org_id"
+    t.integer "location_id"
+  end
+
   create_table "orgs", :force => true do |t|
     t.string   "name"
     t.string   "initials"
@@ -54,15 +65,6 @@ ActiveRecord::Schema.define(:version => 20130926204753) do
     t.string   "certifier_title2"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
-  end
-
-  create_table "orgs_provinces", :force => true do |t|
-    t.integer "org_id"
-    t.integer "province_id"
-  end
-
-  create_table "provinces", :force => true do |t|
-    t.string "name"
   end
 
 end

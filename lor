@@ -1,0 +1,12 @@
+.*
+
+Pending:
+  Org add some examples to (or delete) /Users/apprentice/Desktop/openNGO/spec/models/org_spec.rb
+    # No reason given
+    # ./spec/models/org_spec.rb:4
+
+Finished in 0.43705 seconds
+2 examples, 0 failures, 1 pending
+
+Randomized with seed 51134
+

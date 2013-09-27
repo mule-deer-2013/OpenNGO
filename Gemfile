@@ -6,6 +6,7 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'thin'
 
 
 # Gems used only for assets and not required
@@ -29,6 +30,10 @@ group :test, :development do
   gem "factory_girl_rails"
   gem "faker"
   gem 'better_errors'
+end
+
+group :development do
+  gem 'guard-livereload'
 end
 
 

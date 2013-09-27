@@ -1,8 +1,8 @@
 class Org < ActiveRecord::Base
 
-attr_accessible :name
+attr_accessible :name, :content
 
 searchable do
-    string :name
+    text :name, :content
   end
 end

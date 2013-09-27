@@ -33,6 +33,8 @@ group :test, :development do
   gem 'better_errors'
   gem 'sunspot_solr'
   gem 'faker'
+  gem 'progress_bar'
+  gem 'thin'
 end
 
 

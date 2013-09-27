@@ -29,10 +29,6 @@ group :test, :development do
   gem 'better_errors'
 end
 
-group :development do
-  gem 'guard-livereload'
-end
-
 
 group :test do
   gem 'capybara'

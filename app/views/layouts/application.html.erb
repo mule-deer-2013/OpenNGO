@@ -11,6 +11,11 @@
   <script src="js/vendor/custom.modernizr.js"></script>
 </head>
 <body>
+  <p>
+    <%= link_to_unless I18n.locale == :en, "English", locale: :en %>
+    |
+    <%= link_to_unless I18n.locale == :es, "Castellano", locale: :es %>
+  </p>
 
   <nav class="top-bar">
     <ul class="title-area">

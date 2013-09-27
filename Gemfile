@@ -6,7 +6,12 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+<<<<<<< HEAD
 gem 'thin'
+=======
+gem 'sunspot_rails'
+
+>>>>>>> c087540027106403212ae8d44a84234d8ef2711a
 
 
 # Gems used only for assets and not required
@@ -27,6 +32,10 @@ group :test, :development do
   gem "factory_girl_rails"
   gem "faker"
   gem 'better_errors'
+  gem 'faker'
+  gem 'progress_bar'
+  gem 'thin'
+  gem 'sunspot_solr'
 end
 
 

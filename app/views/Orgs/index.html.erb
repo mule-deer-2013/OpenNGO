@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
   
 
@@ -20,3 +21,22 @@
 
 
 
+=======
+<h1><%= t("Welcome") %> </h1>
+<h2><%= t("this sentence wont be translated") %></h2>
+<h2><%= t(:using_key_to_translate) %>
+<h2><%= t(:homepage_header2) %> <h2>
+<br>
+<%= link_to "link to sample org", "/orgs/1" %>
+
+<%= form_tag root_path, method: :get do %>
+  <p>
+    <%= text_field_tag :search %>
+    <%= submit_tag "Search" %>
+  </p>
+<% end %>
+
+<% @search_results.each do |result| %>
+<p><%= result.name %></p>
+<% end %>
+>>>>>>> master

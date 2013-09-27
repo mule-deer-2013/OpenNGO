@@ -4,8 +4,8 @@ feature "translation" do
   scenario "User switches from english to spanish and back" do
     visit root_path
     click_link "Castellano"
-    expect(page).to have_text("Bienvenidos")
+    expect(current_path).should eql('/es')
     click_link "English"
-    expect(page).to have_text("Welcome")
+    expect(current_path).should eql('/en')
   end
 end

@@ -6,4 +6,4 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-50.times Org.create(name: Faker::Company.name, content: Faker::Lorem.sentences)
+50.times {Org.create(name: Faker::Company.name)}

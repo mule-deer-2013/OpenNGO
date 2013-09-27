@@ -1,0 +1,10 @@
+# ruby encoding: utf-8
+
+es:
+  activerecord:
+    models:
+      org: 'org'
+    attributes:
+      org:
+        name: 'nombre'
+

@@ -1,8 +1,9 @@
 OpenNGO::Application.routes.draw do
-
-  resources :orgs, only: [:index,:show]
   
-  root to: 'orgs#index'  
+  scope "(:locale)", :locale => /en|es/ do
+    root to: 'orgs#index'
+    resources :orgs, only: [:index,:show]
+  end 
 
 
   # The priority is based upon order of creation:

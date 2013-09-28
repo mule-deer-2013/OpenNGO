@@ -13,26 +13,8 @@
 
 ActiveRecord::Schema.define(:version => 20130928180857) do
 
-  create_table "activities", :force => true do |t|
-    t.string "description"
-  end
-
-  create_table "activities_orgs", :force => true do |t|
-    t.integer "org_id"
-    t.integer "activity_id"
-  end
-
   create_table "advisories", :force => true do |t|
     t.integer "org_id"
-  end
-
-  create_table "ages", :force => true do |t|
-    t.string "description"
-  end
-
-  create_table "ages_orgs", :force => true do |t|
-    t.integer "org_id"
-    t.integer "age_id"
   end
 
   create_table "boards", :force => true do |t|
@@ -40,33 +22,10 @@ ActiveRecord::Schema.define(:version => 20130928180857) do
     t.integer "org_id"
   end
 
-  create_table "branches", :force => true do |t|
-    t.string  "description"
-    t.integer "org_id"
-  end
-
-  create_table "causes", :force => true do |t|
-    t.string "description"
-  end
-
-  create_table "causes_orgs", :force => true do |t|
-    t.integer "org_id"
-    t.integer "cause_id"
-  end
-
-  create_table "locations", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "locations_orgs", :force => true do |t|
-    t.integer "org_id"
-    t.integer "location_id"
-  end
-
   create_table "orgs", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
     t.string   "initials"
     t.string   "address"
     t.string   "province"
@@ -79,28 +38,34 @@ ActiveRecord::Schema.define(:version => 20130928180857) do
     t.date     "founding_date"
     t.date     "starting_date"
     t.string   "legal_type"
-    t.integer  "legal_num"
+    t.integer  "legal_no"
     t.string   "cuit"
-    t.boolean  "vat_exempt"
-    t.boolean  "income_exempt"
-    t.boolean  "tax_ded"
+    t.boolean  "vat_exemption"
+    t.boolean  "income_exemption"
+    t.boolean  "tax_ded_arg"
     t.text     "mission"
-    t.text     "objective"
+    t.text     "objectives"
+    t.string   "chief_operator"
+    t.string   "chief_operator_title"
+    t.string   "board_type"
+    t.integer  "no_emp_full"
+    t.integer  "no_emp_part"
+    t.integer  "no_volunteers_perm"
     t.boolean  "code_conduct"
     t.string   "external_auditor"
-    t.string   "annual_reporting"
-    t.string   "external_prog_eval"
-    t.string   "trans_policy"
-    t.integer  "num_prog_ind"
-    t.integer  "num_prog_org"
-    t.integer  "num_prog_pub"
+    t.string   "annual_financials"
+    t.string   "external_program_audit"
+    t.string   "written_trans_policy"
+    t.integer  "num_programs_indv"
+    t.integer  "num_programs_orgs"
+    t.integer  "num_programs_public"
     t.string   "certifier_name1"
     t.string   "certifier_name2"
     t.string   "certifier_title1"
     t.string   "certifier_title2"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
   end
+
+  add_index "orgs", ["name"], :name => "index_orgs_on_name"
 
   create_table "people", :force => true do |t|
     t.string  "name"

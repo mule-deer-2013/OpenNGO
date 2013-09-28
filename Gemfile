@@ -2,20 +2,13 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'pg'
-<<<<<<< HEAD
+
 gem 'thin'
-=======
+
 gem 'sunspot_rails'
 
->>>>>>> c087540027106403212ae8d44a84234d8ef2711a
 
-
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'compass-rails'
@@ -48,8 +41,7 @@ end
 
 
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

@@ -5,6 +5,7 @@ OpenNGO::Application.routes.draw do
     resources :orgs, only:[:index,:show] do 
         get 'search', on: :collection
     end
+
   end 
 
 

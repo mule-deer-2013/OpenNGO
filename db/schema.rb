@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130928180857) do
+ActiveRecord::Schema.define(:version => 20130928180859) do
 
   create_table "activities", :force => true do |t|
     t.string "description"
@@ -55,14 +55,9 @@ ActiveRecord::Schema.define(:version => 20130928180857) do
   end
 
   create_table "locations", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "locations_orgs", :force => true do |t|
+    t.boolean "primary"
     t.integer "org_id"
-    t.integer "location_id"
+    t.integer "province_id"
   end
 
   create_table "orgs", :force => true do |t|
@@ -108,6 +103,12 @@ ActiveRecord::Schema.define(:version => 20130928180857) do
     t.string  "out_position"
     t.integer "relationable_id"
     t.string  "relationable_type"
+  end
+
+  create_table "provinces", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "teams", :force => true do |t|

@@ -44,6 +44,7 @@ Org.all => All orgs with fields below
     my_org.certifier_title2
     my_org.created_at
     my_org.updated_at
+    my_org.transparency
 
   has_many associations(must select an instance to access nested attributes):
     
@@ -54,14 +55,14 @@ Org.all => All orgs with fields below
       my_org.my_age.description
 
 
+  has_many_through association 
+      my_org.locations => list of all locations (prov id,  primary boolean) 
+      my_org.my_prov.name => e.g "catamarca"
+      my_org.provinces => list of all provinces where org is present (if you want names rather than ids)
+
+
   has_one associations (no need for selecting instance as it only has one):
-   
-      my_org.team => team for this org
-        my_org.team.id
-        my_org.team.authority
-        my_org.team.fte
-        my_org.team.pte
-        my_org.team.volunteers
+  
 
       my_org.advisory => Advisory committee for this org
         my_org.advisory.id
@@ -89,6 +90,7 @@ Board.all => all boards
   my_board.org => org this board belongs to
   my_board.
 
+Location.all => all location
 
 
 
@@ -98,6 +100,3 @@ Team.all => all teams
   my_team.fte
   my_team.pte
   my_team.volunteers
-
-
-

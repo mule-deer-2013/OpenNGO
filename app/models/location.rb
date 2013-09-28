@@ -1,4 +1,6 @@
 class Location < ActiveRecord::Base
-  attr_accessible :name
-  has_and_belongs_to_many :orgs
+  attr_accessible :primary
+  
+  belongs_to :org
+  belongs_to :province
 end

@@ -38,16 +38,17 @@ class CreateOrgs < ActiveRecord::Migration
     end
 
 
-#has and belongs to many
-  create_table :locations do |t|
+#has many through
+  create_table :provinces do |t|
     t.string :name
 
     t.timestamps
   end
 
-  create_table :locations_orgs do |t|
+  create_table :locations do |t|
+    t.boolean :primary
     t.belongs_to :org
-    t.belongs_to :location
+    t.belongs_to :province
   end
 
 

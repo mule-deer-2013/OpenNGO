@@ -60,7 +60,7 @@ AGES = [
 ]
 
 
-10.times {Org.create(name: Faker::Company.name)}
+100.times {Org.create(name: Faker::Company.name)}
 
 
 PROVINCES.each {|prov| Province.create(name: prov)}

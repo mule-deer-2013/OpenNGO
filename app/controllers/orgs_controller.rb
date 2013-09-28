@@ -1,7 +1,10 @@
 class OrgsController < ApplicationController
 
  def index
+
+
  end
+
 
  def search
   if params[:search].blank?
@@ -15,9 +18,8 @@ class OrgsController < ApplicationController
  end
 
  def show
- end 
-
-
+ 
+ end
 
 
 

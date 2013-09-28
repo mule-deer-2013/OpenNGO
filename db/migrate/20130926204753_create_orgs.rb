@@ -21,12 +21,6 @@ class CreateOrgs < ActiveRecord::Migration
       t.boolean :tax_ded
       t.text :mission
       t.text :objective
-      t.string :chief_operator
-      t.string :chief_title
-      t.string :board_type
-      t.integer :num_fte
-      t.integer :num_pte
-      t.integer :num_volunteer
       t.boolean :code_conduct
       t.string :external_auditor
       t.string :annual_reporting

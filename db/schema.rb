@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130926204753) do
+ActiveRecord::Schema.define(:version => 20130928180857) do
 
   create_table "activities", :force => true do |t|
     t.string "description"
@@ -22,6 +22,10 @@ ActiveRecord::Schema.define(:version => 20130926204753) do
     t.integer "activity_id"
   end
 
+  create_table "advisories", :force => true do |t|
+    t.integer "org_id"
+  end
+
   create_table "ages", :force => true do |t|
     t.string "description"
   end
@@ -29,6 +33,11 @@ ActiveRecord::Schema.define(:version => 20130926204753) do
   create_table "ages_orgs", :force => true do |t|
     t.integer "org_id"
     t.integer "age_id"
+  end
+
+  create_table "boards", :force => true do |t|
+    t.string  "btype"
+    t.integer "org_id"
   end
 
   create_table "branches", :force => true do |t|
@@ -77,12 +86,6 @@ ActiveRecord::Schema.define(:version => 20130926204753) do
     t.boolean  "tax_ded"
     t.text     "mission"
     t.text     "objective"
-    t.string   "chief_operator"
-    t.string   "chief_title"
-    t.string   "board_type"
-    t.integer  "num_fte"
-    t.integer  "num_pte"
-    t.integer  "num_volunteer"
     t.boolean  "code_conduct"
     t.string   "external_auditor"
     t.string   "annual_reporting"
@@ -97,6 +100,22 @@ ActiveRecord::Schema.define(:version => 20130926204753) do
     t.string   "certifier_title2"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+  end
+
+  create_table "people", :force => true do |t|
+    t.string  "name"
+    t.string  "in_position"
+    t.string  "out_position"
+    t.integer "relationable_id"
+    t.string  "relationable_type"
+  end
+
+  create_table "teams", :force => true do |t|
+    t.integer "org_id"
+    t.string  "authority"
+    t.integer "fte"
+    t.integer "pte"
+    t.integer "volunteers"
   end
 
 end

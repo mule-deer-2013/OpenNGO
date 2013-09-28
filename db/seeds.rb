@@ -63,14 +63,20 @@ AGES = [
 100.times {Org.create(name: Faker::Company.name)}
 
 
-PROVINCES.each {|prov| Location.create(name: prov)}
+PROVINCES.each {|prov| Province.create(name: prov)}
 CAUSES.each {|cause| Cause.create(description: cause)}
 ACTIVITIES.each {|act| Activity.create(description: act)}
 AGES.each {|age| Age.create(description: age)}
 
 
 Org.all.each do |seed_org|
-  seed_org.locations << Location.find_by_name(PROVINCES.sample)
+  3.times do 
+    myloc = Location.new(primary: false) 
+    myloc.province = Province.find_by_name(PROVINCES.sample)
+    seed_org.locations << myloc
+  end
+
+  seed_org.locations.first.update_attributes(primary: true)
   seed_org.branches << Branch.create( description: Faker::Address.street_name)
   seed_org.branches << Branch.create( description: Faker::Address.street_name)
   seed_org.causes << Cause.find_by_description(CAUSES.sample)
@@ -78,6 +84,7 @@ Org.all.each do |seed_org|
   seed_org.activities << Activity.find_by_description(ACTIVITIES.sample)
   seed_org.activities << Activity.find_by_description(ACTIVITIES.sample)
   seed_org.ages << Age.find_by_description(AGES.sample)
+
   seed_org.board = Board.create(btype: "executive board")
   seed_org.board.people << Person.create(name: Faker::Name.name)
   seed_org.board.people << Person.create(name: Faker::Name.name)

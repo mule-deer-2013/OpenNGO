@@ -2,14 +2,16 @@ class OrgsController < ApplicationController
 
  def index
 
+
  end
 
+
  def search
-  if params[:keyword].blank?
+  if params[:search].blank?
     @search_results = []
   else  
     @search = Org.search do
-      fulltext params[:keyword]
+      fulltext params[:search]
     end
     @search_results = @search.results
   end
@@ -18,5 +20,7 @@ class OrgsController < ApplicationController
  def show
  
  end
+
+
 
 end

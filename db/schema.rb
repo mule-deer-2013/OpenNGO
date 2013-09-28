@@ -13,6 +13,38 @@
 
 ActiveRecord::Schema.define(:version => 20130926204753) do
 
+  create_table "activities", :force => true do |t|
+    t.string "description"
+  end
+
+  create_table "activities_orgs", :force => true do |t|
+    t.integer "org_id"
+    t.integer "activity_id"
+  end
+
+  create_table "ages", :force => true do |t|
+    t.string "description"
+  end
+
+  create_table "ages_orgs", :force => true do |t|
+    t.integer "org_id"
+    t.integer "age_id"
+  end
+
+  create_table "branches", :force => true do |t|
+    t.string  "description"
+    t.integer "org_id"
+  end
+
+  create_table "causes", :force => true do |t|
+    t.string "description"
+  end
+
+  create_table "causes_orgs", :force => true do |t|
+    t.integer "org_id"
+    t.integer "cause_id"
+  end
+
   create_table "locations", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false

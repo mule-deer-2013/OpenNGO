@@ -13,7 +13,14 @@ class OrgsController < ApplicationController
 	end
  end
 
+ def search
+ end
+
  def show
  end 
+
+
+
+
 
 end

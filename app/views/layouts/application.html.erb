@@ -11,12 +11,6 @@
   <script src="js/vendor/custom.modernizr.js"></script>
 </head>
 <body>
-  <p>
-    <%= link_to_unless I18n.locale == :en, "English", locale: :en %>
-    |
-    <%= link_to_unless I18n.locale == :es, "Castellano", locale: :es %>
-  </p>
-
   <nav class="top-bar">
     <ul class="title-area">
       <li class="name"><a href="#"><%=image_tag 'logo.png', :class => "logo" %></a></li>
@@ -33,8 +27,12 @@
     <%= yield %>
   </div>
     <div class="foot">
-    <%=image_tag 'AR.svg', :class => "flag" %>
-    <%=image_tag 'US.png', :class => "flag" %>
+    <%= link_to_unless I18n.locale == :en, "", :locale => "en" do %>
+      <%=image_tag 'AR.svg', :class => "flag" %>
+    <% end %>
+    <%= link_to_unless I18n.locale == :es, "",:locale  => "es" do %>
+      <%=image_tag 'US.png', :class => "flag" %>
+    <% end %>
   </div>
 </body>
  

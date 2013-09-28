@@ -21,6 +21,7 @@ class CreateOrgs < ActiveRecord::Migration
       t.boolean :tax_ded
       t.text :mission
       t.text :objective
+      t.integer :transparency
       t.boolean :code_conduct
       t.string :external_auditor
       t.string :annual_reporting

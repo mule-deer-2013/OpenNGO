@@ -6,4 +6,37 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-50.times {Org.create(name: Faker::Company.name)}
+10.times {Org.create(name: Faker::Company.name)}
+
+PROVINCES = [
+  'Capital Federal',
+  'Buenos Aires',
+  'Catamarca',
+  'Chaco',
+  'Chubut',
+  'Cordoba',
+  'Corrientes',
+  'Entre Rios',
+  'Formosa',
+  'Jujuy',
+  'La Pampa',
+  'La Rioja',
+  'Mendoza',
+  'Misiones',
+  'Neuquen',
+  'Rio Negro',
+  'Salta',
+  'San Juan',
+  'San Luis',
+  'Santa Cruz',
+  'Santa Fe',
+  'Santiage del Estero',
+  'Tierra del Fuego',
+  'Tucuman'
+]
+
+PROVINCES.each {|prov| Location.create(name: prov)}
+
+Org.all.each do |seed_org|
+  seed_org.locations << Location.find_by_name(PROVINCES.sample)
+end

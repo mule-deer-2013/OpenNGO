@@ -44,6 +44,7 @@ class CreateOrgs < ActiveRecord::Migration
     end
 
 
+#has and belongs to many
   create_table :locations do |t|
     t.string :name
 
@@ -54,6 +55,45 @@ class CreateOrgs < ActiveRecord::Migration
     t.belongs_to :org
     t.belongs_to :location
   end
+
+
+#Many-to#one
+  create_table :branches do |t|
+    t.string :description
+    t.belongs_to :org
+  end
+
+
+#Has and belongs to many
+  create_table :causes do |t|
+    t.string :description
+  end
+
+  create_table :causes_orgs do |t|
+    t.belongs_to :org
+    t.belongs_to :cause
+  end
+
+#has and belongs to many
+  create_table :activities do |t|
+    t.string :description
+  end
+
+  create_table :activities_orgs do |t|
+    t.belongs_to :org
+    t.belongs_to :activity
+  end
+
+#has and belongs to many
+  create_table :ages do |t|
+    t.string :description
+  end
+
+  create_table :ages_orgs do |t|
+    t.belongs_to :org
+    t.belongs_to :age
+  end
+
 
  end
 end

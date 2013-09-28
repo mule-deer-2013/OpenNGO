@@ -1,21 +1,18 @@
-
-
-  
-
-  <div id="main">
-    <div id="search">
-      <p>Search Organizations</p>
-      <%= form_tag root_path, method: :get do %>
-        <fieldset class="search">
-          <%= text_field_tag :keyword, nil, placeholder: "Enter name, address, or type of cause" %>
-          <%= submit_tag "Search", class: "small radius success button" , id: "search-submit" %>
-        </fieldset>
-      <% end %>
-    <div>
-  </div>
+<div id="main">
+  <div id="search">
+    <p>Search Organizations</p>
+    <%= form_tag root_path, method: :get do %>
+      <fieldset class="search">
+        <%= text_field_tag :keyword, nil, placeholder: "Enter name, address, or type of cause" %>
+        <%= submit_tag "Search", class: "small radius success button" , id: "search-submit" %>
+      </fieldset>
+    <% end %>
   <div>
-     
-  </div>
+    
+
+</div>
+
+
 
 
 

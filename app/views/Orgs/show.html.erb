@@ -3,3 +3,10 @@
 <%= render partial: "profile_feature1" %>
 <%= render partial: 'profile_feature2' %>
 <%= render partial: 'profile_feature3' %>
+
+
+<div style="background-color:white">
+      fooooooo
+      <% @keyword = /keyword=(.+)&/.match(URI(request.fullpath).to_s) %>
+   <%= @search_result %>
+</div>

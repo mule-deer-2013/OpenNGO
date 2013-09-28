@@ -70,6 +70,7 @@ AGES = [
 
 10.times {Org.create(name: Faker::Company.name)}
 
+
 PROVINCES.each {|prov| Location.create(name: prov)}
 CAUSES.each {|cause| Cause.create(description: cause)}
 ACTIVITIES.each {|act| Activity.create(description: act)}
@@ -85,4 +86,10 @@ Org.all.each do |seed_org|
   seed_org.activities << Activity.find_by_description(ACTIVITIES.sample)
   seed_org.activities << Activity.find_by_description(ACTIVITIES.sample)
   seed_org.ages << Age.find_by_description(AGES.sample)
+  seed_org.board = Board.create(btype: "executive board")
+  seed_org.board.people << Person.create(name: Faker::Name.name)
+  seed_org.board.people << Person.create(name: Faker::Name.name)
+  seed_org.advisory = Advisory.create()
+  seed_org.advisory.people << Person.create(name: Faker::Name.name) 
+  seed_org.team = Team.create(fte: 23,pte: 12,volunteers:421, authority: "#{Faker::Name.name},#{Faker::Name.title}")
 end

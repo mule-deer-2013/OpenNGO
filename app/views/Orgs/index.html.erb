@@ -7,16 +7,14 @@
       <p>Search Organizations</p>
       <%= form_tag root_path, method: :get do %>
         <fieldset class="search">
-         
-          <input id="search-box" type="text" placeholder="Enter name, address, or type of cause">
-          <a id= "search-submit" href="" class="small radius success button">Search</a>
-
+          <%= text_field_tag :keyword, nil, placeholder: "Enter name, address, or type of cause" %>
+          <%= submit_tag "Search", class: "small radius success button" , id: "search-submit" %>
         </fieldset>
       <% end %>
     <div>
   </div>
   <div>
-     <%= text_field_tag :keyword, placeholder: "Enter name, address, or type of cause" %>
+     
   </div>
 
 

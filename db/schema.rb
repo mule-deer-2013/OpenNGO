@@ -94,6 +94,11 @@ ActiveRecord::Schema.define(:version => 20130928180859) do
     t.string   "certifier_name2"
     t.string   "certifier_title1"
     t.string   "certifier_title2"
+    t.string   "leader_name"
+    t.string   "leader_title"
+    t.integer  "fte"
+    t.integer  "pte"
+    t.integer  "volunteers"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end
@@ -112,12 +117,5 @@ ActiveRecord::Schema.define(:version => 20130928180859) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "teams", :force => true do |t|
-    t.integer "org_id"
-    t.string  "authority"
-    t.integer "fte"
-    t.integer "pte"
-    t.integer "volunteers"
-  end
 
 end

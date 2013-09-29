@@ -1,3 +1,4 @@
+
 <div class="filter">
   <div class="transparency">
     <p>TRANSPARENCY LEVEL</p>
@@ -32,44 +33,27 @@
     <li><a href="#">This is another</a></li>
     <li><a href="#">Yet another</a></li>
   </ul>
+  <a href="#" class="small button radius alert apply">Apply</a>
 
 </div>
 
+
 <div class="results-container">
- 
-    <div class="row list-container">
-      <div class="large-9 push-3 columns">
-        <p>Title</p>
-        <p>foo: bar</p>
-        <p>foo: bar</p>
-      </div>
-      <div class="large-3 pull-9 columns"><img class"org-logo" src="http://wallpaperan.com/wallpaper/3581-cute-pictures-wallpapers.jpg">
-      </div>
+<% @search_results.each do |result| %>
+  <div class="row list-container">
+    <div class="large-9 push-3 columns">
+        <p><%= result.name %></p>
+        <%= result.provinces.map do |p| %>
+          <%= p.name %>
+        <% end %>.join(', ')
+        <p><%= result.causes %></p>
+        <p>2013 Budget</p>
     </div>
-
-     <div class="row list-container">
-      <div class="large-9 push-3 columns">
-        <p>Title</p>
-        <p>foo: bar</p>
-        <p>foo: bar</p>
-      </div>
-      <div class="large-3 pull-9 columns"><img class"org-logo" src="http://wallpaperan.com/wallpaper/3581-cute-pictures-wallpapers.jpg">
-      </div>
+    <div class="large-3 pull-9 columns"><img class"org-logo" src="http://wallpaperan.com/wallpaper/3581-cute-pictures-wallpapers.jpg">
     </div>
+  </div>
+<% end %>
 
-    <div class="row list-container">
-      <div class="large-9 push-3 columns">
-        <p>Title</p>
-        <p>foo: bar</p>
-        <p>foo: bar</p>
-      </div>
-      <div class="large-3 pull-9 columns"><img class"org-logo" src="http://wallpaperan.com/wallpaper/3581-cute-pictures-wallpapers.jpg">
-      </div>
-    </div>
-
- <% @search_results.each do |result| %>
-  <p><%= result.inspect %></p>
-  <% end %>
 </div>
 
 

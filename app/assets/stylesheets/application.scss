@@ -17,6 +17,10 @@
 $grey: #282929;
 $awhite: #FAFAFA;
 
+* {
+  margin:0;
+  padding:0;
+}
 
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -49,14 +53,17 @@ body {
 
 
 .container {
-  width: 100%;
-  height: 100%;
+  position: relative;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 #main {
-  overflow:auto;
-  height:100%;
-  width: 100%;
+  position:relative;
+  height: 850px;
+  /*overflow:auto;*/
+  /*min-height:100%;*/
+  /*width: 100%;*/
   background-image: url("http://farm4.staticflickr.com/3799/9952425716_7be564f2bd_k.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -112,7 +119,6 @@ fieldset #search-submit {
 
 .foot{
   position: relative;
-  margin-top: -120px;
   height: 120px;
   width: 100%;
   bottom: 0px;
@@ -164,11 +170,19 @@ fieldset #search-submit {
     margin-left: 25px;
     margin-top: 20px;
   }
+  .apply{
+    margin-top: 0px;
+    margin-right: 25px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 
 }
 
 .results-container {
   position: relative;
+  min-height: 100%;
   background-color: #E7E7E7;
   margin-top: 50px;
   .list-container {

@@ -60,6 +60,7 @@ AGES = [
 ]
 
 
+
 100.times {Org.create(name: Faker::Company.name)}
 
 

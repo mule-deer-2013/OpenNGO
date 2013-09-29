@@ -11,11 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20130928180857) do
-=======
 ActiveRecord::Schema.define(:version => 20130928180859) do
->>>>>>> f4e806a17649743a5bd0e449c64776f7e5c5bb45
 
   create_table "activities", :force => true do |t|
     t.string "description"
@@ -59,20 +55,9 @@ ActiveRecord::Schema.define(:version => 20130928180859) do
   end
 
   create_table "locations", :force => true do |t|
-<<<<<<< HEAD
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "locations_orgs", :force => true do |t|
-    t.integer "org_id"
-    t.integer "location_id"
-=======
     t.boolean "primary"
     t.integer "org_id"
     t.integer "province_id"
->>>>>>> f4e806a17649743a5bd0e449c64776f7e5c5bb45
   end
 
   create_table "orgs", :force => true do |t|
@@ -96,10 +81,7 @@ ActiveRecord::Schema.define(:version => 20130928180859) do
     t.boolean  "tax_ded"
     t.text     "mission"
     t.text     "objective"
-<<<<<<< HEAD
-=======
     t.integer  "transparency"
->>>>>>> f4e806a17649743a5bd0e449c64776f7e5c5bb45
     t.boolean  "code_conduct"
     t.string   "external_auditor"
     t.string   "annual_reporting"
@@ -124,15 +106,12 @@ ActiveRecord::Schema.define(:version => 20130928180859) do
     t.string  "relationable_type"
   end
 
-<<<<<<< HEAD
-=======
   create_table "provinces", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
->>>>>>> f4e806a17649743a5bd0e449c64776f7e5c5bb45
   create_table "teams", :force => true do |t|
     t.integer "org_id"
     t.string  "authority"

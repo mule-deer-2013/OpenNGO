@@ -9,8 +9,18 @@
   <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="css/foundation.css" />
   <script src="js/vendor/custom.modernizr.js"></script>
+  <script src="/js/custom.modernizr.js"></script>
 </head>
 <body>
+  <script>
+  document.write('<script src=/js/vendor/'
+    + ('__proto__' in {} ? 'zepto' : 'jquery')
+    + '.js><\/script>');
+  </script>
+  <script src="js/foundation/foundation.js"></script>
+  <script src="js/foundation/foundation.dropdown.js"></script>
+  
+
   <nav class="top-bar">
     <ul class="title-area">
       <li class="name"><a href="#"><%=image_tag 'logo.png', :class => "logo" %></a></li>
@@ -36,8 +46,10 @@
         <%=image_tag 'US.png', :class => "flag" %>
       <% end %>
       <p>Dev Bootcamp Students Contribution to Help Agentina (2013)</p>
-    </div>
-  
+  </div>
+  <script>
+    $(document).foundation();
+  </script>
 </body>
  
 </html>

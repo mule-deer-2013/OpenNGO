@@ -13,17 +13,20 @@
  */
 @import "foundation";
 
+
 $grey: #282929;
-$white: #FAFAFA;
+/*$grey: black;*/
+$awhite: #FAFAFA;
+/*$topbar-bg: #282929;
+$include-html-top-bar-classes: $include-html-classes;
+$topbar-section-bg: #282929;*/
 
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  /*background-color: $grey;*/
   height: 100%;
 }
 
 .top-bar {
-  background-color: #282929;
   margin-bottom: 0px;
   font-size: 20px;
 }
@@ -32,7 +35,6 @@ body {
   padding-right: 20px;
   li a:not(.button){
     font-size: 15px;
-    background: #282929;
   }
 
 }
@@ -115,20 +117,72 @@ fieldset #search-submit {
   margin-bottom: 0px;
   text-align: center;
   background-color: $grey;
+  
   p {
-    color: $white;
+    color: $awhite;
     font-size: 12px;
   }
   .flag {
-  width: 50px;
-  height: 50px;
-  margin: 5px;
-  cursor: pointer;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    cursor: pointer;
   }
 }
 
+.filter{
+  width: 100%;
+  height: 90px;
+  background-color: $awhite;
+  text-align: center;
+  padding-top: 15px;
+   box-shadow: inset 0 0 10px #000000;
+  div {
+    float:left;
+    border-right: 1px solid #eee;
+    padding-right: 25px;
+    padding-left: 25px;
+    
+  }
+  div:first-child {
+    margin-left: 50px;
+  }
+  div p{
+    font-size: 12px;
+    font-weight: bold;
+  }
+  #customDropdown{
+    font-size: 80px;
+    padding: 10px;
+  }
+  a{
+    float: left;
+    margin-left: 25px;
+    margin-top: 20px;
+  }
 
+}
 
+.results-container {
+  position: relative;
+  background-color: #E7E7E7;
+  margin-top: 50px;
+  .list-container {
+    width: 839px;
+    height: 131px;
+    padding: 15px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    div {
+      min-height: 100%;
+    }
+  }
+}
+
+.org-logo {
+  max-width: 100%;
+  height: 152px;
+}
 
 
 

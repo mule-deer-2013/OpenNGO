@@ -14,4 +14,5 @@
 /log/*.log
 /tmp
 /solr/data
-/solr/pids/development
+/solr/pids
+/db/schema.rb

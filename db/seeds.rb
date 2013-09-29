@@ -60,13 +60,17 @@ AGES = [
 ]
 
 
-100.times {Org.create(name: Faker::Company.name)}
+LEVELS = [3,2,1,0]
+
+
+15.times {Org.create(name: Faker::Company.name, transparency: LEVELS.sample)}
 
 
 PROVINCES.each {|prov| Province.create(name: prov)}
 CAUSES.each {|cause| Cause.create(description: cause)}
 ACTIVITIES.each {|act| Activity.create(description: act)}
 AGES.each {|age| Age.create(description: age)}
+
 
 
 Org.all.each do |seed_org|

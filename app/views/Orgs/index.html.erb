@@ -2,7 +2,7 @@
 
 <div id="main">
   <div id="search">
-    <p>Search Organizations</p>
+    <p><%= t("Search")%> <%=t("Organizations")%></p>
     <%= form_tag :search_orgs, method: :get do %>
       <fieldset class="search">
         <%= text_field_tag :keyword, nil, placeholder: "Enter name, address, or type of cause" %>

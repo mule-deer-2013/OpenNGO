@@ -15,6 +15,7 @@
 
 
 $grey: #282929;
+$light-grey: #a8a8a8;
 $awhite: #FAFAFA;
 
 * {
@@ -24,6 +25,7 @@ $awhite: #FAFAFA;
 
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
   height: 100%;
 }
 
@@ -146,8 +148,7 @@ fieldset #search-submit {
   background-color: $awhite;
   text-align: center;
   padding-top: 15px;
-   box-shadow: inset 0 0 10px #000000;
-  div {
+    div {
     float:left;
     border-right: 1px solid #eee;
     padding-right: 25px;
@@ -162,7 +163,7 @@ fieldset #search-submit {
     font-weight: bold;
   }
   #customDropdown{
-    font-size: 80px;
+    font-size: 11px;
     padding: 10px;
   }
   a{
@@ -180,19 +181,37 @@ fieldset #search-submit {
 
 }
 
+.search-sum {
+  padding: 11px 0 7px 21px;
+  background-color: #eeebeb;
+  border-bottom: 1px solid #cfcbcb;
+}
+
 .results-container {
+
   position: relative;
   min-height: 100%;
   background-color: #E7E7E7;
-  margin-top: 50px;
+  margin-top: 0px;
   .list-container {
+
     width: 839px;
     height: 131px;
     padding: 15px;
     border: 1px solid #eee;
     background-color: #fff;
+    color: $light-grey; 
+    font-size: 15px;
     div {
       min-height: 100%;
+    }
+    h4{
+      color: #4587ba;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    ul li{
+      list-style-type: none;
     }
   }
 }

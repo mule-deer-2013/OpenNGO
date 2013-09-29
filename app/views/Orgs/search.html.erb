@@ -37,22 +37,43 @@
 
 </div>
 
+<div class="search-sum">
+  <div class="row">
+
+    <div class="large-2 push-10 columns">
+     <label for="customDropdown1">Sort by</label>
+      <select id="customDropdown1" class="small">
+        <option DISABLED>This is a dropdown</option>
+        <option>This is another option</option>
+        <option>This is another option too</option>
+        <option>Look, a third option</option>
+      </select>
+    </div>
+    <div class="large-10 pull-2 columns">
+      foo
+
+    </div>
+    
+  </div>
+ 
+</div>
+
 
 <div class="results-container">
-<% @search_results.each do |result| %>
-  <div class="row list-container">
-    <div class="large-9 push-3 columns">
-        <p><%= result.name %></p>
-        <%= result.provinces.map do |p| %>
-          <%= p.name %>
-        <% end %>.join(', ')
-        <p><%= result.causes %></p>
-        <p>2013 Budget</p>
+  <% @search_results.each do |result| %>
+    <div class="row list-container">
+      <div class="large-9 push-3 columns">
+          <h4><%= result.name %></h4>
+          <ul>
+            <li>Provinces: <%= result.provinces.map {|p| p.name }.join(', ')%></li>
+            <li>Causes: <%= result.causes.map { |c| c.description }.join(', ') %></li>
+            <li>2013 Budget: XXXX peso</li>
+          </ul>
+      </div>
+      <div class="large-3 pull-9 columns"><img class"org-logo" src="http://wallpaperan.com/wallpaper/3581-cute-pictures-wallpapers.jpg">
+      </div>
     </div>
-    <div class="large-3 pull-9 columns"><img class"org-logo" src="http://wallpaperan.com/wallpaper/3581-cute-pictures-wallpapers.jpg">
-    </div>
-  </div>
-<% end %>
+  <% end %>
 
 </div>
 

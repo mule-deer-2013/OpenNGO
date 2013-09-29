@@ -25,19 +25,13 @@
   </nav>
   <div class="container">
     <%= yield %>
-    
   </div>
 
   <div class="foot">
-      <%= link_to_unless I18n.locale == :en, "", :locale => "en" do %>
-        <%=image_tag 'AR.svg', :class => "flag" %>
-      <% end %>
-      <%= link_to_unless I18n.locale == :es, "",:locale  => "es" do %>
-        <%=image_tag 'US.png', :class => "flag" %>
-      <% end %>
-      <p>Dev Bootcamp Students Contribution to Help Agentina (2013)</p>
-    </div>
-  
+      <%= link_to_unless I18n.locale == :es, (image_tag ('AR.svg'), :class => "flag") , :locale => :es %>
+      <%= link_to_unless I18n.locale == :en, (image_tag ('US.png'), :class => "flag"), :locale  => :en %>
+  </div>
+
 </body>
- 
+
 </html>

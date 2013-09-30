@@ -16,3 +16,4 @@
 /solr/data
 /solr/pids
 /db/schema.rb
+Gemfile.lock

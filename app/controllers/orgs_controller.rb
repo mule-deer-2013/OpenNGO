@@ -1,26 +1,20 @@
 class OrgsController < ApplicationController
 
  def index
-
-
  end
 
-
  def search
-  if params[:keyword].blank?
+  if params[:search_terms].blank?
     @search_results = []
   else  
-    @search = Org.search do
-      fulltext params[:keyword]
+    @search = Sunspot.search Org, Province, Cause do
+    	keywords(params[:search_terms])
     end
-    @search_results = @search.results
   end
+    @search_results = @search.results
  end
 
  def show
- 
  end
-
-
 
 end

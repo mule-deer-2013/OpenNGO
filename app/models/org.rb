@@ -16,6 +16,5 @@ class Org < ActiveRecord::Base
 
   searchable :auto_index => true, :auto_remove => true do
     text :name, boost: 5
-    
   end
 end

@@ -7,7 +7,7 @@ class CreateOrgs < ActiveRecord::Migration
       t.string :province
       t.string :city
       t.boolean :int_branch
-      t.integer :telephone
+      t.string :telephone
       t.integer :fax
       t.string :email
       t.string :website

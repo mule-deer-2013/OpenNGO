@@ -64,8 +64,13 @@ TRANSPARENCY =[0,1,2,3]
 
 100.times {Org.create(
   name: Faker::Company.name,
+  initials: Faker::Address.city_prefix,
+  city: Faker::Address.city,
+  province: PROVINCES.sample,
   address: Faker::Address.street_address,
-  telephone:Faker::PhoneNumber.phone_number,
+  telephone: "(123)456-7894",
+  email: Faker::Internet.email,
+  website: Faker::Internet.domain_name,
   transparency: TRANSPARENCY.sample
 
   )}

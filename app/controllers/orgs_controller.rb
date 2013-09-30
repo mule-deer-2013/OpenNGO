@@ -20,8 +20,14 @@ class OrgsController < ApplicationController
  def show
   @org = Org.find(params[:id])
   @transparency = @org.transparency
+  @name = @org.name
+  @initials = @org.initials
+  @address = @org.address
+  @city = @org.city
+  @province = @org.province
+  @telephone = @org.telephone
+  @website = @org.website
+  @email = @org.email
  end
-
-
 
 end

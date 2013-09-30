@@ -9,8 +9,18 @@
   <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="css/foundation.css" />
   <script src="js/vendor/custom.modernizr.js"></script>
+  <script src="/js/custom.modernizr.js"></script>
 </head>
 <body>
+  <script>
+  document.write('<script src=/js/vendor/'
+    + ('__proto__' in {} ? 'zepto' : 'jquery')
+    + '.js><\/script>');
+  </script>
+  <script src="js/foundation/foundation.js"></script>
+  <script src="js/foundation/foundation.dropdown.js"></script>
+  
+  <div class="fixed">
   <nav class="top-bar">
     <ul class="title-area">
       <li class="name"><a href="#"><%=image_tag 'logo.png', :class => "logo" %></a></li>
@@ -23,21 +33,21 @@
       </ul>
     </section>
   </nav>
+  </div>
   <div class="container">
     <%= yield %>
-    
   </div>
 
   <div class="foot">
-      <%= link_to_unless I18n.locale == :en, "", :locale => "en" do %>
-        <%=image_tag 'AR.svg', :class => "flag" %>
-      <% end %>
-      <%= link_to_unless I18n.locale == :es, "",:locale  => "es" do %>
-        <%=image_tag 'US.png', :class => "flag" %>
-      <% end %>
-      <p>Dev Bootcamp Students Contribution to Help Agentina (2013)</p>
-    </div>
-  
+
+    <%= link_to_unless I18n.locale == :es, (image_tag ('AR.svg'), :class => "flag") , :locale => :es %>
+    <%= link_to_unless I18n.locale == :en, (image_tag ('US.png'), :class => "flag"), :locale  => :en %>
+    <p>Dev Bootcamp Students Contribution to Help Agentina (2013)</p>
+  </div>
+  <script>
+    $(document).foundation();
+  </script>
+
 </body>
- 
+
 </html>

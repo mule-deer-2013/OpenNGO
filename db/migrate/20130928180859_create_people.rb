@@ -17,15 +17,6 @@ class CreatePeople < ActiveRecord::Migration
       t.belongs_to :org
     end
 
-    create_table :teams do |t|
-      t.belongs_to :org
-      t.string :authority
-      t.integer :fte
-      t.integer :pte
-      t.integer :volunteers
-    end
-
-
 
 end
 end

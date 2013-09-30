@@ -63,12 +63,13 @@ ActiveRecord::Schema.define(:version => 20130928180859) do
   create_table "orgs", :force => true do |t|
     t.string   "name"
     t.string   "initials"
+    t.boolean  "display_name"
     t.string   "address"
     t.string   "province"
     t.string   "city"
     t.boolean  "int_branch"
-    t.integer  "telephone"
-    t.integer  "fax"
+    t.string   "telephone"
+    t.string   "fax"
     t.string   "email"
     t.string   "website"
     t.date     "founding_date"
@@ -84,16 +85,22 @@ ActiveRecord::Schema.define(:version => 20130928180859) do
     t.integer  "transparency"
     t.boolean  "code_conduct"
     t.string   "external_auditor"
+    t.string   "auditor_name"
     t.string   "annual_reporting"
     t.string   "external_prog_eval"
     t.string   "trans_policy"
     t.integer  "num_prog_ind"
     t.integer  "num_prog_org"
     t.integer  "num_prog_pub"
+    t.string   "leader_name"
+    t.string   "leader_title"
     t.string   "certifier_name1"
     t.string   "certifier_name2"
     t.string   "certifier_title1"
     t.string   "certifier_title2"
+    t.integer  "fte"
+    t.integer  "pte"
+    t.integer  "volunteers"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end
@@ -110,14 +117,6 @@ ActiveRecord::Schema.define(:version => 20130928180859) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "teams", :force => true do |t|
-    t.integer "org_id"
-    t.string  "authority"
-    t.integer "fte"
-    t.integer "pte"
-    t.integer "volunteers"
   end
 
 end

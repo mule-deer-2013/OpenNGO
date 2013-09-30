@@ -1,8 +1,15 @@
 <div class='org-top-header'>
   <div class="org-header-left">
         <%= image_tag("http://cdn.styleforum.net/c/c7/c7b62ada_UN_Logo_OW.gif", :alt => "no logo", :class => "logo-image") %>
-       <h3> Fundacion San Andres </h3>
-       (<%= @transparency %>stars go here)<br><br>
+  
+       <span id='header-title'> Fundacion San Andres </span>
+
+        <center><font size="5" color="#274873">
+          <br>
+          <% @transparency = 2 %>
+         <%=" ★ " * @transparency %>
+         <%= " ☆ " * (3 - @transparency) %>
+       </font><center>
   </div>
 
 

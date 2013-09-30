@@ -26,6 +26,16 @@ class OrgsController < ApplicationController
  end
 
  def create
+ 	puts "*" * 100
+ 	puts params
+ 	puts "*" * 100
+ 	@org = Org.create(params[:org])
+ 	if @org.save
+ 		redirect_to org_path(@org)
+ 	else
+ 		@errors = @org.errors.full_messages
+ 		redirect_to new_org_path	
+ 	end
  end
 
 

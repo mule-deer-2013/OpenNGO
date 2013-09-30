@@ -1,0 +1,44 @@
+
+<div class="org_upload_form">
+
+<h2 class = "form-heading"> Please fill out the following form to create a new organization in the database: </h2><br>
+
+<%= form_for @org do |f| %>
+	
+	<%= f.label(:org_name, "Organization Name:") %>
+	<%= f.text_field  :name, :placeholder => "e.g. HelpArgentina" %><br>
+ 	
+ 	<%= f.label(:org_initiales, "Organization Initials:") %>
+  <%= f.text_field  :initials, :placeholder => "e.g. HA" %><br>
+  
+  <p> Please use:</p>
+  
+  <%= f.radio_button(:display_name, true) %>
+  <%= f.label(:display_name_true, "our full name") %>
+	<%= f.radio_button(:display_name, false) %>
+	<%= f.label(:display_name_false, "our initials") %>
+	<br>
+	<br>
+	<%= f.label(:int_branch, "Check the box if your organization is a branch of an international organization? (e.g. Greenpeace Argentina)") %>
+	<%= f.check_box(:int_branch, checked: true) %>
+
+	<br>
+	<br>
+	<%= f.label(:street_address, "Street Address (primary office):") %>
+  <%= f.text_field  :address, :placeholder => "e.g. Sanchez de Bustamante 191, pb A" %><br>
+
+  <%= f.label(:city, "City:") %>
+  <%= f.text_field  :city, :placeholder => "e.g. Buenos Aires" %><br>
+
+  <%= f.label(:province, "Province:") %>
+  <%= f.collection_select :province, Province.all, :id, :name %>
+
+
+
+
+	<br><br><br>
+  <%= f.submit "Save & Create Profile", :id => 'new_org_button', :class => "undefined"  %>
+
+<% end %>
+
+</div>

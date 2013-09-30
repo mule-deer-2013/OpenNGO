@@ -13,8 +13,8 @@ class Org < ActiveRecord::Base
 
   has_one :board
   has_one :advisory
-  has_many :persons, :through => :board
-  has_many :persons, :through => :advisor
+  has_many :people, :through => :boards
+  has_many :people, :through => :advisories
  
   has_many :locations
   has_many :provinces, through: :locations

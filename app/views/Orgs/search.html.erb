@@ -1,5 +1,84 @@
-<h1> Search Results! </h1>
 
+<div class="filter">
+  <div class="transparency">
+    <p>TRANSPARENCY LEVEL</p>
+    <select id="customDropdown" class="small">
+      <option DISABLED>Transparency level</option>
+      <option>This is another option</option>
+      <option>This is another option too</option>
+      <option>Look, a third option</option>
+    </select>
+  </div>
+  <div class="cause">
+    <p>CAUSE</p>
+    <select id="customDropdown" class="small">
+      <option DISABLED>Transparency level</option>
+      <option>This is another option</option>
+      <option>This is another option too</option>
+      <option>Look, a third option</option>
+    </select>
+  </div>
+  <div class="location">
+    <p>LOCATION</p>
+    <select id="customDropdown" class="small">
+      <option DISABLED>Transparency level</option>
+      <option>This is another option</option>
+      <option>This is another option too</option>
+      <option>Look, a third option</option>
+    </select>
+  </div>
+  <a href="#" data-dropdown="drop1" class="button dropdown secondary small radius">Advance</a><br>
+  <ul id="drop1" class="f-dropdown">
+    <li><a href="#">This is a link</a></li>
+    <li><a href="#">This is another</a></li>
+    <li><a href="#">Yet another</a></li>
+  </ul>
+  <a href="#" class="small button radius alert apply">Apply</a>
+
+</div>
+
+<div class="search-sum">
+  <div class="row">
+
+    <div class="large-2 push-10 columns">
+     <label for="customDropdown1">Sort by</label>
+      <select id="customDropdown1" class="small">
+        <option DISABLED>This is a dropdown</option>
+        <option>This is another option</option>
+        <option>This is another option too</option>
+        <option>Look, a third option</option>
+      </select>
+    </div>
+    <div class="large-10 pull-2 columns">
+      foo
+
+    </div>
+    
+  </div>
+ 
+</div>
+
+
+<div class="results-container">
   <% @search_results.each do |result| %>
-  <p><%= result.name %></p>
+    <div class="row list-container">
+      <div class="large-9 push-3 columns">
+          <h4><%= result.name %></h4>
+          <ul>
+            <li>Provinces: <%= result.provinces.map {|p| p.name }.join(', ')%></li>
+            <li>Causes: <%= result.causes.map { |c| c.description }.join(', ') %></li>
+            <li>2013 Budget: XXXX peso</li>
+          </ul>
+      </div>
+      <div class="large-3 pull-9 columns"><img class"org-logo" src="http://wallpaperan.com/wallpaper/3581-cute-pictures-wallpapers.jpg">
+      </div>
+    </div>
   <% end %>
+
+</div>
+
+
+
+
+
+ 

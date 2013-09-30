@@ -7,6 +7,8 @@ gem 'pg'
 
 gem 'sunspot_rails'
 
+gem 'high_voltage'
+
 group :production do
   gem 'thin'  
 end

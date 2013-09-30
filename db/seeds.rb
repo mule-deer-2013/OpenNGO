@@ -26,40 +26,50 @@ PROVINCES = [
 ]
 
 CAUSES = [
-  'Gender and Equality',
-  'Sports',
-  'Housing Development',
-  'Public Policy',
-  'Health and Scientific Research',
   'Arts and Culture',
-  'Disabilities',
+  'Crisis Response',
+  'Sciene & Technology',
+  'Sports',
   'Human Rights',
-  'Institutional Development',
   'Community Development',
-  'Enviroment',
+  'Disabilities',
   'Education',
-  'Childhood'
+  'Institutional Development',
+  'Gender & Equality',
+  'Ethnic & Indigenous Populations',
+  'Environment',
+  'Media & Communication',
+  'Health & Nutrition',
+  'Public Policy',
+  'Housing Development',
+  'Social Work',
+  'Other'
 ]
 
 
 ACTIVITIES = [
-  'Consulting',
+  'Technical Support / Consulting',
   'Financing',
   'Research',
   'Training',
-  'Direct Assistance'
+  'Services / Direct Assistance',
+  'Communication / Campaigns',
+  'Lobbying / Policy work'
 ]
-
+ 
 
 AGES = [
+  'n/a',  
   'Infancy',
   'Childhood',
   'Teenagers',
+  'Youth',
   'Adults',
   'Seniors'
 ]
 
-TRANSPARENCY =[0,1,2,3]
+
+LEVELS = [3,2,1,0]
 
 
 100.times {Org.create(
@@ -71,15 +81,23 @@ TRANSPARENCY =[0,1,2,3]
   telephone: "(123)456-7894",
   email: Faker::Internet.email,
   website: Faker::Internet.domain_name,
-  transparency: TRANSPARENCY.sample
+  transparency: LEVELS.sample
+  display_name: true, 
+  transparency: LEVELS.sample, 
+  fte: 23, 
+  pte: 12, 
+  volunteers: 42, 
+  leader_name: "#{Faker::Name.name}", 
+  leader_title: "Executive Director")}
 
-  )}
+
 
 
 PROVINCES.each {|prov| Province.create(name: prov)}
 CAUSES.each {|cause| Cause.create(description: cause)}
 ACTIVITIES.each {|act| Activity.create(description: act)}
 AGES.each {|age| Age.create(description: age)}
+
 
 
 Org.all.each do |seed_org|

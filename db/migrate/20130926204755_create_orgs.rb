@@ -3,6 +3,7 @@ class CreateOrgs < ActiveRecord::Migration
     create_table :orgs do |t|
       t.string :name
       t.string :initials
+      t.boolean :display_name
       t.string :address
       t.string :province
       t.string :city

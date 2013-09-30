@@ -21,6 +21,13 @@ class OrgsController < ApplicationController
  
  end
 
+ def new
+ 	@org = Org.new()
+ end
+
+ def create
+ end
+
 
 
 end

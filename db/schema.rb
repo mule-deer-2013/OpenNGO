@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(:version => 20130928180859) do
   create_table "orgs", :force => true do |t|
     t.string   "name"
     t.string   "initials"
+    t.boolean  "display_name"
     t.string   "address"
     t.string   "province"
     t.string   "city"

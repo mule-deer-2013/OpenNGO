@@ -1,0 +1,131 @@
+
+
+.org-side-window-panel {
+  width:100%;
+  padding:5px;
+  margin: 0 auto;
+  background:red;
+  border: 5px solid;
+  border-radius: 10px;
+  overflow:hidden;
+}
+
+
+.org-header-left {
+  float:left;
+  width:100%;
+  height: 100%;
+  background:#C0C0C0;
+  height:150px;
+  border: 5px solid;
+  border-radius:10px;
+}
+
+.org-header-right {
+  width:100%;
+  padding:5px;
+  margin: 0 auto;
+  background: green;
+  height:150px;
+  border:5px solid;
+  border-radius:10px;
+
+}
+
+
+.org-window-holder {
+  padding-top: 10px;
+  width:95%;
+  margin: 0 auto;
+  position:center;
+}
+
+.org-main-window{
+  width:65%;
+  float:left;
+  margin-bottom:10px;
+}
+
+
+.org-side-window{
+  width:450px;
+  float:left;
+  margin-left:15px;
+  margin-right:-450px;
+  margin-bottom:10px;
+
+}
+
+
+.logo-image {
+  position: relative;
+  float: left;
+  height: 80%;
+  padding: 10px
+}
+
+
+.org-main-window-panel {
+  width:100%;
+  padding:5px;
+  margin: 0 auto;
+  border: 5px solid;
+  border-radius: 10px;
+  background: red;
+}
+  .org-main-window-panel ul {list-style-type:none;}
+
+
+.org-navigation-panel {
+  width:100%;
+  padding:0px;
+  margin: 0 auto;
+  border: 5px solid;
+  border-radius: 10px;
+  background: red;
+  list-style-type: none;
+}
+
+
+.org-side-window-panel {
+  width:100%;
+  padding:5px;
+  margin: 0 auto;
+  background:red;
+  border: 5px solid;
+  border-radius: 10px;
+  overflow:hidden;
+}
+
+.foot{
+  clear:both;
+}
+
+
+.org-tab-button {
+  width:20%;
+  background-color: yellow;
+  border-radius: 10px;
+  border: 1px solid #009900;
+  padding-left: 5px;
+  padding-right:5px;
+  margin:0 auto;
+  display:inline-block;
+  overflow:hidden;
+  text-overflow:clip;
+  text-align:center;
+}
+
+.org-tab-button:hover {opacity: 0.6;}
+
+a { color:black;}
+
+#tabs-list {
+  padding:5px;
+  margin:0;
+}
+
+#tabs-list li {
+  display:inline;
+
+}

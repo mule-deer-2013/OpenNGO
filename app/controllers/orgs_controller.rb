@@ -9,7 +9,7 @@ class OrgsController < ApplicationController
  def search
   if params[:keyword].blank?
     @search_results = []
-  else  
+  else
     @search = Org.search do
       fulltext params[:keyword]
     end
@@ -18,7 +18,8 @@ class OrgsController < ApplicationController
  end
 
  def show
- 
+  @org = Org.find(params[:id])
+  @transparency = @org.transparency
  end
 
 

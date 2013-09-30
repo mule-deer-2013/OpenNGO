@@ -59,8 +59,16 @@ AGES = [
   'Seniors'
 ]
 
+TRANSPARENCY =[0,1,2,3]
 
-100.times {Org.create(name: Faker::Company.name)}
+
+100.times {Org.create(
+  name: Faker::Company.name,
+  address: Faker::Address.street_address,
+  telephone:Faker::PhoneNumber.phone_number,
+  transparency: TRANSPARENCY.sample
+
+  )}
 
 
 PROVINCES.each {|prov| Province.create(name: prov)}
@@ -70,8 +78,8 @@ AGES.each {|age| Age.create(description: age)}
 
 
 Org.all.each do |seed_org|
-  3.times do 
-    myloc = Location.new(primary: false) 
+  3.times do
+    myloc = Location.new(primary: false)
     myloc.province = Province.find_by_name(PROVINCES.sample)
     seed_org.locations << myloc
   end
@@ -89,6 +97,6 @@ Org.all.each do |seed_org|
   seed_org.board.people << Person.create(name: Faker::Name.name)
   seed_org.board.people << Person.create(name: Faker::Name.name)
   seed_org.advisory = Advisory.create()
-  seed_org.advisory.people << Person.create(name: Faker::Name.name) 
+  seed_org.advisory.people << Person.create(name: Faker::Name.name)
   seed_org.team = Team.create(fte: 23,pte: 12,volunteers:421, authority: "#{Faker::Name.name},#{Faker::Name.title}")
 end

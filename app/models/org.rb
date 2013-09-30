@@ -28,4 +28,16 @@ class Org < ActiveRecord::Base
   searchable :auto_index => true, :auto_remove => true do
     text :name, boost: 5
   end
+
+
+
+def has_video?
+  true  #setting this always to true for now.
+  #self.youtube
+end
+
+
+
+
+
 end

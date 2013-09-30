@@ -72,7 +72,7 @@ AGES = [
 LEVELS = [3,2,1,0]
 
 
-100.times {Org.create(
+50.times {Org.create(
   name: Faker::Company.name,
   initials: Faker::Address.city_prefix,
   city: Faker::Address.city,
@@ -80,9 +80,7 @@ LEVELS = [3,2,1,0]
   address: Faker::Address.street_address,
   telephone: "(123)456-7894",
   email: Faker::Internet.email,
-  website: Faker::Internet.domain_name,
-  transparency: LEVELS.sample
-  display_name: true, 
+  website: Faker::Internet.domain_name, 
   transparency: LEVELS.sample, 
   fte: 23, 
   pte: 12, 
@@ -121,5 +119,4 @@ Org.all.each do |seed_org|
   seed_org.board.people << Person.create(name: Faker::Name.name)
   seed_org.advisory = Advisory.create()
   seed_org.advisory.people << Person.create(name: Faker::Name.name)
-  seed_org.team = Team.create(fte: 23,pte: 12,volunteers:421, authority: "#{Faker::Name.name},#{Faker::Name.title}")
 end

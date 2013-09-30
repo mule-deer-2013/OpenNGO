@@ -15,6 +15,8 @@ class OrgsController < ApplicationController
  end
 
  def show
+  @org = Org.find(params[:id])
+  @transparency = @org.transparency
  end
 
  def new

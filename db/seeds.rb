@@ -68,6 +68,7 @@ AGES = [
   'Seniors'
 ]
 
+TRANSPARENCY =[0,1,2,3]
 
 
 LEVELS = [3,2,1,0]
@@ -84,8 +85,8 @@ AGES.each {|age| Age.create(description: age)}
 
 
 Org.all.each do |seed_org|
-  3.times do 
-    myloc = Location.new(primary: false) 
+  3.times do
+    myloc = Location.new(primary: false)
     myloc.province = Province.find_by_name(PROVINCES.sample)
     seed_org.locations << myloc
   end
@@ -103,5 +104,5 @@ Org.all.each do |seed_org|
   seed_org.board.people << Person.create(name: Faker::Name.name)
   seed_org.board.people << Person.create(name: Faker::Name.name)
   seed_org.advisory = Advisory.create()
-  seed_org.advisory.people << Person.create(name: Faker::Name.name) 
+  seed_org.advisory.people << Person.create(name: Faker::Name.name)
 end

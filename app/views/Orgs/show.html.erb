@@ -1,6 +1,16 @@
-<h1> This is the individual org profile page! </h1>
-<br>
-<%= render partial: "profile_feature1" %>
-<%= render partial: 'profile_feature2' %>
-<%= render partial: 'profile_feature3' %>
+<div class="org-window-holder">
 
+<div class="org-header-wrap">
+  <div class="org-main-window">
+     <%= render partial: 'org_header-main' %>
+  </div>
+     <%= render partial: 'org-header-side' %>
+</div>
+
+  <div class='org-main-window'>
+  <%= render partial: 'org_navigation' %>
+  <%= render partial: 'main_window' %>
+  </div>
+
+  <%= render partial: 'side_window' %>
+</div>

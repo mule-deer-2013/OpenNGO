@@ -16,6 +16,7 @@ class Org < ActiveRecord::Base
   has_many :people, :through => :boards
   has_many :people, :through => :advisories
  
+
   has_many :locations
   has_many :provinces, through: :locations
 

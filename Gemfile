@@ -1,12 +1,15 @@
 source 'https://rubygems.org'
+ruby "1.9.3"
 
 gem 'rails', '3.2.13'
 
 gem 'pg'
 
-gem 'thin'
-
 gem 'sunspot_rails'
+
+group :production do
+  gem 'thin'  
+end
 
 
 group :assets do
@@ -34,6 +37,7 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'selenium-webdriver'
   gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'launchy'

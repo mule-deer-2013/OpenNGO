@@ -26,48 +26,65 @@ PROVINCES = [
 ]
 
 CAUSES = [
-  'Gender and Equality',
-  'Sports',
-  'Housing Development',
-  'Public Policy',
-  'Health and Scientific Research',
   'Arts and Culture',
-  'Disabilities',
+  'Crisis Response',
+  'Sciene & Technology',
+  'Sports',
   'Human Rights',
-  'Institutional Development',
   'Community Development',
-  'Enviroment',
+  'Disabilities',
   'Education',
-  'Childhood'
+  'Institutional Development',
+  'Gender & Equality',
+  'Ethnic & Indigenous Populations',
+  'Environment',
+  'Media & Communication',
+  'Health & Nutrition',
+  'Public Policy',
+  'Housing Development',
+  'Social Work',
+  'Other'
 ]
 
 
 ACTIVITIES = [
-  'Consulting',
+  'Technical Support / Consulting',
   'Financing',
   'Research',
   'Training',
-  'Direct Assistance'
+  'Services / Direct Assistance',
+  'Communication / Campaigns',
+  'Lobbying / Policy work'
 ]
-
+ 
 
 AGES = [
+  'n/a',  
   'Infancy',
   'Childhood',
   'Teenagers',
+  'Youth',
   'Adults',
   'Seniors'
 ]
 
 
+<<<<<<< HEAD
 
 100.times {Org.create(name: Faker::Company.name)}
+=======
+LEVELS = [3,2,1,0]
+
+
+15.times {Org.create(name: Faker::Company.name, display_name: true, transparency: LEVELS.sample, fte: 23, pte: 12, volunteers: 42, leader_name: "#{Faker::Name.name}", leader_title: "Executive Director")}
+>>>>>>> master
 
 
 PROVINCES.each {|prov| Province.create(name: prov)}
 CAUSES.each {|cause| Cause.create(description: cause)}
 ACTIVITIES.each {|act| Activity.create(description: act)}
 AGES.each {|age| Age.create(description: age)}
+
 
 
 Org.all.each do |seed_org|
@@ -91,5 +108,4 @@ Org.all.each do |seed_org|
   seed_org.board.people << Person.create(name: Faker::Name.name)
   seed_org.advisory = Advisory.create()
   seed_org.advisory.people << Person.create(name: Faker::Name.name) 
-  seed_org.team = Team.create(fte: 23,pte: 12,volunteers:421, authority: "#{Faker::Name.name},#{Faker::Name.title}")
 end

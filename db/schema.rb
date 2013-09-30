@@ -90,12 +90,12 @@ ActiveRecord::Schema.define(:version => 20130928180859) do
     t.integer  "num_prog_ind"
     t.integer  "num_prog_org"
     t.integer  "num_prog_pub"
+    t.string   "leader_name"
+    t.string   "leader_title"
     t.string   "certifier_name1"
     t.string   "certifier_name2"
     t.string   "certifier_title1"
     t.string   "certifier_title2"
-    t.string   "leader_name"
-    t.string   "leader_title"
     t.integer  "fte"
     t.integer  "pte"
     t.integer  "volunteers"
@@ -116,6 +116,5 @@ ActiveRecord::Schema.define(:version => 20130928180859) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
 
 end

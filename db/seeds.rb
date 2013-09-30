@@ -42,7 +42,7 @@ CAUSES = [
   'Health & Nutrition',
   'Public Policy',
   'Housing Development',
-  'Social Work'  
+  'Social Work',
   'Other'
 ]
 
@@ -52,7 +52,7 @@ ACTIVITIES = [
   'Financing',
   'Research',
   'Training',
-  'Services / Direct Assistance'
+  'Services / Direct Assistance',
   'Communication / Campaigns',
   'Lobbying / Policy work'
 ]
@@ -63,7 +63,7 @@ AGES = [
   'Infancy',
   'Childhood',
   'Teenagers',
-  'Youth'
+  'Youth',
   'Adults',
   'Seniors'
 ]
@@ -72,7 +72,7 @@ AGES = [
 LEVELS = [3,2,1,0]
 
 
-15.times {Org.create(name: Faker::Company.name, transparency: LEVELS.sample)}
+15.times {Org.create(name: Faker::Company.name, transparency: LEVELS.sample, fte: 23, pte: 12, volunteers: 42, leader_name: "#{Faker::Name.name}", leader_title: "Executive Director")}
 
 
 PROVINCES.each {|prov| Province.create(name: prov)}
@@ -103,5 +103,5 @@ Org.all.each do |seed_org|
   seed_org.board.people << Person.create(name: Faker::Name.name)
   seed_org.advisory = Advisory.create()
   seed_org.advisory.people << Person.create(name: Faker::Name.name) 
-  seed_org.team = Team.create(fte: 23,pte: 12,volunteers:421, authority: "#{Faker::Name.name},#{Faker::Name.title}")
+  # seed_org.team = Team.create(fte: 23,pte: 12,volunteers:421, authority: "#{Faker::Name.name},#{Faker::Name.title}")
 end

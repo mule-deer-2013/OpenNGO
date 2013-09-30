@@ -30,10 +30,15 @@ class CreateOrgs < ActiveRecord::Migration
       t.integer :num_prog_ind
       t.integer :num_prog_org
       t.integer :num_prog_pub
+      t.string :leader_name
+      t.string :leader_title
       t.string :certifier_name1
       t.string :certifier_name2
       t.string :certifier_title1
       t.string :certifier_title2
+      t.integer :fte
+      t.integer :pte
+      t.integer :volunteers
 
       t.timestamps
     end

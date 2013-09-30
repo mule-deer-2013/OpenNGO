@@ -8,8 +8,8 @@ class CreateOrgs < ActiveRecord::Migration
       t.string :province
       t.string :city
       t.boolean :int_branch
-      t.integer :telephone
-      t.integer :fax
+      t.string :telephone
+      t.string :fax
       t.string :email
       t.string :website
       t.date :founding_date
@@ -25,6 +25,7 @@ class CreateOrgs < ActiveRecord::Migration
       t.integer :transparency
       t.boolean :code_conduct
       t.string :external_auditor
+      t.string :auditor_name
       t.string :annual_reporting
       t.string :external_prog_eval
       t.string :trans_policy

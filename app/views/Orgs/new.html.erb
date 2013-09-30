@@ -1,15 +1,15 @@
 
 <div class="org_upload_form">
 
-<h2 class = "form-heading"> Please fill out the following form to create a new organization in the database: </h2><br>
+<h2 class = "form-heading"> Please fill out the following form to add your organization to the database: </h2><br />
 
 <%= form_for @org do |f| %>
 	
 	<%= f.label(:org_name, "Organization Name:") %>
-	<%= f.text_field  :name, :placeholder => "e.g. HelpArgentina" %><br>
+	<%= f.text_field  :name, :placeholder => "e.g. HelpArgentina" %><br />
  	
  	<%= f.label(:org_initiales, "Organization Initials:") %>
-  <%= f.text_field  :initials, :placeholder => "e.g. HA" %><br>
+  <%= f.text_field  :initials, :placeholder => "e.g. HA" %><br />
   
   <p> Please use:</p>
   
@@ -17,27 +17,90 @@
   <%= f.label(:display_name_true, "our full name") %>
 	<%= f.radio_button(:display_name, false) %>
 	<%= f.label(:display_name_false, "our initials") %>
-	<br>
-	<br>
-	<%= f.label(:int_branch, "Check the box if your organization is a branch of an international organization? (e.g. Greenpeace Argentina)") %>
-	<%= f.check_box(:int_branch, checked: true) %>
+	<br />
+	<br />
 
-	<br>
-	<br>
 	<%= f.label(:street_address, "Street Address (primary office):") %>
-  <%= f.text_field  :address, :placeholder => "e.g. Sanchez de Bustamante 191, pb A" %><br>
+  <%= f.text_field  :address, placeholder: "e.g. Sanchez de Bustamante 191, pb A" %><br />
 
   <%= f.label(:city, "City:") %>
-  <%= f.text_field  :city, :placeholder => "e.g. Buenos Aires" %><br>
+  <%= f.text_field  :city, placeholder: "e.g. Buenos Aires" %><br />
 
   <%= f.label(:province, "Province:") %>
-  <%= f.collection_select :province, Province.all, :id, :name %>
+  <%= f.collection_select :province, Province.all, :id, :name %><br /><br />
+
+  <%= f.label(:telephone, "Telephone:") %>
+  <%= f.telephone_field(:telephone, placeholder: "(0 54 11) 43849009") %>
+
+  <%= f.label(:fax, "Fax:") %>
+  <%= f.telephone_field(:fax, placeholder: "4384-9009 int 1213") %><br /><br />
+
+  <%= f.label(:email, "Email:") %>
+  <%= f.email_field(:email, placeholder: "e.g. info@helpargentina.org") %><br /><br />
+
+  <%= f.label(:website, "Website:") %>
+  <%= f.url_field(:website, placeholder: "e.g. wwww.HelpArgentina.org") %><br /><br />
+
+  <%= f.label(:mission, "Mission Statement:") %>
+  <%= f.text_area :mission, placeholder: "e.g. Promover la filantropía conectando individuos, empresas y fundaciones con organizaciones de la sociedad civil en Argentina que trabajan bajo criterios de transparencia y buenas prácticas." %>
+
+  <%= f.label(:objective, "Objectives:") %>
+  <%= f.text_area :objective, size: "24x6", placeholder: "e.g. 1. Asesorar a donantes (tanto individuos como organizaciones) en sus procesos de inversión social en la Argentina. 
+
+2. Promover el involucramiento de individuos y organizaciones con el sector social argentino  
+
+3. Asistir a organizaciones sociales argentinas en sus esfuerzos de desarrollo de recursos en el exterior  
+
+4. Promover el voluntariado, incentivando a extranjeros a colaborar con organizaciones sociales argentinas." %>
+	
+	<%= f.label("TEAM") %>
+	<%= f.label(:fte, "Full Time:") %>
+  <%= f.number_field(:fte, placeholder: "e.g. 6") %>
+  <%= f.label(:pte, "Part Time:") %>
+  <%= f.number_field(:pte, placeholder: "e.g. 0") %>
+  <%= f.label(:volunteer, "Volunteers (full time):") %>
+  <%= f.number_field(:volunteers, placeholder: "e.g. 2") %><br />
+  <%= f.label(:leader_name, "Team Leader (employee with max authority):") %>
+  <%= f.text_field  :leader_name, placeholder: "e.g. Guillermo Correa" %><br />
+  <%= f.text_field  :leader_title, placeholder: "e.g. Executive Director" %><br />
+
+  <%= f.label("Check the box if your organization:") %>
+	<%= f.check_box(:vat_exempt) %>
+	<%= f.label(:vat_exempt, "...is exempt from the value-add-tax.") %>
+
+	<%= f.check_box(:income_exempt) %>
+	<%= f.label(:income_exempt, "...is exempt from the income tax.") %>
+
+	<%= f.check_box(:int_branch) %>
+  <%= f.label(:int_branch, "...is a branch of an international organization? (e.g. Greenpeace Argentina).") %>
+
+	<%= f.check_box(:tax_ded) %>
+	<%= f.label(:tax_ded, "...enables its donor to write-off there donations to you as tax deductibile.") %>
+
+	<%= f.check_box(:code_conduct) %>
+	<%= f.label(:code_conduct, "...has a written code of conduct policy.") %>
+
+	<%= f.check_box(:trans_policy) %>
+	<%= f.label(:trans_policy, "...has a written transparency policy.") %>
+
+	<%= f.check_box(:external_auditor) %>
+	<%= f.label(:external_auditor, "...does an annual audit of its financial records and reports by an external third party.") %>
+	<%= f.label(:auditor_name, "Who?") %>
+	<%= f.text_field :auditor_name, placeholder: "e.g. Estudio Balter y Asoc" %>
+
+	<%= f.check_box(:annual_reporting) %>
+	<%= f.label(:annual_reporting, "...publically shared and communicated its financial reporting last year.") %>
+
+	<%= f.check_box(:external_prog_eval) %>
+	<%= f.label(:external_prog_eval, "...had its programs evaluated by an external party last year.") %>
 
 
 
-
-	<br><br><br>
+	<br /><br /><br />
   <%= f.submit "Save & Create Profile", :id => 'new_org_button', :class => "undefined"  %>
+
+
+
 
 <% end %>
 

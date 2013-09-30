@@ -1,5 +1,5 @@
 class Org < ActiveRecord::Base
-  attr_accessible :name, :initials, :address, :telephone
+  attr_accessible :name, :initials, :address, :telephone, :transparency
   has_and_belongs_to_many :causes
   has_many :branches
   has_and_belongs_to_many :activities

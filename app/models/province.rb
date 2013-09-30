@@ -4,4 +4,7 @@ class Province < ActiveRecord::Base
   has_many :locations
   has_many :orgs, through: :locations
 
+  searchable :auto_index => true, :auto_remove => true do
+    text :name
+  end
 end

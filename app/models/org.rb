@@ -20,7 +20,7 @@ class Org < ActiveRecord::Base
   accepts_nested_attributes_for :locations, allow_destroy: true
   
   attr_accessible :legal_attributes, :objectives_attributes, :causes_attributes, :branches_attributes, :board_attributes, :advisory_attributes, :activities_attributes, :ages_attributes, :locations_attributes
-  attr_accessible :name, :initials, :preferred_name, :address, :mission, :objective, :transparency 
+  attr_accessible :name, :initials, :preferred_name, :logo_url, :address, :mission, :objective, :transparency 
   attr_accessible :province, :city, :int_branch, :telephone, :fax, :email, :website
   attr_accessible :founding_date, :starting_date, :legal_num, :cuit, :youtube, :twitter
   attr_accessible :income_exempt, :tax_ded, :vat_exempt, :code_conduct, :external_auditor, :auditor_name, :annual_reporting, :external_prog_eval, :trans_policy

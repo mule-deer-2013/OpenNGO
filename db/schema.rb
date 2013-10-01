@@ -54,16 +54,26 @@ ActiveRecord::Schema.define(:version => 20130928180859) do
     t.integer "cause_id"
   end
 
+  create_table "legals", :force => true do |t|
+    t.string  "legal_type"
+    t.integer "org_id"
+  end
+
   create_table "locations", :force => true do |t|
     t.boolean "primary"
     t.integer "org_id"
     t.integer "province_id"
   end
 
+  create_table "objectives", :force => true do |t|
+    t.text    "summary"
+    t.integer "org_id"
+  end
+
   create_table "orgs", :force => true do |t|
     t.string   "name"
     t.string   "initials"
-    t.boolean  "display_name"
+    t.string   "preferred_name"
     t.string   "address"
     t.string   "province"
     t.string   "city"
@@ -81,7 +91,6 @@ ActiveRecord::Schema.define(:version => 20130928180859) do
     t.boolean  "income_exempt"
     t.boolean  "tax_ded"
     t.text     "mission"
-    t.text     "objective"
     t.integer  "transparency"
     t.boolean  "code_conduct"
     t.string   "external_auditor"
@@ -101,6 +110,8 @@ ActiveRecord::Schema.define(:version => 20130928180859) do
     t.integer  "fte"
     t.integer  "pte"
     t.integer  "volunteers"
+    t.string   "youtube"
+    t.string   "twitter"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end

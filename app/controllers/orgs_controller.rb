@@ -18,14 +18,19 @@ class OrgsController < ApplicationController
  end
 
  def new
- 	@org = Org.new()
+ 	@org = Org.new
+  
+    @org.objectives << Objective.new
+  
+  @org.legal = Legal.new
+  @legalnames = Legal.pluck(:legal_type)
+  @provincenames = Province.pluck(:name)
  end
 
  def create
  	puts "*" * 100
- 	puts params
- 	puts "*" * 100
  	@org = Org.create(params[:org])
+  puts "*" * 100
  	if @org.save
  		redirect_to org_path(@org)
  	else

@@ -6,19 +6,13 @@
 <%= form_for @org do |f| %>
 	
 	<%= f.label(:org_name, "Organization Name:") %>
-	<%= f.text_field  :name, :placeholder => "e.g. HelpArgentina" %><br />
+	<%= f.text_field  :name, :placeholder => "e.g. Fundacion HelpArgentina" %><br />
  	
  	<%= f.label(:org_initiales, "Organization Initials:") %>
   <%= f.text_field  :initials, :placeholder => "e.g. HA" %><br />
-  
-  <p> Please use:</p>
-  
-  <%= f.radio_button(:display_name, true) %>
-  <%= f.label(:display_name_true, "our full name") %>
-	<%= f.radio_button(:display_name, false) %>
-	<%= f.label(:display_name_false, "our initials") %>
-	<br />
-	<br />
+
+  <%= f.label(:preferred_name, "Organization Preferred Name: (to be displayed in your org profile)") %>
+  <%= f.text_field  :preferred_name, :placeholder => "e.g. HelpArgentina" %><br />
 
 	<%= f.label(:street_address, "Street Address (primary office):") %>
   <%= f.text_field  :address, placeholder: "e.g. Sanchez de Bustamante 191, pb A" %><br />
@@ -27,7 +21,7 @@
   <%= f.text_field  :city, placeholder: "e.g. Buenos Aires" %><br />
 
   <%= f.label(:province, "Province:") %>
-  <%= f.collection_select :province, Province.all, :id, :name %><br /><br />
+  <%= f.select :province, @provincenames %><br /><br />
 
   <%= f.label(:telephone, "Telephone:") %>
   <%= f.telephone_field(:telephone, placeholder: "(0 54 11) 43849009") %>
@@ -44,15 +38,8 @@
   <%= f.label(:mission, "Mission Statement:") %>
   <%= f.text_area :mission, placeholder: "e.g. Promover la filantropía conectando individuos, empresas y fundaciones con organizaciones de la sociedad civil en Argentina que trabajan bajo criterios de transparencia y buenas prácticas." %>
 
-  <%= f.label(:objective, "Objectives:") %>
-  <%= f.text_area :objective, size: "24x6", placeholder: "e.g. 1. Asesorar a donantes (tanto individuos como organizaciones) en sus procesos de inversión social en la Argentina. 
 
-2. Promover el involucramiento de individuos y organizaciones con el sector social argentino  
 
-3. Asistir a organizaciones sociales argentinas en sus esfuerzos de desarrollo de recursos en el exterior  
-
-4. Promover el voluntariado, incentivando a extranjeros a colaborar con organizaciones sociales argentinas." %>
-	
 	<%= f.label("TEAM") %>
 	<%= f.label(:fte, "Full Time:") %>
   <%= f.number_field(:fte, placeholder: "e.g. 6") %>
@@ -92,8 +79,46 @@
 	<%= f.label(:annual_reporting, "...publically shared and communicated its financial reporting last year.") %>
 
 	<%= f.check_box(:external_prog_eval) %>
-	<%= f.label(:external_prog_eval, "...had its programs evaluated by an external party last year.") %>
+	<%= f.label(:external_prog_eval, "...had its programs evaluated by an external party last year.") %><br /><br />
+  
+  <%= f.label(:founding_date, "Founding Date:") %>
+  <%= f.date_select(:founding_date, order: [:day, :month, :year]) %><br /><br />
 
+  <%= f.label(:starting_date, "Starting Date:") %>
+  <%= f.date_select(:starting_date, order: [:day, :month, :year]) %><br /><br />
+
+  
+  <%= f.fields_for :legal do |l| %>
+    <%= l.label(:legal_type, "Legal Entity Type:") %>
+    <%= l.select(:legal_type, @legalnames) %>
+  <% end %><br /><br />
+
+
+
+  <%= f.label(:legal_num, "Legal Entity Number:") %>
+  <%= f.number_field(:legal_num, placeholder: "e.g. 11128") %>
+
+  <%= f.label(:cuit, "CUIT:") %>
+  <%= f.text_field(:cuit, placeholder: "e.g. 30-70854145-8") %>
+
+
+
+  <%= f.fields_for :objectives do |o| %>
+    <%= o.label(:summary, "Objectives:") %>
+    <%= o.text_area :summary, rows: 3, placeholder: "e.g. Asesorar a donantes (tanto individuos como organizaciones) en sus procesos de inversión social en la Argentina." %>
+  <% end %>  
+  <%= f.fields_for :objectives do |o| %>
+    <%= o.text_area :summary, rows: 3, placeholder: "e.g. Asesorar a donantes (tanto individuos como organizaciones) en sus procesos de inversión social en la Argentina." %>
+  <% end %>  
+  <%= f.fields_for :objectives do |o| %>
+    <%= o.text_area :summary, rows: 3, placeholder: "e.g. Asesorar a donantes (tanto individuos como organizaciones) en sus procesos de inversión social en la Argentina." %>
+  <% end %>  
+
+
+
+  
+  
+ 
 
 
 	<br /><br /><br />
@@ -103,5 +128,5 @@
 
 
 <% end %>
-
+  
 </div>

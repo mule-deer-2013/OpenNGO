@@ -1,13 +1,17 @@
 
-<div class="org_upload_form">
+<div class="row">
+  <div class='small-11 small-centered columns'>
+  <fieldset>
 
-<h2 class = "form-heading"> Please fill out the following form to add your organization to the database: </h2><br />
+<h4 class = "form-heading"> <b>Please fill out the following form to add your organization to the database:</b> </h4><br /><br />
 
 <%= form_for @org do |f| %>
 	
-	<%= f.label(:org_name, "Organization Name:") %>
-	<%= f.text_field  :name, :placeholder => "e.g. Fundacion HelpArgentina" %><br />
- 	
+  
+  	<%= f.label(:org_name, "Organization Name:", :html => { :class => "right inline" }) %>
+  	<%= f.text_field  :name, :html => { :id => "right-label" }, :placeholder => "e.g. Fundacion HelpArgentina" %><br />
+
+
  	<%= f.label(:org_initiales, "Organization Initials:") %>
   <%= f.text_field  :initials, :placeholder => "e.g. HA" %><br />
 
@@ -88,9 +92,9 @@
   <%= f.date_select(:starting_date, order: [:day, :month, :year]) %><br /><br />
 
   
-  <%= f.fields_for :legal do |l| %>
-    <%= l.label(:legal_type, "Legal Entity Type:") %>
-    <%= l.select(:legal_type, @legalnames) %>
+  <%= f.fields_for :legal do |ff| %>
+    <%= ff.label(:legal_type, "Legal Entity Type:") %>
+    <%= ff.select(:legal_type, @legalnames) %>
   <% end %><br /><br />
 
 
@@ -114,11 +118,19 @@
     <%= o.text_area :summary, rows: 3, placeholder: "e.g. Asesorar a donantes (tanto individuos como organizaciones) en sus procesos de inversión social en la Argentina." %>
   <% end %>  
 
+  <%= f.fields_for :cause do |ff| %>
+    <%= ff.label(:description, "Causes:") %>
+    <%= ff.select :description, @causenames %>
+  <% end %>
+  <br /><br />
 
+  <%= f.fields_for :age do |ff| %>
+    <%= ff.label(:description, "Age Groups:") %>
+    <%= ff.select :description, @agegroups %>
+  <% end %>
+  <br /><br />
 
   
-  
- 
 
 
 	<br /><br /><br />
@@ -128,5 +140,6 @@
 
 
 <% end %>
-  
+    </fieldset>
+  </div>
 </div>

@@ -6,6 +6,7 @@ gem 'rails', '3.2.13'
 gem 'pg'
 
 gem 'sunspot_rails'
+gem 'sidekiq'
 
 gem 'high_voltage'
 
@@ -37,6 +38,7 @@ group :test, :development do
   gem 'progress_bar'
   gem 'thin'
   gem 'sunspot_solr'
+  gem 'simple_form'
 end
 
 
@@ -48,18 +50,4 @@ group :test do
   gem 'launchy'
 end
 
-
-
-
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
+gem "debugger"

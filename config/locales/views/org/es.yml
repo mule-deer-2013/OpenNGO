@@ -1,13 +1,23 @@
 es:
-  Last_updated: ultima actualización
-  Affiliation: Afiliaciones
+  Actividad: Activity
+  Activities: Actividades
+  Affiliation: Afiliación
+  Affiliations: Afiliaciones
+  Branch: Filial
+  Branches: Filiales
+  Cause: Causa
+  Causes: Causas
   Financials: Finanzas
+  Last_updated: ultima actualización
   Mission: Misión
+  Objective: Objetivo
+  Objectives: Objetivos
   Organization: Organización
   Organizations: ONGs
-  Programa: Programa
+  Program: Programa
   Programs: Programas
   Search: Buscar
+  Staff: RRHH
   Team: Equipo
   Test: Prueba
   Welcome: Bienvenidos

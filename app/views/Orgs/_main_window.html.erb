@@ -9,18 +9,43 @@
      
       <div class="org-info-list">
         <ol> 
-          <li><span><%=t("Mission")%></span><p><%= @org.mission %></p></li>
+          <li><span><%=t("Mission")%></span>
+            <p><%= @org.mission %>
+            </p></li>
+
+          <li><span><%=t("Causes") %></span>  
+            <p>
+            <%= @org.causes.map { |cause| cause.description }.add_commas %>
+          </p></li>
+            
           <li><span><%=t("Objectives")%></span>
             <p>
             <% @org.objectives.each do |obj| %>
              <p><%= obj.summary %></p>
              <% end %>
             </p></li>
+
+          <li><span><%=t("Activities")%></span>
+            <p>
+            <%= @org.activities.map { |activity| activity.description }.add_commas %>
+            </p></li>
+
+          <li><span><%=t("Staff")%></span>
+            <p>
+             <%= render partial: 'staff_table' %>
+            </p></li>
+
+          <li><span><%=t("Branches")%></span>
+             <p>
+            <%= @org.activities.map { |activity| activity.description }.add_commas %>
+            </p></li>
+
+
           
-          <li><span>Staff</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
-          <li><span>Staff</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
-           <li><span>Staff</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
-            <li><span>Staff</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
+
+
+
+
         </ol> 
      </div>
  

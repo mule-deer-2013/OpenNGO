@@ -194,4 +194,20 @@ img.desaturate{
     color:#555;
   }
 
+#org-staff-table {
+  width:100%;
+  text-align:center;
+  vertical-align:bottom;
+  padding-left: 120px;
+  border:none;
+}
+  #org-staff-table th {
+    text-align:center;
+    background-color:green;
+  }
+
+  #org-staff-table tr {
+    background-color:red;
+  }
+
 

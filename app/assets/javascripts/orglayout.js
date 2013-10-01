@@ -60,7 +60,7 @@ $(document).ready(function(){
 
 // text resizer:
 
-$( '.my-resizer' ).each(function ( i, span ) {
+  $( '.my-resizer' ).each(function ( i, span ) {
 
     var width = $( span ).width(),
         html = '<span style="white-space:nowrap"></span>',
@@ -75,7 +75,7 @@ $( '.my-resizer' ).each(function ( i, span ) {
 
     $( span ).text( $( line ).text() );
 
-});
+  });
 
 
 

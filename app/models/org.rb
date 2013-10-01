@@ -22,13 +22,27 @@ class Org < ActiveRecord::Base
   
   has_one :board
   has_one :advisory
-  has_many :people, :through => :boards
-  has_many :people, :through => :advisories
- 
+
+  has_many :people, :through => :board
+  has_many :people, :through => :advisory
+
+
   has_many :locations
   has_many :provinces, through: :locations
 
   searchable :auto_index => true, :auto_remove => true do
     text :name, boost: 5
   end
+
+
+
+def has_video?
+  true  #setting this always to true for now.
+  #self.youtube
+end
+
+
+
+
+
 end

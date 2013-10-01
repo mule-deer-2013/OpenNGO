@@ -1,0 +1,162 @@
+
+
+.org-side-window-panel {
+  width:100%;
+  padding:5px;
+  margin: 0 auto;
+  border-color:#C0C0C0;
+  border: 2px solid;
+  border-radius: 10px;
+  overflow:hidden;
+}
+
+
+.org-header-left {
+  float:left;
+  max-width:600px;
+  width:100%;
+  height: 100%;
+  height:150px;
+  border: 2px solid #C0C0C0;
+  border-radius:10px;
+  padding:20px;
+}
+
+.org-header-right {
+  width:100%;
+  padding:10px;
+  margin: 0 auto;
+  height:150px;
+  border:2px solid #C0C0C0;
+  border-radius:10px;
+  color:#898989;
+
+}
+
+
+.org-window-holder {
+  max-width:840px;
+  padding-top: 10px;
+  margin: 0 auto;
+}
+
+.org-main-window{
+  max-width:600px;
+  width:65%;
+  float:left;
+  margin-bottom:10px;
+}
+
+
+.org-side-window{
+  width:320px;
+  float:left;
+  margin-left:15px;
+  margin-right:-450px;
+  margin-bottom:10px;
+
+}
+
+
+#org-header-title {
+  padding-left:20px;
+  font-size:xx-large;
+
+}
+
+#org-stars{
+  padding-left:20px;
+  color:#274873;
+  font-size:x-large;
+
+}
+
+.org-logo-image {
+  position: relative;
+  float: left;
+  height: 80%;
+}
+
+
+.org-main-window-panel {
+  width:100%;
+  padding:5px;
+  margin: 0 auto;
+  border: 2px solid #C0C0C0;
+  border-radius: 10px;
+}
+  .org-main-window-panel ul {list-style-type:none;}
+
+
+.org-navigation-panel {
+  width:100%;
+  padding:0px;
+  margin: 0 auto;
+  list-style-type: none;
+
+}
+
+
+.org-side-window-panel {
+  width:100%;
+  padding:5px;
+  margin: 0 auto;
+  border: 2px solid #C0C0C0;
+  border-radius: 10px;
+  overflow:hidden;
+}
+
+.foot{
+  clear:both;
+}
+
+.org-tab-button {
+  width:20%;
+  background-color: #C0C0;
+  border-radius: 5px;
+  border: 1px solid;
+  padding-left: 5px;
+  padding-right:5px;
+  margin:0 auto;
+  display:inline-block;
+  overflow:hidden;
+  overflow:clip;
+  text-align:center;
+}
+
+.org-info-display{
+  display:none;
+}
+
+.org-tab-button:hover {opacity: 0.6;}
+
+a { color:black;}
+
+#tabs-list {
+  padding:5px;
+  margin:0;
+}
+
+#tabs-list li {
+  display:inline;
+
+}
+
+#org-last-updated {
+  padding:0;
+  margin:10px;
+  color:#898989;
+  font-size:small;
+}
+
+
+#youtube-panel {
+  background:black;
+}
+
+.org-profile-icons {
+  float:right;
+}
+
+
+

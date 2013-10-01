@@ -91,7 +91,9 @@ LEVELS = [3,2,1,0]
   telephone: "(123)456-7894",
   email: Faker::Internet.email,
   website: Faker::Internet.domain_name, 
-  transparency: LEVELS.sample, 
+  transparency: LEVELS.sample,
+  youtube: "http://www.youtube.com/embed/LHKLS6TECTA",
+  mission: Faker::Lorem.paragraph,
   fte: 23, 
   pte: 12, 
   volunteers: 42, 
@@ -123,11 +125,13 @@ Org.all.each do |seed_org|
   seed_org.activities << Activity.find_by_description(ACTIVITIES.sample)
   seed_org.activities << Activity.find_by_description(ACTIVITIES.sample)
   seed_org.ages << Age.find_by_description(AGES.sample)
-  seed_org.youtube << "http://www.youtube.com/embed/LHKLS6TECTA"
   seed_org.legal = Legal.first
   seed_org.board = Board.create(btype: "executive board")
   seed_org.board.people << Person.create(name: Faker::Name.name)
   seed_org.board.people << Person.create(name: Faker::Name.name)
   seed_org.advisory = Advisory.create()
   seed_org.advisory.people << Person.create(name: Faker::Name.name)
+  3.times{seed_org.objectives << Objective.create(summary:Faker::Lorem.paragraph)}
+ 
+ 
 end

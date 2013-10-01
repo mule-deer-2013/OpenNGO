@@ -1,5 +1,6 @@
 $grey: #282929;
 $light-grey: #a8a8a8;
+
 $awhite: #FAFAFA;
 
 
@@ -55,10 +56,7 @@ body {
 
 #main {
   position:relative;
-  height: 850px;
-  /*overflow:auto;*/
-  /*min-height:100%;*/
-  /*width: 100%;*/
+  height: 770px;
   background-image: url("http://farm4.staticflickr.com/3799/9952425716_7be564f2bd_k.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -193,21 +191,26 @@ fieldset #search-submit {
   background-color: #E7E7E7;
   margin-top: 0px;
   .list-container {
-
     width: 839px;
-    height: 131px;
     padding: 15px;
     border: 1px solid #eee;
     background-color: #fff;
     color: $light-grey; 
     font-size: 15px;
+    .star{
+      color: #FFA500;
+    }
     div {
       min-height: 100%;
     }
-    h4{
+    h4 a{
       color: #4587ba;
+      text-decoration: none;
       margin-top: 0px;
       margin-bottom: 0px;
+    }
+    ul{
+      padding-top: 0px;
     }
     ul li{
       list-style-type: none;

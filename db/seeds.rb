@@ -99,9 +99,6 @@ LEVELS = [3,2,1,0]
   leader_title: "Executive Director")}
 
 
-15.times {Org.create(name: Faker::Company.name, transparency: LEVELS.sample, fte: 23, pte: 12, volunteers: 42, leader_name: "#{Faker::Name.name}", leader_title: "Executive Director")}
-
-
 # need to seed objectives after merge
 
 PROVINCES.each {|prov| Province.create(name: prov)}

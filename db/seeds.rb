@@ -70,8 +70,8 @@ AGES = [
 
 
 
-LEVELS = [3,2,1,0]
 
+LEVELS = [3,2,1,0]
 
 50.times {Org.create(
   name: Faker::Company.name,
@@ -88,7 +88,6 @@ LEVELS = [3,2,1,0]
   volunteers: 42, 
   leader_name: "#{Faker::Name.name}", 
   leader_title: "Executive Director")}
-
 
 
 

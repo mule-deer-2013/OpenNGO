@@ -25,7 +25,6 @@ class OrgsController < ApplicationController
   @telephone = @org.telephone
   @website = @org.website
   @email = @org.email
-
  end
 
  def new

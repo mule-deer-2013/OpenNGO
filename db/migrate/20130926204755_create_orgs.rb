@@ -4,6 +4,7 @@ class CreateOrgs < ActiveRecord::Migration
       t.string :name
       t.string :initials
       t.string :preferred_name
+      t.string :logo_url
       t.string :address
       t.string :province
       t.string :city

@@ -1,11 +1,12 @@
 class OrgsController < ApplicationController
 
  def index
+  
  end
 
  def search
   if params[:search_terms].blank?
-    @search_results = []
+    @search_results = Org.all
   else
     @search_results = []
     @search = Sunspot.search Org, Province, Cause do      
@@ -19,6 +20,7 @@ class OrgsController < ApplicationController
       end
     end
   end
+  @search_results
  end
 
  def show
@@ -29,11 +31,13 @@ class OrgsController < ApplicationController
  def new
  	@org = Org.new
   
-    @org.objectives << Objective.new
+  @org.objectives << Objective.new
   
   @org.legal = Legal.new
   @legalnames = Legal.pluck(:legal_type)
   @provincenames = Province.pluck(:name)
+  @causenames = Cause.pluck(:description)
+  @agegroups = Age.pluck(:description)
  end
 
  def create

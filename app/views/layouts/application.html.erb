@@ -9,18 +9,18 @@
 </head>
 <body>  
   <div class="fixed">
-  <nav class="top-bar">
-    <ul class="title-area">
-      <li class="name"><a href="#"><%=image_tag 'logo.png', :class => "logo" %></a></li>
-    </ul>
-    <section class="top-bar-section">
-      <ul class="right">
-        <li><%= link_to 'About', page_path('about')%></li>
-        <li><a href="#">Login</a></li>
-        <li><a href="/orgs/new" class="tiny button radius">Sign Up</a></li>
+    <nav class="top-bar" data-options="is_hover:false">
+      <ul class="title-area">
+        <li class="name"><a href="#"><%=image_tag 'logo.png', :class => "logo" %></a></li>
       </ul>
-    </section>
-  </nav>
+      <section class="top-bar-section" data-options="is_hover:false">
+        <ul class="right">
+          <li><%= link_to 'About', page_path('about')%></li>
+          <li><a href="#">Login</a></li>
+          <li><a href="/orgs/new" class="tiny button radius">Sign Up</a></li>
+        </ul>
+      </section>
+    </nav>
   </div>
   <div class="container">
     <%= yield %>

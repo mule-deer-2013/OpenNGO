@@ -113,6 +113,7 @@ Org.all.each do |seed_org|
   seed_org.activities << Activity.find_by_description(ACTIVITIES.sample)
   seed_org.activities << Activity.find_by_description(ACTIVITIES.sample)
   seed_org.ages << Age.find_by_description(AGES.sample)
+  seed_org.youtube << "http://www.youtube.com/embed/LHKLS6TECTA"
 
   seed_org.board = Board.create(btype: "executive board")
   seed_org.board.people << Person.create(name: Faker::Name.name)

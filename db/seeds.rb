@@ -73,7 +73,7 @@ TRANSPARENCY =[0,1,2,3]
 
 LEVELS = [3,2,1,0]
 
-100.times {Org.create(
+50.times {Org.create(
   name: Faker::Company.name,
   initials: Faker::Address.city_prefix,
   city: Faker::Address.city,
@@ -81,8 +81,14 @@ LEVELS = [3,2,1,0]
   address: Faker::Address.street_address,
   telephone: "(123)456-7894",
   email: Faker::Internet.email,
-  website: Faker::Internet.domain_name,
-  transparency: TRANSPARENCY.sample
+  website: Faker::Internet.domain_name, 
+  transparency: LEVELS.sample, 
+  fte: 23, 
+  pte: 12, 
+  volunteers: 42, 
+  leader_name: "#{Faker::Name.name}", 
+  leader_title: "Executive Director")}
+
 
 
 

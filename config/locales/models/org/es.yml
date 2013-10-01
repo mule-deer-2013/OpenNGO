@@ -1,10 +1,16 @@
-# ruby encoding: utf-8
-
 es:
-  activerecord:
-    models:
-      org: 'org'
-    attributes:
-      org:
-        name: 'nombre'
-
+  Last_updated: ultima actualización
+  Affiliation: Afiliación
+  Affiliations: Afiliaciones
+  Financials: Finanzas
+  Mission: Misión
+  Objectives: Objetivos
+  Organization: Organización
+  Organizations: ONGs
+  Programa: Programa
+  Programs: Programas
+  Search: Buscar
+  Team: Equipo
+  Test: Prueba
+  Welcome: Bienvenidos
+ 

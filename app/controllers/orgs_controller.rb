@@ -8,9 +8,16 @@ class OrgsController < ApplicationController
   if params[:search_terms].blank?
     @search_results = Org.all
   else
-    @search = Sunspot.search Org, Province, Cause do
+    @search_results = []
+    @search = Sunspot.search Org, Province, Cause do      
     	keywords(params[:search_terms])
-      @search_results = @search.results
+    end
+    @search.results.each do |opc|
+      if opc.is_a? Org
+        @search_results << opc
+      elsif opc.respond_to? :orgs
+        @search_results += opc.orgs
+      end
     end
   end
   @search_results

@@ -12,19 +12,54 @@
   <div class="cause">
     <p>CAUSE</p>
     <select id="customDropdown" class="small">
-      <option DISABLED>Transparency level</option>
-      <option>This is another option</option>
-      <option>This is another option too</option>
-      <option>Look, a third option</option>
+      <option DISABLED>Cause</option>
+      <option>Sciene & Technology</option>
+      <option>Sports</option>
+      <option>Human Rights</option>
+      <option>Arts and Culture</option>
+      <option>Community Development</option>
+      <option>Disabilities</option>
+      <option>Education</option>
+      <option>Institutional Development</option>
+      <option>Gender & Equality</option>
+      <option>Ethnic & Indigenous Populations</option>
+      <option>Environment</option>
+      <option>Media & Communication</option>
+      <option>Health & Nutrition</option>
+      <option>Public Policy</option>
+      <option>Housing Development</option>
+      <option>Social Work</option>
+      <option>Other</option>
     </select>
   </div>
   <div class="location">
     <p>LOCATION</p>
     <select id="customDropdown" class="small">
-      <option DISABLED>Transparency level</option>
-      <option>This is another option</option>
-      <option>This is another option too</option>
-      <option>Look, a third option</option>
+      <option DISABLED>Location</option>
+      <option>Capital Federal</option>
+      <option>Buenos Aires</option>
+      <option>Catamarca</option>
+      <option>Chaco</option>
+      <option>Chubut</option>
+      <option>Cordoba</option>
+      <option>Corrientes</option>
+      <option>Entre Rios</option>
+      <option>Formosa</option>
+      <option>Jujuy</option>
+      <option>La Pampa</option>
+      <option>La Rioja</option>
+      <option>Mendoza</option>
+      <option>Misiones</option>
+      <option>Neuquen</option>
+      <option>Rio Negro</option>
+      <option>Salta</option>
+      <option>San Juan</option>
+      <option>San Luis</option>
+      <option>Santa Cruz</option>
+      <option>Santa Fe</option>
+      <option>Santiage del Estero</option>
+      <option>Tierra del Fuego</option>
+      <option>Tucuman</option>
     </select>
   </div>
   <a href="#" data-dropdown="drop1" class="button dropdown secondary small radius">Advance</a><br>
@@ -63,7 +98,7 @@
   <% @search_results.each do |result| %>
     <div class="row list-container">
       <div class="large-9 push-3 columns">
-          <h4><%= result.name %></h4>
+          <h4><%= link_to "#{result.name}", controller: :orgs, action: :show, id: "#{result.id}" %></h4>
           <ul>
             <li>Provinces: <%= result.provinces.map {|p| p.name }.join(', ')%></li>
             <li>Causes: <%= result.causes.map { |c| c.description }.join(', ') %></li>

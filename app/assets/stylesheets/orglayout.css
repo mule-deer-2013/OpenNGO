@@ -58,12 +58,20 @@
 }
 
 
-#header-title {
+#org-header-title {
   padding-left:20px;
   font-size:xx-large;
+
 }
 
-.logo-image {
+#org-stars{
+  padding-left:20px;
+  color:#274873;
+  font-size:x-large;
+
+}
+
+.org-logo-image {
   position: relative;
   float: left;
   height: 80%;
@@ -102,7 +110,6 @@
   clear:both;
 }
 
-
 .org-tab-button {
   width:20%;
   background-color: #C0C0;
@@ -135,9 +142,20 @@ a { color:black;}
 
 }
 
+#org-last-updated {
+  padding:0;
+  margin:10px;
+  color:#898989;
+  font-size:small;
+}
+
 
 #youtube-panel {
   background:black;
+}
+
+.org-profile-icons {
+  float:right;
 }
 
 

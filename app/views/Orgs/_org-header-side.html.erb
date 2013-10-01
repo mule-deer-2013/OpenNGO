@@ -1,14 +1,20 @@
 <div class='org-side-window'>
   <div class='org-header-right'>
     <br>
-      <%= @name %><br>
-      <%= @address %><br>
-      <%= @city %>,<%= @province %><br>
-      <%= @telephone %><br>
-      <%= @email %><br>
-      <%= @website %>
-    </ul>
+      <div class='org-profile-icons' >
+       <%=image_tag("facebook-s.png")%><br>
+       <%=image_tag("googleplus-s.png") %><br>
+       <%=image_tag("linkedin-s.png") %>
+       
+    </div>
+
+      <%= @org.name %><br>
+      <%= @org.address %><br>
+      <%= @org.city %>,<%= @province %><br>
+      <%= @org.telephone %><br>
+      <%= @org.email %><br>
+      <%= @org.website %>
+    
   </div>
-<br>
 
  </div>

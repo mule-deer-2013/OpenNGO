@@ -11,6 +11,10 @@
  *= require_self
  *= require_tree .
  */
+
+
+// TODO-JW: THIS SHOULDN'T BE HERE -- only the require meta-tags above should be here
+
 @import "foundation";
 
 
@@ -100,6 +104,12 @@ fieldset.search {
   width: 100%;
   border: none;
   margin-left: 114px;
+}
+
+fieldset #search_terms {
+  height: 36px;
+  width: 350px;
+  border-radius: 5px;
 }
 
 fieldset #keyword {

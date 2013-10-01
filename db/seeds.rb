@@ -1,3 +1,5 @@
+require 'Faker'
+
 PROVINCES = [
   'Capital Federal',
   'Buenos Aires',

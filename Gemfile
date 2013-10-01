@@ -16,11 +16,13 @@ end
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
+  gem 'uglifier', '>= 1.0.3'
   gem 'compass-rails'
   gem 'zurb-foundation', '~> 4.0.0'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'modernizr-rails'
 end
 
+gem 'normalize-rails'
 gem 'jquery-rails'
 
 

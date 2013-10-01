@@ -82,9 +82,11 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25)
     mini_portile (0.5.1)
+    modernizr-rails (2.6.2.3)
     multi_json (1.8.0)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
+    normalize-rails (2.1.1)
     options (2.3.0)
       fattr
     pg (0.17.0)
@@ -191,6 +193,8 @@ DEPENDENCIES
   high_voltage
   jquery-rails
   launchy
+  modernizr-rails
+  normalize-rails
   pg
   progress_bar
   rails (= 3.2.13)

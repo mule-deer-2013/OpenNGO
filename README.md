@@ -14,6 +14,7 @@ Org.all => All orgs with fields below
   Single field returns(when called on instance of Org, e.g my_org):
     my_org.name
     my_org.initials
+    my_org.preferred_name
     my_org.address
     my_org.city
     my_org.int_branch
@@ -22,7 +23,6 @@ Org.all => All orgs with fields below
     my_org.email
     my_org.founding_date
     my_org.starting_date
-    my_org.legal_type
     my_org.legal_number
     my_org.cuit
     my_org.vat_exempt

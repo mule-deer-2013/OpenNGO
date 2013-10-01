@@ -9,6 +9,8 @@ gem 'sunspot_rails'
 gem 'sidekiq'
 
 gem 'high_voltage'
+gem 'simple_form'
+gem "faker"
 
 group :production do
   gem 'thin'  
@@ -31,13 +33,12 @@ gem 'jquery-rails'
 group :test, :development do
   gem "rspec-rails"
   gem "factory_girl_rails"
-  gem "faker"
+  
   gem 'better_errors'
-  gem 'faker'
   gem 'progress_bar'
   gem 'thin'
   gem 'sunspot_solr'
-  gem 'simple_form'
+ 
 end
 
 

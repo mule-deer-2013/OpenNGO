@@ -70,10 +70,25 @@ AGES = [
 
 
 
+
 LEVELS = [3,2,1,0]
 
+50.times {Org.create(
+  name: Faker::Company.name,
+  initials: Faker::Address.city_prefix,
+  city: Faker::Address.city,
+  province: PROVINCES.sample,
+  address: Faker::Address.street_address,
+  telephone: "(123)456-7894",
+  email: Faker::Internet.email,
+  website: Faker::Internet.domain_name, 
+  transparency: LEVELS.sample, 
+  fte: 23, 
+  pte: 12, 
+  volunteers: 42, 
+  leader_name: "#{Faker::Name.name}", 
+  leader_title: "Executive Director")}
 
-15.times {Org.create(name: Faker::Company.name, display_name: true, transparency: LEVELS.sample, fte: 23, pte: 12, volunteers: 42, leader_name: "#{Faker::Name.name}", leader_title: "Executive Director")}
 
 
 PROVINCES.each {|prov| Province.create(name: prov)}
@@ -84,8 +99,8 @@ AGES.each {|age| Age.create(description: age)}
 
 
 Org.all.each do |seed_org|
-  3.times do 
-    myloc = Location.new(primary: false) 
+  3.times do
+    myloc = Location.new(primary: false)
     myloc.province = Province.find_by_name(PROVINCES.sample)
     seed_org.locations << myloc
   end
@@ -103,5 +118,5 @@ Org.all.each do |seed_org|
   seed_org.board.people << Person.create(name: Faker::Name.name)
   seed_org.board.people << Person.create(name: Faker::Name.name)
   seed_org.advisory = Advisory.create()
-  seed_org.advisory.people << Person.create(name: Faker::Name.name) 
+  seed_org.advisory.people << Person.create(name: Faker::Name.name)
 end

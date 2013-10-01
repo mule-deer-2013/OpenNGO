@@ -23,12 +23,12 @@ class CreateOrgs < ActiveRecord::Migration
       t.text :mission
       t.text :objective
       t.integer :transparency
+      t.string :trans_policy
       t.boolean :code_conduct
       t.string :external_auditor
       t.string :auditor_name
       t.string :annual_reporting
       t.string :external_prog_eval
-      t.string :trans_policy
       t.integer :num_prog_ind
       t.integer :num_prog_org
       t.integer :num_prog_pub

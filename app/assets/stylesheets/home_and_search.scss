@@ -2,6 +2,7 @@ $grey: #282929;
 $light-grey: #a8a8a8;
 $awhite: #FAFAFA;
 
+
 * {
   margin:0;
   padding:0;
@@ -15,6 +16,7 @@ body {
 
 
 .top-bar {
+  background: $grey;
   margin-bottom: 0px;
   background-color: #282929;
   font-size: 20px;
@@ -27,6 +29,13 @@ body {
   padding-right: 20px;
   li a:not(.button){
     font-size: 15px;
+    background: $grey;
+  }
+  ul {
+    background: $grey;
+  }
+  li a:not(.button):hover{
+    background: $grey !important;
   }
 }
 

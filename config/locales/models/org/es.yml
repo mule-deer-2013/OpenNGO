@@ -1,6 +1,10 @@
 es:
+  Actividad: Activity
+  Activities: Actividades
   Affiliation: Afiliación
   Affiliations: Afiliaciones
+  Branch: Filial
+  Branches: Filiales
   Cause: Causa
   Causes: Causas
   Financials: Finanzas
@@ -13,7 +17,7 @@ es:
   Program: Programa
   Programs: Programas
   Search: Buscar
+  Staff: RRHH
   Team: Equipo
   Test: Prueba
   Welcome: Bienvenidos
- 

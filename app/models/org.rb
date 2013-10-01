@@ -15,9 +15,8 @@ class Org < ActiveRecord::Base
   has_one :board
   has_one :advisory
 
-  has_one :team
-  has_many :persons, :through => :board
-  has_many :persons, :through => :advisory
+  has_many :people, :through => :board
+  has_many :people, :through => :advisory
 
 
  

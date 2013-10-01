@@ -1,17 +1,19 @@
 class OrgsController < ApplicationController
 
  def index
+  
  end
 
  def search
   if params[:search_terms].blank?
-    @search_results = []
+    @search_results = Org.all
   else
     @search = Sunspot.search Org, Province, Cause do
     	keywords(params[:search_terms])
+      @search_results = @search.results
     end
   end
-    @search_results = @search.results
+  @search_results
  end
 
  def show

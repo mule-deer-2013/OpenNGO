@@ -1,4 +1,5 @@
 class Org < ActiveRecord::Base
+  after_commit :schedule_solr_reindex
   
   has_many :objectives
   has_one :legal
@@ -36,13 +37,16 @@ class Org < ActiveRecord::Base
 
 
 
-def has_video?
-  true  #setting this always to true for now.
-  #self.youtube
-end
+  def has_video?
+    true  #setting this always to true for now.
+    #self.youtube
+  end
 
 
-
+  private
+  def schedule_solr_reindex
+    SolrReindexWorker.perform_async(self.class.name)
+  end
 
 
 end

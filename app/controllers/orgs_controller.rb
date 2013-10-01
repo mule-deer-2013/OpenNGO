@@ -1,5 +1,5 @@
 class OrgsController < ApplicationController
-
+respond_to :html, :xml, :json
  def index
   
  end
@@ -20,12 +20,12 @@ class OrgsController < ApplicationController
       end
     end
   end
-  @search_results
+  respond_with(@search_results)
  end
 
  def show
   @org = Org.find(params[:id])
- 
+  respond_with(@org)
  end
 
  def new
@@ -36,6 +36,7 @@ class OrgsController < ApplicationController
   @org.legal = Legal.new
   @legalnames = Legal.pluck(:legal_type)
   @provincenames = Province.pluck(:name)
+
  end
 
  def create

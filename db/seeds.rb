@@ -30,7 +30,7 @@ PROVINCES = [
 CAUSES = [
   'Arts and Culture',
   'Crisis Response',
-  'Sciene & Technology',
+  'Science & Technology',
   'Sports',
   'Human Rights',
   'Community Development',

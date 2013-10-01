@@ -3,7 +3,7 @@ class CreateOrgs < ActiveRecord::Migration
     create_table :orgs do |t|
       t.string :name
       t.string :initials
-      t.boolean :display_name
+      t.string :preferred_name
       t.string :address
       t.string :province
       t.string :city
@@ -21,7 +21,6 @@ class CreateOrgs < ActiveRecord::Migration
       t.boolean :income_exempt
       t.boolean :tax_ded
       t.text :mission
-      t.text :objective
       t.integer :transparency
       t.string :trans_policy
       t.boolean :code_conduct
@@ -41,6 +40,8 @@ class CreateOrgs < ActiveRecord::Migration
       t.integer :fte
       t.integer :pte
       t.integer :volunteers
+      t.string :youtube
+      t.string :twitter
 
       t.timestamps
     end
@@ -63,6 +64,11 @@ class CreateOrgs < ActiveRecord::Migration
 #Many-to#one
   create_table :branches do |t|
     t.string :description
+    t.belongs_to :org
+  end
+
+  create_table :objectives do |t|
+    t.text :summary
     t.belongs_to :org
   end
 
@@ -95,6 +101,12 @@ class CreateOrgs < ActiveRecord::Migration
   create_table :ages_orgs do |t|
     t.belongs_to :org
     t.belongs_to :age
+  end
+
+#has one
+  create_table :legals do |t|
+    t.string :legal_type
+    t.belongs_to :org
   end
 
 

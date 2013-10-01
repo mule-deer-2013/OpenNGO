@@ -34,6 +34,7 @@ group :test, :development do
   gem 'progress_bar'
   gem 'thin'
   gem 'sunspot_solr'
+  gem 'simple_form'
 end
 
 

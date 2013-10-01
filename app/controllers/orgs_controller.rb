@@ -22,11 +22,13 @@ class OrgsController < ApplicationController
  def new
  	@org = Org.new
   
-    @org.objectives << Objective.new
+  @org.objectives << Objective.new
   
   @org.legal = Legal.new
   @legalnames = Legal.pluck(:legal_type)
   @provincenames = Province.pluck(:name)
+  @causenames = Cause.pluck(:description)
+  @agegroups = Age.pluck(:description)
  end
 
  def create

@@ -1,4 +1,5 @@
 class Org < ActiveRecord::Base
+
   attr_accessible :name, :initials, :display_name, :address, :mission, :objective, :transparency 
   attr_accessible :province, :city, :int_branch, :telephone, :fax, :email, :website
   attr_accessible :founding_date, :starting_date, :legal_type, :legal_num, :cuit
@@ -13,13 +14,29 @@ class Org < ActiveRecord::Base
 
   has_one :board
   has_one :advisory
-  has_many :people, :through => :boards
-  has_many :people, :through => :advisories
+
+  has_many :people, :through => :board
+  has_many :people, :through => :advisory
+
+
  
+
   has_many :locations
   has_many :provinces, through: :locations
 
   searchable :auto_index => true, :auto_remove => true do
     text :name, boost: 5
   end
+
+
+
+def has_video?
+  true  #setting this always to true for now.
+  #self.youtube
+end
+
+
+
+
+
 end

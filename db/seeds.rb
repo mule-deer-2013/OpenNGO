@@ -68,6 +68,15 @@ AGES = [
   'Seniors'
 ]
 
+ LEGALS = [
+    "Asociacion Civil",
+    "Fundacion",
+    "Cooperativa",
+    "Mutual",
+    "Corporacion",
+    "Federacion",
+    "Confederacion"
+  ]
 
 
 
@@ -90,12 +99,13 @@ LEVELS = [3,2,1,0]
   leader_title: "Executive Director")}
 
 
+# need to seed objectives after merge
 
 PROVINCES.each {|prov| Province.create(name: prov)}
 CAUSES.each {|cause| Cause.create(description: cause)}
 ACTIVITIES.each {|act| Activity.create(description: act)}
 AGES.each {|age| Age.create(description: age)}
-
+LEGALS.each {|type| Legal.create(legal_type: type)}
 
 
 Org.all.each do |seed_org|
@@ -114,7 +124,7 @@ Org.all.each do |seed_org|
   seed_org.activities << Activity.find_by_description(ACTIVITIES.sample)
   seed_org.ages << Age.find_by_description(AGES.sample)
   seed_org.youtube << "http://www.youtube.com/embed/LHKLS6TECTA"
-
+  seed_org.legal = Legal.first
   seed_org.board = Board.create(btype: "executive board")
   seed_org.board.people << Person.create(name: Faker::Name.name)
   seed_org.board.people << Person.create(name: Faker::Name.name)

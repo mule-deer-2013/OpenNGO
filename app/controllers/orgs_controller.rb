@@ -31,6 +31,7 @@ respond_to :html, :xml, :json
       search_location = search_org + search_cause if params[:filter][:location].blank?
       Org.all.each do |s|
         @search_results << s if (search_org.include?(s) && search_cause.include?(s) && search_location.include?(s))
+      end
     end
   end
   
@@ -62,5 +63,5 @@ respond_to :html, :xml, :json
   		redirect_to new_org_path	
   	end
   end
-  
+
 end

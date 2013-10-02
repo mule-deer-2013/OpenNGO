@@ -139,7 +139,6 @@ a { color:black;}
 
 #tabs-list li {
   display:inline;
-
 }
 
 #org-last-updated {
@@ -158,7 +157,6 @@ a { color:black;}
 
 .org-profile-icons {
   float:right;
-
 }
 
 img.desaturate{
@@ -173,8 +171,6 @@ img.desaturate{
 
   margin:20px;
   width:90%
-
-
 }
   .org-info-list span {
     position:absolute;
@@ -196,19 +192,21 @@ img.desaturate{
 
 #org-staff-table {
   width:100%;
-  text-align:center;
-  vertical-align:bottom;
   padding-left: 120px;
   border:none;
 }
-  #org-staff-table th {
-    text-align:center;
-    background-color:green;
-  }
 
   #org-staff-table tr {
-    background-color:red;
+    opacity:0.8;
+    text-align:center;
+    background-color:#E0E0E0;
   }
 
+  #org-staff-table thead td {
+    width:33%;
+    opacity:0.8;
+    text-align:center;
+    color: white;
+    background-color:#898989;
 
-git
+  }

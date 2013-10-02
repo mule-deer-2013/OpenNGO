@@ -10,13 +10,14 @@
       <div class="org-info-list">
         <ol> 
           <li><span><%=t("Mission")%></span>
-            <p><%= @org.mission %>
+            <p>
+              <%= @org.mission %>
             </p></li>
 
           <li><span><%=t("Causes") %></span>  
             <p>
             <%= @org.causes.map { |cause| cause.description }.add_commas %>
-          </p></li>
+            </p></li>
             
           <li><span><%=t("Objectives")%></span>
             <p>
@@ -27,18 +28,44 @@
 
           <li><span><%=t("Activities")%></span>
             <p>
-            <%= @org.activities.map { |activity| activity.description }.add_commas %>
+              <%= @org.activities.map { |activity| activity.description }.add_commas %>
             </p></li>
 
           <li><span><%=t("Staff")%></span>
             <p>
-             <%= render partial: 'staff_table' %>
+              <%= render partial: 'staff_table' %>
             </p></li>
 
           <li><span><%=t("Branches")%></span>
              <p>
-            <%= @org.activities.map { |activity| activity.description }.add_commas %>
+              <% @org.branches.each do |branch| %>
+              <p><%= branch.description %></p>
+              <% end %>
             </p></li>
+
+          <li><span><%=t(:Age_Group)%></span>
+             <p>
+            <%= @org.ages.map { |age| age.description }.add_commas %>
+            </p></li>
+
+          <li><span><%=t("Other")%></span>
+             <p>
+                <p><%="Founding Date:" + @org.founding_date%></p>
+                <p><%= @org.founding_date%></p>
+                <p><%= @org.founding_date%></p>
+                <p><%= @org.founding_date%></p> 
+                <p><%= @org.founding_date%></p>
+                <p><%= @org.founding_date%></p>
+                <p><%= @org.founding_date%></p>
+                <p><%= @org.founding_date%></p>
+                <p><%= @org.founding_date%></p>
+                <p><%= @org.founding_date%></p>
+
+
+            </p></li>
+         
+
+
 
 
           

@@ -1,14 +1,14 @@
               <table id="org-staff-table">
                 <thead>
-                  <td><span><%=t(:Full_Time)%></span></td>
-                  <td><%=t(:Part_Time)%> </td>
-                  <td><%=t("Volunteers")%> </td>
+                  <td><%= t(:Full_time) %></td>
+                  <td><%= t(:Part_time) %></td>
+                  <td><%= t("Volunteers") %></td>
                 </thead>
 
                 <tr>
-                  <td> 10 </td>
-                  <td> 22 </td>
-                  <td> 56 </td>
+                  <td><%= @org.fte %></td>
+                  <td><%= @org.pte %></td>
+                  <td><%= @org.volunteers %></td>
                 </tr>
 
 

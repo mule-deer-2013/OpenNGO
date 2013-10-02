@@ -99,7 +99,24 @@ LEVELS = [3,2,1,0]
   pte: 12, 
   volunteers: 42, 
   leader_name: "#{Faker::Name.name}", 
-  leader_title: "Executive Director")}
+  leader_title: "Executive Director",
+  founding_date: Date.parse('31-10-1975'),
+  starting_date: Date.parse('01-12-1978'),
+  legal_type: "Foundation",
+  legal_num: "123-123-123",
+  cuit: "523-5243-8",
+  trans_policy: [true,false].sample,
+  vat_exempt: [true,false].sample,
+  income_exempt: [true,false].sample,
+  tax_ded: [true,false].sample,
+  code_conduct:[true,false].sample,
+  external_auditor: [true,false].sample,
+  auditor_name: "Ernst & Young",
+  annual_reporting: [true,false].sample,
+  external_prog_eval: [true,false].sample
+
+
+)}
 
 
 # need to seed objectives after merge

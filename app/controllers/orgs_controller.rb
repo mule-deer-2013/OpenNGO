@@ -5,34 +5,19 @@ respond_to :html, :xml, :json
   end
 
   def search
-    @search_results = []
-    if params[:search_terms].blank?
-      @search_results = Org.all
-    end 
-    if params[:filter].nil?  
-      search = Sunspot.search Org, Cause, Province do
-        fulltext(params[:search_terms])
-      end
-      search.results.each do |r|
-        if r.is_a? Org
-          @search_results << r
-        elsif r.respond_to? :orgs
-        @search_results += r.orgs
-        end
-      end
+    @defaults = {}
+    if params[:filter]
+      @defaults[:cause] = params[:filter][:cause]
+      @defaults[:location] = params[:filter][:location]
+      @defaults[:transparency] = params[:filter][:transparency]
     end
-    if params[:search_terms].nil? 
-      @search_results = []
-      search_org = Org.search { with :transparency, params[:filter][:transparency].to_i}.results
-      search_cause = Cause.search { fulltext(params[:filter][:cause]) }.results.first.orgs
-      search_location = Province.search { fulltext(params[:filter][:location]) }.results.first.orgs
-      search_org = search_cause + search_location if params[:filter][:transparency].blank?
-      search_cause = search_org + search_location if params[:filter][:cause].blank?
-      search_location = search_org + search_cause if params[:filter][:location].blank?
-      Org.all.each do |s|
-        @search_results << s if (search_org.include?(s) && search_cause.include?(s) && search_location.include?(s))
-      end
-    end
+
+    @filters = []
+    @filters << { :name => "transparency", :options => [0,1,2,3] }
+    @filters << { :name => "cause", :options => Cause.uniq.pluck(:description) }
+    @filters << { :name => "location", :options => Org.uniq.pluck(:province) }
+
+    @search_results = Search.results_for(params)
   end
   
   def show

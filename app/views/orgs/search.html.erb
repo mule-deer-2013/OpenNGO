@@ -1,19 +1,13 @@
 <div class="filter">
 
 <%= form_tag :search_orgs, method: :get do %>
-  <div class="transparency">
-    <p>TRANSPARENCY LEVEL</p>
-    <%= select("filter", "transparency", [0,1,2,3], {include_blank: 'None'}) %>
-  </div>
+  <% @filters.each do |filter| %>
+    <div class="transparency">
+      <p><%= filter[:name] %></p>
+      <%= select("filter", filter[:name], filter[:options], {include_blank: 'None', :selected => @defaults[filter[:name].to_sym] || "None"}) %>
+    </div>
+  <% end %>
 
-  <div class="cause">
-    <p>CAUSE</p>
-    <%= select("filter", "cause", Cause.uniq.pluck(:description), {include_blank: 'None'}) %>
-  </div>
-  <div class="location">
-    <p>LOCATION</p>
-    <%= select("filter", "location", Org.uniq.pluck(:province), {include_blank: 'None'}) %>
-  </div>
   <a href="#" data-dropdown="drop1" class="button dropdown secondary small radius">Advance</a><br>
   <ul id="drop1" class="f-dropdown">
     <li><a href="#">This is a link</a></li>
@@ -36,6 +30,7 @@
       </select>
     </div>
     <div class="large-9 pull-3 columns">
+      <h5 class="subheader"><%= @search_results.count %> organizations found</h5>
     </div>
   </div>
 

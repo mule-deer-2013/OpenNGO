@@ -6,8 +6,11 @@ gem 'rails', '3.2.13'
 gem 'pg'
 
 gem 'sunspot_rails'
+gem 'sidekiq'
 
 gem 'high_voltage'
+gem 'simple_form'
+
 
 group :production do
   gem 'thin'  
@@ -25,6 +28,7 @@ end
 
 gem 'normalize-rails'
 gem 'jquery-rails'
+gem 'rails_12factor'
 
 
 
@@ -33,10 +37,10 @@ group :test, :development do
   gem "factory_girl_rails"
   gem "faker"
   gem 'better_errors'
-  gem 'faker'
   gem 'progress_bar'
   gem 'thin'
   gem 'sunspot_solr'
+ 
 end
 
 
@@ -47,19 +51,3 @@ group :test do
   gem 'shoulda-matchers'
   gem 'launchy'
 end
-
-
-
-
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'

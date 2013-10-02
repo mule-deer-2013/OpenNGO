@@ -1,7 +1,7 @@
 class OrgsController < ApplicationController
 
+respond_to :html, :xml, :json
   def index
-
   end
 
   def search
@@ -31,24 +31,24 @@ class OrgsController < ApplicationController
       search_location = search_org + search_cause if params[:filter][:location].blank?
       Org.all.each do |s|
         @search_results << s if (search_org.include?(s) && search_cause.include?(s) && search_location.include?(s))
-      end
-      @search_results
     end
   end
   
   def show
-  @org = Org.find(params[:id])
-
+    @org = Org.find(params[:id])
   end
 
   def new
   	@org = Org.new
 
-    @org.objectives << Objective.new
+  @org.objectives << Objective.new
 
   @org.legal = Legal.new
   @legalnames = Legal.pluck(:legal_type)
   @provincenames = Province.pluck(:name)
+  @causenames = Cause.pluck(:description)
+  @agegroups = Age.pluck(:description)
+
   end
 
   def create
@@ -62,9 +62,5 @@ class OrgsController < ApplicationController
   		redirect_to new_org_path	
   	end
   end
-
-
-
-
-
+  
 end

@@ -4,6 +4,7 @@ class CreateOrgs < ActiveRecord::Migration
       t.string :name
       t.string :initials
       t.string :preferred_name
+      t.string :logo_url
       t.string :address
       t.string :province
       t.string :city
@@ -24,10 +25,10 @@ class CreateOrgs < ActiveRecord::Migration
       t.integer :transparency
       t.string :trans_policy
       t.boolean :code_conduct
-      t.string :external_auditor
+      t.boolean :external_auditor
       t.string :auditor_name
-      t.string :annual_reporting
-      t.string :external_prog_eval
+      t.boolean :annual_reporting
+      t.boolean :external_prog_eval
       t.integer :num_prog_ind
       t.integer :num_prog_org
       t.integer :num_prog_pub

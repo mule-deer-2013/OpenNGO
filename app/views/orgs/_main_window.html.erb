@@ -50,22 +50,36 @@
 
           <li><span><%=t("Other")%></span>
              <p>
-                <p><%="Founding Date"+":"+ @org.founding_date%></p>
-                <p><%="Starting Date"+":"+ @org.starting_date%></p>
-                <p><%= @org.founding_date%></p>
-                <p><%= @org.founding_date%></p> 
-                <p><%= @org.founding_date%></p>
-                <p><%= @org.founding_date%></p>
-                <p><%= @org.founding_date%></p>
-                <p><%= @org.founding_date%></p>
-                <p><%= @org.founding_date%></p>
-                <p><%= @org.founding_date%></p>
-
-
+                <b><%="Founding Date"+": "%><font class="org-text-padding"> </b><%=@org.founding_date.strftime("%d-%m-%Y") %></font><br>
+                <b><%="Starting Date"+": "%><font class="org-text-padding"> </b><%= @org.starting_date.strftime("%d-%m-%Y") %></font><br>
+                <b><%="Type of Legal Entity"+": "%><font class="org-text-padding"> </b><%= @org.legal_type %></font><br>
+                <b><%="Legal Entity No"+": "%><font class="org-text-padding"> </b><%= @org.legal_num %></font><br> 
+                <b><%="CUIT:   " %><font class="org-text-padding"> </b><%= @org.cuit %></font></br>
             </p></li>
          
 
 
+          <li><span><%="Nothing here"%></span>
+             <p> 
+              <% if @org.trans_policy %>
+              <%= image_tag("check.png", class: "check-or-cross") %>
+              <%else%>
+              <%= image_tag("cross.png", class: "check-or-cross") %>
+              <% end %>
+              <span class="org-text-padding">Written Transparency Policy</span>
+            </p>
+   
+
+<!-- 
+              t.string :trans_policy
+      t.boolean :code_conduct
+      t.string :external_auditor
+      t.string :auditor_name
+      t.string :annual_reporting
+      t.string :external_prog_eval
+              [@org.trans_policy,@org.code_conduct, @org.external_auditor] -->
+        
+            </p></li>
 
 
           

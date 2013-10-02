@@ -210,3 +210,19 @@ img.desaturate{
     background-color:#898989;
 
   }
+
+
+.org-text-padding {
+    padding-left:20px;
+}
+
+.check-or-cross {
+  width:20px;
+  height:20px;
+}
+
+  .check-or-cross-text {
+    color:red;
+
+    
+  }

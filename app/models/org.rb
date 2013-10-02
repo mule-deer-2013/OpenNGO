@@ -1,6 +1,7 @@
 include ApplicationHelper
 
 class Org < ActiveRecord::Base
+  after_commit :schedule_solr_reindex
   
   has_many :objectives
   has_many :branches
@@ -44,8 +45,9 @@ class Org < ActiveRecord::Base
     #self.youtube
   end
 
-
-
-
+  private
+  def schedule_solr_reindex
+    SolrReindexWorker.perform_async(self.class.name)
+  end
 
 end

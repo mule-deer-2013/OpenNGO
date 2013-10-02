@@ -10,7 +10,7 @@ gem 'sidekiq'
 
 gem 'high_voltage'
 gem 'simple_form'
-gem "faker"
+
 
 group :production do
   gem 'thin'  
@@ -27,13 +27,14 @@ end
 
 gem 'normalize-rails'
 gem 'jquery-rails'
+gem 'rails_12factor'
 
 
 
 group :test, :development do
   gem "rspec-rails"
   gem "factory_girl_rails"
-  
+  gem "faker"
   gem 'better_errors'
   gem 'progress_bar'
   gem 'thin'
@@ -49,5 +50,3 @@ group :test do
   gem 'shoulda-matchers'
   gem 'launchy'
 end
-
-gem "debugger"

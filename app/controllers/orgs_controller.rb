@@ -20,7 +20,10 @@ class OrgsController < ApplicationController
       end
     end
   end
+  puts "*" * 50
+  p params
   @search_results
+
  end
 
  def show

@@ -1,5 +1,5 @@
 class OrgsController < ApplicationController
-
+respond_to :html, :xml, :json
  def index
   
  end
@@ -20,12 +20,12 @@ class OrgsController < ApplicationController
       end
     end
   end
-  @search_results
+  respond_with(@search_results)
  end
 
  def show
   @org = Org.find(params[:id])
- 
+  respond_with(@org)
  end
 
  def new
@@ -38,6 +38,7 @@ class OrgsController < ApplicationController
   @provincenames = Province.pluck(:name)
   @causenames = Cause.pluck(:description)
   @agegroups = Age.pluck(:description)
+
  end
 
  def create

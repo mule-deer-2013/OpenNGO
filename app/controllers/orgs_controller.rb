@@ -1,57 +1,67 @@
 class OrgsController < ApplicationController
 
- def index
-  
- end
+  def index
 
- def search
-  if params[:search_terms].blank?
-    @search_results = Org.all
-  else
+  end
+
+  def search
     @search_results = []
-    @search = Sunspot.search Org, Province, Cause do      
-    	keywords(params[:search_terms])
-    end
-    @search.results.each do |opc|
-      if opc.is_a? Org
-        @search_results << opc
-      elsif opc.respond_to? :orgs
-        @search_results += opc.orgs
+    if params[:search_terms].blank?
+      @search_results = Org.all
+    end 
+    if params[:filter].nil?  
+      search = Sunspot.search Org, Cause, Province do
+        fulltext(params[:search_terms])
+      end
+      search.results.each do |r|
+        if r.is_a? Org
+          @search_results << r
+        elsif r.respond_to? :orgs
+        @search_results += r.orgs
+        end
       end
     end
+    if params[:search_terms].nil? 
+      @search_results = []
+      search_org = Org.search { with :transparency, params[:filter][:transparency].to_i}.results
+      search_cause = Cause.search { fulltext(params[:filter][:cause]) }.results.first.orgs
+      search_location = Province.search { fulltext(params[:filter][:location]) }.results.first.orgs
+      search_org = search_cause + search_location if params[:filter][:transparency].blank?
+      search_cause = search_org + search_location if params[:filter][:cause].blank?
+      search_location = search_org + search_cause if params[:filter][:location].blank?
+      Org.all.each do |s|
+        @search_results << s if (search_org.include?(s) && search_cause.include?(s) && search_location.include?(s))
+      end
+      @search_results
+    end
   end
-  puts "*" * 50
-  p params
-  @search_results
-
- end
-
- def show
+  
+  def show
   @org = Org.find(params[:id])
- 
- end
 
- def new
- 	@org = Org.new
-  
+  end
+
+  def new
+  	@org = Org.new
+
     @org.objectives << Objective.new
-  
+
   @org.legal = Legal.new
   @legalnames = Legal.pluck(:legal_type)
   @provincenames = Province.pluck(:name)
- end
+  end
 
- def create
- 	puts "*" * 100
- 	@org = Org.create(params[:org])
+  def create
+  	puts "*" * 100
+  	@org = Org.create(params[:org])
   puts "*" * 100
- 	if @org.save
- 		redirect_to org_path(@org)
- 	else
- 		@errors = @org.errors.full_messages
- 		redirect_to new_org_path	
- 	end
- end
+  	if @org.save
+  		redirect_to org_path(@org)
+  	else
+  		@errors = @org.errors.full_messages
+  		redirect_to new_org_path	
+  	end
+  end
 
 
 

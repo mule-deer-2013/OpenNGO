@@ -1,18 +1,18 @@
 <div class="filter">
-<%= form_tag("/search_orgs", method: "get") do %>
 
+<%= form_tag :search_orgs, method: :get do %>
   <div class="transparency">
     <p>TRANSPARENCY LEVEL</p>
-    <%= select("org", "transparency", [0,1,2,3], {include_blank: 'None'}) %>
+    <%= select("filter", "transparency", [0,1,2,3], {include_blank: 'None'}) %>
   </div>
 
   <div class="cause">
     <p>CAUSE</p>
-    <%= select("org", "cause", Cause.uniq.pluck(:description), {include_blank: 'None'}) %>
+    <%= select("filter", "cause", Cause.uniq.pluck(:description), {include_blank: 'None'}) %>
   </div>
   <div class="location">
     <p>LOCATION</p>
-    <%= select("org", "cause", Org.uniq.pluck(:province), {include_blank: 'None'}) %>
+    <%= select("filter", "location", Org.uniq.pluck(:province), {include_blank: 'None'}) %>
   </div>
   <a href="#" data-dropdown="drop1" class="button dropdown secondary small radius">Advance</a><br>
   <ul id="drop1" class="f-dropdown">

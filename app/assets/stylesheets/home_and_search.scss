@@ -12,7 +12,7 @@ $awhite: #FAFAFA;
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 15px;
-  height: 100%;
+  min-height: 100%;
 }
 
 
@@ -44,7 +44,12 @@ body {
   width: 200px;
   height: 37px;
   padding-top: 10px;
-  padding-left:10px
+  padding-left:10px;
+  filter: brightness(170%);
+  -webkit-filter: brightness(170%);
+  -moz-filter: brightness(170%);
+  -o-filter: brightness(170%);
+  -ms-filter: brightness(170%);
 }
 
 

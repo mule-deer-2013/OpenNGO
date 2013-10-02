@@ -88,7 +88,6 @@ LEVELS = [3,2,1,0]
   name: Faker::Company.name,
   initials: Faker::Address.city_prefix,
   city: Faker::Address.city,
-  province: PROVINCES.sample,
   address: Faker::Address.street_address,
   telephone: "(123)456-7894",
   email: Faker::Internet.email,

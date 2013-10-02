@@ -12,6 +12,7 @@ respond_to :html, :xml, :json
     @search = Sunspot.search Org, Province, Cause do      
     	keywords(params[:search_terms])
     end
+
     @search.results.each do |opc|
       if opc.is_a? Org
         @search_results << opc
@@ -20,12 +21,12 @@ respond_to :html, :xml, :json
       end
     end
   end
-  respond_with(@search_results)
+  @search_results
+
  end
 
  def show
   @org = Org.find(params[:id])
-  respond_with(@org)
  end
 
  def new

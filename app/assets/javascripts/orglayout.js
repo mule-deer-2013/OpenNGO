@@ -39,7 +39,6 @@ $(document).ready(function(){
     $("#org-affiliations").hide()
   });
 
-
   $("#org-team-butt").click(function() {
     $('#org-homepage').hide()
     $("#org-financials").hide()
@@ -47,7 +46,6 @@ $(document).ready(function(){
     $("#org-team").show()
     $("#org-affiliations").hide()
   });
-
 
   $("#org-affiliations-butt").click(function() {
     $('#org-homepage').hide()
@@ -60,20 +58,20 @@ $(document).ready(function(){
 
 // text resizer:
 
-  $( '.my-resizer' ).each(function ( i, span ) {
+  $('.my-resizer').each(function ( i, span ) {
 
-    var width = $( span ).width(),
+    var width = $(span).width(),
         html = '<span style="white-space:nowrap"></span>',
-        line = $( span ).wrapInner( html ).children()[ 0 ],
-        n = 40; //biggest possible font size
+        line = $(span).wrapInner(html).children()[ 0 ],
+        maxsize = 40; //biggest possible font size
 
-    $( span ).css( 'font-size', n );
+    $(span).css( 'font-size', maxsize );
 
-    while ( $( line ).width() > width ) {
-        $( span ).css( 'font-size', --n );
+    while ( $(line).width() > width ) {
+        $(span).css( 'font-size', --maxsize );
     }
 
-    $( span ).text( $( line ).text() );
+    $(span).text( $(line).text() );
 
   });
 

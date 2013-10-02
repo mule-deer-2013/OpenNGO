@@ -1,5 +1,5 @@
 class OrgsController < ApplicationController
-
+respond_to :html, :xml, :json
  def index
   
  end
@@ -27,23 +27,6 @@ class OrgsController < ApplicationController
 
  def show
   @org = Org.find(params[:id])
-
-  # org
-  #   name
-  #   country
-  #   legal_num
-  #   tax status
-  #   number of employees
-  #   number of volunteers
-
-  #   causes
-  #     [cause one, cause two, cause three]
-  #   financials
-  #     balance sheet
-  #     budget
-  #     income
-  #     expenses
-
  end
 
  def new
@@ -56,6 +39,7 @@ class OrgsController < ApplicationController
   @provincenames = Province.pluck(:name)
   @causenames = Cause.pluck(:description)
   @agegroups = Age.pluck(:description)
+
  end
 
  def create

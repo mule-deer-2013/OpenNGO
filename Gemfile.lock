@@ -46,7 +46,6 @@ GEM
       ffi (~> 1.0, >= 1.0.11)
     chunky_png (1.2.8)
     coderay (1.1.0)
-    columnize (0.3.6)
     compass (0.12.2)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
@@ -56,12 +55,6 @@ GEM
     connection_pool (1.1.0)
     daemons (1.1.9)
     database_cleaner (1.1.1)
-    debugger (1.6.2)
-      columnize (>= 0.3.1)
-      debugger-linecache (~> 1.2.0)
-      debugger-ruby_core_source (~> 1.2.3)
-    debugger-linecache (1.2.0)
-    debugger-ruby_core_source (1.2.3)
     diff-lcs (1.2.4)
     erubis (2.7.0)
     eventmachine (1.0.3)
@@ -213,7 +206,6 @@ DEPENDENCIES
   capybara
   compass-rails
   database_cleaner
-  debugger
   factory_girl_rails
   faker
   high_voltage

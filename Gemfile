@@ -23,6 +23,7 @@ group :assets do
   gem 'compass-rails'
   gem 'zurb-foundation', '~> 4.0.0'
   gem 'modernizr-rails'
+  gem 'foundation-icons-sass-rails'
 end
 
 gem 'normalize-rails'

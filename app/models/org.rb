@@ -29,7 +29,8 @@ class Org < ActiveRecord::Base
   attr_accessible :income_exempt, :tax_ded, :vat_exempt, :code_conduct, :external_auditor, :auditor_name, :annual_reporting, :external_prog_eval, :trans_policy
   attr_accessible :num_prog_ind, :num_prog_org, :num_prog_pub, :fte, :pte, :volunteers
   attr_accessible :certifier_name1, :certifier_name2, :certifier_title1, :certifier_title2, :leader_name, :leader_title
-  
+  # attr_accessible :location, :cause, :age
+
   has_many :people, :through => :board
   has_many :people, :through => :advisory
   has_many :provinces, through: :locations

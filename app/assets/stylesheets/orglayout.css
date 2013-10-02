@@ -30,8 +30,13 @@
   border:2px solid #E0E0E0;
   border-radius:10px;
   color:#898989;
-
 }
+
+  .org-header-right ul{
+    font-size:small;
+    line-height:120%;
+    list-style-type:none;
+  }
 
 
 .org-window-holder {

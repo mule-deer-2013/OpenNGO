@@ -8,6 +8,7 @@ en:
   Branches: Branches
   Cause: Cause
   Causes: Causes
+  Income_Tax_Exempt: Income Tax Exempt
   Individual: Individual
   Individuals: Individuals
   Financial: Financial
@@ -26,7 +27,10 @@ en:
   Programs: Programs
   Search: Search
   Staff: Staff
+  Tax_Deductible: Tax-deductible for Argentine Donors
   Team: Team
   Test: Test
+  Transparency_Policy: Transparency Policy
+  VAT_exempt: VAT exempt
   Volunteers: Volunteers
   Welcome: Welcome

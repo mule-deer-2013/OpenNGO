@@ -2,8 +2,6 @@
 
 
   <div class="org-main-window-panel">
-      
-
 
     <div class ="org-info-display"  id="org-homepage">
      
@@ -39,7 +37,7 @@
           <li><span><%=t("Branches")%></span>
              <p>
               <% @org.branches.each do |branch| %>
-              <p><%= branch.description %></p>
+              <%= branch.description %><br>
               <% end %>
             </p></li>
 
@@ -59,33 +57,81 @@
          
 
 
-          <li><span><%="Nothing here"%></span>
-             <p> 
+          <li><span><%"intentionally left blank"%></span>
+             
+             <p>
+
               <% if @org.trans_policy %>
               <%= image_tag("check.png", class: "check-or-cross") %>
               <%else%>
               <%= image_tag("cross.png", class: "check-or-cross") %>
               <% end %>
               <span class="org-text-padding">Written Transparency Policy</span>
-            </p>
-   
+              
+              <br>
+              <% if @org.vat_exempt %>
+              <%= image_tag("check.png", class: "check-or-cross") %>
+              <%else%>
+              <%= image_tag("cross.png", class: "check-or-cross") %>
+              <% end %>
+              <span class="org-text-padding">VAT tax exempt</span>
+            
+             <br>
+              <% if @org.income_exempt %>
+              <%= image_tag("check.png", class: "check-or-cross") %>
+              <%else%>
+              <%= image_tag("cross.png", class: "check-or-cross") %>
+              <% end %>
+              <span class="org-text-padding">Income tax exempt</span>
 
-<!-- 
-              t.string :trans_policy
-      t.boolean :code_conduct
-      t.string :external_auditor
-      t.string :auditor_name
-      t.string :annual_reporting
-      t.string :external_prog_eval
-              [@org.trans_policy,@org.code_conduct, @org.external_auditor] -->
+              <br>
+              <% if @org.tax_ded %>
+              <%= image_tag("check.png", class: "check-or-cross") %>
+              <%else%>
+              <%= image_tag("cross.png", class: "check-or-cross") %>
+              <% end %>
+              <span class="org-text-padding">Tax deductible for Argentine Donors</span>
+
+              <br>
+              <% if @org.code_conduct %>
+              <%= image_tag("check.png", class: "check-or-cross") %>
+              <%else%>
+              <%= image_tag("cross.png", class: "check-or-cross") %>
+              <% end %>
+              <span class="org-text-padding">Written Code of Conduct</span>
+
+              <br>
+              <% if @org.external_auditor %>
+              <%= image_tag("check.png", class: "check-or-cross") %>
+              <%else%>
+              <%= image_tag("cross.png", class: "check-or-cross") %>
+              <% end %>
+              <span class="org-text-padding">Annual External audit of finances
+                <% if @org.external_auditor %> 
+                <br><font size="small"><%="-  "%></font>
+                <% end %>
+              </span>
+
+              <br>
+              <% if @org.annual_reporting %>
+              <%= image_tag("check.png", class: "check-or-cross") %>
+              <%else%>
+              <%= image_tag("cross.png", class: "check-or-cross") %>
+              <% end %>
+              <span class="org-text-padding">Annual Reporting of Financial Results</span>
+
+
+              <br>
+              <% if @org.external_prog_eval %>
+              <%= image_tag("check.png", class: "check-or-cross") %>
+              <%else%>
+              <%= image_tag("cross.png", class: "check-or-cross") %>
+              <% end %>
+              <span class="org-text-padding">Annual External Program Evaluation</span>
+
+
         
             </p></li>
-
-
-          
-
-
-
 
         </ol> 
      </div>

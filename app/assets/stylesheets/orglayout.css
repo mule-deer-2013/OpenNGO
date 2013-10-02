@@ -217,12 +217,9 @@ img.desaturate{
 }
 
 .check-or-cross {
+  opacity:0.5;
   width:20px;
   height:20px;
 }
 
-  .check-or-cross-text {
-    color:red;
-
-    
-  }
+ 

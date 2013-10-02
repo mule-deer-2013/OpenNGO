@@ -40,9 +40,8 @@ class Org < ActiveRecord::Base
 
 
 
-  def has_video?
-    true  #setting this always to true for now.
-    #self.youtube
+  def has_valid_youtube?
+    self.youtube.include?("www.youtube.com")
   end
 
   private

@@ -112,9 +112,9 @@
 
 .org-tab-button {
   width:20%;
-  border-radius: 5px;
-  border: 1px solid;
-  border-color:#E0E0E0;
+  /*border-radius: 5px;*/
+  /*border: 1px solid;*/
+  /*border-color:#E0E0E0;*/
   padding-left: 5px;
   padding-right:5px;
   margin:0 auto;
@@ -123,6 +123,10 @@
   overflow:clip;
   text-align:center;
 }
+
+  .org-tab-button a {
+    font-style:italic;
+  }
 
 .org-info-display{
   display:none;
@@ -133,7 +137,7 @@
 a { color:black;}
 
 #tabs-list {
-  padding:5px;
+  padding:0px;
   margin:0;
 }
 
@@ -143,7 +147,7 @@ a { color:black;}
 
 #org-last-updated {
   padding:0;
-  margin:10px;
+  margin:9px;
   color:#898989;
   font-size:small;
 }
@@ -190,19 +194,19 @@ img.desaturate{
     color:#555;
   }
 
-#org-staff-table {
+#org-data-table {
   width:100%;
   padding-left: 120px;
   border:none;
 }
 
-  #org-staff-table tr {
+  #org-data-table tr {
     opacity:0.8;
     text-align:center;
     background-color:#E0E0E0;
   }
 
-  #org-staff-table thead td {
+  #org-data-table thead td {
     width:33%;
     opacity:0.8;
     text-align:center;

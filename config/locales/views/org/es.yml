@@ -8,6 +8,9 @@ es:
   Branches: Filiales
   Cause: Causa
   Causes: Causas
+  Individual: Individuo
+  Individuals: Individuos
+  Financial: Finanzas
   Financials: Finanzas
   Full_time: Permanente
   Part_time: Medio tiempo
@@ -21,6 +24,7 @@ es:
   Part_time: Medio tiempo
   Program: Programa
   Programs: Programas
+  General_Public: Publico General
   Search: Buscar
   Staff: RRHH
   Team: Equipo
@@ -28,4 +32,3 @@ es:
   Volunteer: Voluntario
   Volunteers: Voluntarios
   Welcome: Bienvenidos
- 

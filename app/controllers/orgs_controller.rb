@@ -56,6 +56,4 @@ respond_to :html, :xml, :json
 
 
 
-
-
 end

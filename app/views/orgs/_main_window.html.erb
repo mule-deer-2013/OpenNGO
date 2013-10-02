@@ -3,8 +3,7 @@
 
   <div class="org-main-window-panel">
 
-    <div class ="org-info-display"  id="org-homepage">
-     
+    <div class ="org-info-display"  id="org-homepage">   
       <div class="org-info-list">
         <ol> 
           <li><span><%=t("Mission")%></span>
@@ -135,23 +134,21 @@
 
         </ol> 
      </div>
- 
    </div>
 
 
     <div class="org-info-display" id="org-programs" >
-
-  <div class="org-info-list">
+      <div class="org-info-list">
         <ol> 
-          <li><span>History</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur. Fusce nec leo ut massa viverra venenatis. Nam accumsan libero a elit aliquet quis ullamcorper arcu tincidunt. Praesent purus turpis, consectetur quis congue vel, pulvinar at lorem. Vivamus varius condimentum dolor, quis ultricies ipsum porta quis. </p></li>
-          <li><span>Executive Board</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
-          <li><span>Staff</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
-          <li><span>Staff</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
-           <li><span>Staff</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
-            <li><span>Staff</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
-        </ol> 
-     </div>
 
+    
+            <li><span><%=t("Programs")%></span>
+            <p>
+              <%= render partial: 'program_table' %>
+            </p></li>
+
+        </ol> 
+      </div>
     </div>
 
     <div class="org-info-display" id="org-financials">

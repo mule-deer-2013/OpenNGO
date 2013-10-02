@@ -1,11 +1,13 @@
 
 <div class='org-side-window'>
   <div id='org-last-updated'><%=t(:Last_updated)+":" %></div>
+  <%if @org.has_valid_youtube? %>
   <div class='org-side-window-panel' id="youtube-panel">
-        <center><iframe width="300" height="225" src="//www.youtube.com/embed/LHKLS6TECTA?modestbranding=1&rel=0&showinfo=0&theme=light" frameborder="0" allowfullscreen></iframe>
+        <center><iframe width="300" height="225" src=<%=@org.youtube+ "?modestbranding=1&rel=0&showinfo=0&theme=light"%> frameborder="0" allowfullscreen alt=></iframe>
         <center>
   </div>
-<br>
+<br> 
+<%end%>
 
    <div class="org-side-window-panel">
 

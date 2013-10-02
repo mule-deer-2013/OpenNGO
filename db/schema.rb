@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130928180859) do
+ActiveRecord::Schema.define(:version => 20131002185602) do
 
   create_table "activities", :force => true do |t|
     t.string "description"
@@ -95,10 +95,10 @@ ActiveRecord::Schema.define(:version => 20130928180859) do
     t.integer  "transparency"
     t.string   "trans_policy"
     t.boolean  "code_conduct"
-    t.string   "external_auditor"
+    t.boolean  "external_auditor"
     t.string   "auditor_name"
-    t.string   "annual_reporting"
-    t.string   "external_prog_eval"
+    t.boolean  "annual_reporting"
+    t.boolean  "external_prog_eval"
     t.integer  "num_prog_ind"
     t.integer  "num_prog_org"
     t.integer  "num_prog_pub"

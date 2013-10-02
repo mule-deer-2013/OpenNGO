@@ -3,8 +3,7 @@
 
   <div class="org-main-window-panel">
 
-    <div class ="org-info-display"  id="org-homepage">
-     
+    <div class ="org-info-display"  id="org-homepage">   
       <div class="org-info-list">
         <ol> 
           <li><span><%=t("Mission")%></span>
@@ -66,31 +65,7 @@
               <%else%>
               <%= image_tag("cross.png", class: "check-or-cross") %>
               <% end %>
-              <span class="org-text-padding">Written Transparency Policy</span>
-              
-              <br>
-              <% if @org.vat_exempt %>
-              <%= image_tag("check.png", class: "check-or-cross") %>
-              <%else%>
-              <%= image_tag("cross.png", class: "check-or-cross") %>
-              <% end %>
-              <span class="org-text-padding">VAT tax exempt</span>
-            
-             <br>
-              <% if @org.income_exempt %>
-              <%= image_tag("check.png", class: "check-or-cross") %>
-              <%else%>
-              <%= image_tag("cross.png", class: "check-or-cross") %>
-              <% end %>
-              <span class="org-text-padding">Income tax exempt</span>
-
-              <br>
-              <% if @org.tax_ded %>
-              <%= image_tag("check.png", class: "check-or-cross") %>
-              <%else%>
-              <%= image_tag("cross.png", class: "check-or-cross") %>
-              <% end %>
-              <span class="org-text-padding">Tax deductible for Argentine Donors</span>
+              <span class="org-text-padding"><%=t(:Transparency_Policy)%></span>
 
               <br>
               <% if @org.code_conduct %>
@@ -99,6 +74,31 @@
               <%= image_tag("cross.png", class: "check-or-cross") %>
               <% end %>
               <span class="org-text-padding">Written Code of Conduct</span>
+              
+              <br>
+              <% if @org.vat_exempt %>
+              <%= image_tag("check.png", class: "check-or-cross") %>
+              <%else%>
+              <%= image_tag("cross.png", class: "check-or-cross") %>
+              <% end %>
+              <span class="org-text-padding"><%=t(:VAT_Exempt)%></span>
+            
+              <br>
+              <% if @org.income_exempt %>
+              <%= image_tag("check.png", class: "check-or-cross") %>
+              <%else%>
+              <%= image_tag("cross.png", class: "check-or-cross") %>
+              <% end %>
+              <span class="org-text-padding"><%=t(:Income_Tax_Exempt)%></span>
+
+              <br>
+              <% if @org.tax_ded %>
+              <%= image_tag("check.png", class: "check-or-cross") %>
+              <%else%>
+              <%= image_tag("cross.png", class: "check-or-cross") %>
+              <% end %>
+              <span class="org-text-padding"><%=t(:Tax_Deductible)%></span>
+
 
               <br>
               <% if @org.external_auditor %>
@@ -107,7 +107,7 @@
               <%= image_tag("cross.png", class: "check-or-cross") %>
               <% end %>
               <span class="org-text-padding">Annual External audit of finances
-                <% if @org.external_auditor %> 
+                <% if @org.auditor_name %> 
                 <br><font size="small"><%="-  "%></font>
                 <% end %>
               </span>
@@ -135,23 +135,21 @@
 
         </ol> 
      </div>
- 
    </div>
 
 
     <div class="org-info-display" id="org-programs" >
-
-  <div class="org-info-list">
+      <div class="org-info-list">
         <ol> 
-          <li><span>History</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur. Fusce nec leo ut massa viverra venenatis. Nam accumsan libero a elit aliquet quis ullamcorper arcu tincidunt. Praesent purus turpis, consectetur quis congue vel, pulvinar at lorem. Vivamus varius condimentum dolor, quis ultricies ipsum porta quis. </p></li>
-          <li><span>Executive Board</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
-          <li><span>Staff</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
-          <li><span>Staff</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
-           <li><span>Staff</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
-            <li><span>Staff</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
-        </ol> 
-     </div>
 
+    
+            <li><span><%=t("Programs")%></span>
+            <p>
+              <%= render partial: 'program_table' %>
+            </p></li>
+
+        </ol> 
+      </div>
     </div>
 
     <div class="org-info-display" id="org-financials">

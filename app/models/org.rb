@@ -45,6 +45,7 @@ class Org < ActiveRecord::Base
 
   private
   def schedule_solr_reindex
+    puts "*"*80
     SolrReindexWorker.perform_async(self.class.name)
   end
 

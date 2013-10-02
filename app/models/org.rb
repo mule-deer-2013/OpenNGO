@@ -41,7 +41,7 @@ class Org < ActiveRecord::Base
 
 
   def has_valid_youtube?
-    self.youtube.include?("www.youtube.com")
+    self.youtube.include?("www.youtube.com/embed")
   end
 
   private

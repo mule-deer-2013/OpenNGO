@@ -118,6 +118,7 @@ LEVELS = [3,2,1,0]
   num_prog_ind: Random.rand(0..20),
   num_prog_org:Random.rand(0..20),
   num_prog_pub:Random.rand(0..20),
+  twitter:"CIPPEC"
     
 )}
 

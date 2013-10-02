@@ -8,8 +8,8 @@
 <%= form_for @org do |f| %>
 	
   
-  	<%= f.label(:org_name, "Organization Name:", :html => { :class => "right inline" }) %>
-  	<%= f.text_field  :name, :html => { :id => "right-label" }, :placeholder => "e.g. Fundacion HelpArgentina" %><br />
+	<%= f.label(:org_name, "Organization Name:") %>
+	<%= f.text_field  :name, :placeholder => "e.g. Fundacion HelpArgentina" %><br />
 
 
  	<%= f.label(:org_initiales, "Organization Initials:") %>
@@ -24,8 +24,18 @@
   <%= f.label(:city, "City:") %>
   <%= f.text_field  :city, placeholder: "e.g. Buenos Aires" %><br />
 
-  <%= f.label(:province, "Province:") %>
-  <%= f.select :province, @provincenames %><br /><br />
+  <%= f.fields_for :locations do |ff| %>
+    <%= ff.label(:primary_province, "Province: (primary)") %>
+    <%= ff.select :province_id, @provincearray %>
+    <%= ff.hidden_field :primary, value: true  %><br /><br />
+  <% end %>
+
+  <%= label_tag 'provinces', 'Other Provinces of Focus:' %>
+  <% @provinces.each do |province| %>
+    <%= check_box_tag "provinces[]", province.id %> <%= province.name %>
+    <%= hidden_field_tag :primary, value: false  %><br />
+  <% end %>
+   <br /><br />
 
   <%= f.label(:telephone, "Telephone:") %>
   <%= f.telephone_field(:telephone, placeholder: "(0 54 11) 43849009") %>
@@ -117,19 +127,40 @@
   <%= f.fields_for :objectives do |o| %>
     <%= o.text_area :summary, rows: 3, placeholder: "e.g. Asesorar a donantes (tanto individuos como organizaciones) en sus procesos de inversión social en la Argentina." %>
   <% end %>  
-
-  <%= f.fields_for :cause do |ff| %>
-    <%= ff.label(:description, "Causes:") %>
-    <%= ff.select :description, @causenames %>
+    <p class="markup-text">NEEDS TO SHOW ONE BOX AND DYNAMICALLY ADD NEW ONES</p>
+  
+  <%= label_tag 'causes', 'Causes:' %>
+  <% @causes.each do |cause| %>
+    <%= check_box_tag "causes[]", cause.id %> <%= cause.description %><br>
   <% end %>
   <br /><br />
-
-  <%= f.fields_for :age do |ff| %>
-    <%= ff.label(:description, "Age Groups:") %>
-    <%= ff.select :description, @agegroups %>
+  
+  <%= label_tag 'ages', 'Age Groups:' %>
+  <% @ages.each do |age| %>
+    <%= check_box_tag "ages[]", age.id %> <%= age.description %><br>
   <% end %>
-  <br /><br />
+   <br /><br />
 
+
+  <%= label_tag 'activities', 'Activity Type:' %>
+  <% @activities.each do |activity| %>
+    <%= check_box_tag "activities[]", activity.id %> <%= activity.description %><br>
+  <% end %><br>
+
+
+  <%= f.fields_for :branches do |ff| %>
+    <%= ff.label(:description, "Branches:") %>
+    <%= ff.text_area :description, rows: 3, placeholder: "e.g. Ctro de Recuperación Nutricional 'Madre Teresa de Calcuta'" %>
+  <% end %>
+  <%= f.fields_for :branches do |ff| %>
+    <%= ff.text_area :description, rows: 3, placeholder: "e.g. Ctro de Recuperación Nutricional 'Madre Teresa de Calcuta'" %>
+  <% end %>
+  <%= f.fields_for :branches do |ff| %>
+    <%= ff.text_area :description, rows: 3, placeholder: "e.g. Ctro de Recuperación Nutricional 'Madre Teresa de Calcuta'" %>
+  <% end %>
+  <p class="markup-text">NEEDS TO SHOW ONE BOX AND DYNAMICALLY ADD NEW ONES</p>
+  <br /><br />
+  
   
 
 

@@ -25,28 +25,45 @@ respond_to :html, :xml, :json
   end
 
   def new
-  	@org = Org.new
+    @org = Org.new
 
-  @org.objectives << Objective.new
+    @org.objectives.build
+    @org.branches.build
+    @org.locations.build
 
-  @org.legal = Legal.new
-  @legalnames = Legal.pluck(:legal_type)
-  @provincenames = Province.pluck(:name)
-  @causenames = Cause.pluck(:description)
-  @agegroups = Age.pluck(:description)
+    @org.build_legal
+    # @org.ages.build
 
+    @legalnames = Legal.pluck(:legal_type)
+
+    @provincenames = Province.pluck(:name)
+    @provinceids = Province.pluck(:id)
+    @provincearray = @provincenames.zip(@provinceids)
+
+    @causes = Cause.all
+    @ages = Age.all
+    @provinces = Province.all
+    @activities = Activity.all
+
+    @agegroups = Age.pluck(:description)
   end
 
   def create
-  	puts "*" * 100
-  	@org = Org.create(params[:org])
-  puts "*" * 100
-  	if @org.save
-  		redirect_to org_path(@org)
-  	else
-  		@errors = @org.errors.full_messages
-  		redirect_to new_org_path	
-  	end
-  end
 
+    puts "*" * 100
+    puts params
+    puts "*" * 100
+    @org = Org.new(params[:org])
+    @org.causes << Cause.where(:id => params[:causes])
+    @org.ages << Age.where(:id => params[:ages])
+    @org.locations << Location.where(:id => params[:provinces])
+    @org.activities << Activity.where(:id => params[:activities])
+
+    if @org.save
+      redirect_to org_path(@org)
+    else
+      @errors = @org.errors.full_messages
+      redirect_to new_org_path  
+    end
+  end
 end

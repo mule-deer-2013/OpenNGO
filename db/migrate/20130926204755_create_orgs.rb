@@ -6,7 +6,6 @@ class CreateOrgs < ActiveRecord::Migration
       t.string :preferred_name
       t.string :logo_url
       t.string :address
-      t.string :province
       t.string :city
       t.boolean :int_branch
       t.string :telephone

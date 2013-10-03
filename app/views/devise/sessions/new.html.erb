@@ -1,5 +1,10 @@
+
 <div class="row">
+  
   <div class="small-9 small-centered large-uncentered columns">
+     <% if alert %>
+     <h3> <span class="radius alert label"><%= alert %></span></h3>
+    <% end %>
     <h2>Sign in</h2>
 
     <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
@@ -8,10 +13,12 @@
         <%= f.input :password, :required => false %>
         <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
       </div>
-
+      <br>
       <div class="form-actions">
-        <%= f.button :submit, "Sign in" %>
+        <%= f.button :submit, "Sign in", :class => "button radius" %>
       </div>
     <% end %>
+
   </div>
+ 
 </div>

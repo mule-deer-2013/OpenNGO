@@ -36,6 +36,9 @@ respond_to :html, :xml, :json
   @org.branches.build
   @org.locations.build
   @org.programs.build
+  @org.affiliations.build
+  @org.networks.build
+  @org.prizes.build
   board = @org.build_board
   board.people.build
   advisory = @org.build_advisory
@@ -71,7 +74,7 @@ respond_to :html, :xml, :json
   @org.locations << Location.where(:id => params[:provinces])
   # @org.people << Person.where(:id => params[:people])
   @org.activities << Activity.where(:id => params[:activities])
-  @org.affiliations << affiliations.where(:id => params[:affiliations])
+  # @org.affiliations << affiliations.where(:id => params[:affiliations])
   
  	if @org.save
  		redirect_to org_path(@org)

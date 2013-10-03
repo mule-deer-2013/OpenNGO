@@ -308,20 +308,51 @@
 
 </fieldset>
 
-<fieldset>
-  <h2>FINANCIALS</h2>
-</fieldset>
 
 <fieldset>
-  <h2>AFFILIATIONS</h2>
+  <h2>FINANCIALS</h2>
+
+  <h4>Balance Sheets</h4>
+
+  <h4>Income Statements</h4>
+
+  <h4>Institutional Donations</h4>
+</fieldset>
+
+
+<fieldset>
+  <h4>Affiliations</h4>
   <%= f.fields_for :affiliations do |a| %>
     <%= a.label(:aff_name, "Name:") %>
-    <%= a.text_field :aff_name, placeholder: "e.g. Fundación Navarro Viola" %>
+    <%= a.text_field :aff_name, placeholder: "e.g. Fundacion Navarro Viola" %>
     <%= a.label(:aff_type, "Type of Institution:") %>
-    <%= a.select(:aff_type, @affilitypes) %>
-    <%= a.label(:aff_description, "Description of the collaboration:") %>
-    <%= a.text_area :aff_description, placeholder: "e.g. Co-gestión del Concurso de Proyectos Sociales (“nuestros Mayores”)." %>
+    <%= a.select(:aff_type, @affilitypes) %><br><br>
+    <%= a.label(:aff_description, "Description of the Collaboration:") %>
+    <%= a.text_area :aff_description, placeholder: "e.g. Co-gestion del Concurso de Proyectos Sociales ('nuestros Mayores')." %>
   <% end %>
+  <p class="markup-text">NEEDS TO SHOW ONE SET OF FIELDS AND DYNAMICALLY ADD NEW ONES</p>
+
+  <h4>Networks</h4>
+  <%= f.fields_for :networks do |n| %>
+    <%= n.label(:net_name, "Name:") %>
+    <%= n.text_field :net_name, placeholder: "e.g. RACI" %>
+    <%= n.label(:net_scope, "Scope:") %>
+    <%= n.text_field(:net_scope, placeholder: "e.g. Nacional") %>
+    <%= n.label(:net_status, "Status within the network:") %>
+    <%= n.text_field :net_status, placeholder: "e.g. Miembro Fundador" %>
+  <% end %>
+  <p class="markup-text">NEEDS TO SHOW ONE SET OF FIELDS AND DYNAMICALLY ADD NEW ONES</p>
+
+  <h4>Prizes and Recognitions</h4>
+  <%= f.fields_for :prizes do |p| %>
+    <%= p.label(:prize_name, "Name:") %>
+    <%= p.text_field :prize_name, placeholder: "e.g. Mejor Think Tanks de Argentina" %>
+    <%= p.label(:prize_date, "Date:") %>
+    <%= p.date_select(:prize_date, order: [:day, :month, :year]) %><br><br>
+    <%= p.label(:prize_giver, "Awarding Institution:") %>
+    <%= p.text_field :prize_giver, placeholder: "e.g. Universidad de Pennsylvania" %>
+  <% end %>
+<p class="markup-text">NEEDS TO SHOW ONE SET OF FIELDS AND DYNAMICALLY ADD NEW ONES</p>
 </fieldset>
 
 

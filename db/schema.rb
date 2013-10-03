@@ -61,6 +61,15 @@ ActiveRecord::Schema.define(:version => 20131002231454) do
     t.integer "cause_id"
   end
 
+  create_table "instit_donors", :force => true do |t|
+    t.string  "inst_name"
+    t.string  "int_type"
+    t.string  "purpose"
+    t.date    "year"
+    t.integer "amount"
+    t.integer "org_id"
+  end
+
   create_table "legals", :force => true do |t|
     t.string  "legal_type"
     t.integer "org_id"
@@ -70,6 +79,13 @@ ActiveRecord::Schema.define(:version => 20131002231454) do
     t.boolean "primary"
     t.integer "org_id"
     t.integer "province_id"
+  end
+
+  create_table "networks", :force => true do |t|
+    t.string  "net_name"
+    t.string  "net_scope"
+    t.string  "net_status"
+    t.integer "org_id"
   end
 
   create_table "objectives", :force => true do |t|
@@ -143,6 +159,13 @@ ActiveRecord::Schema.define(:version => 20131002231454) do
     t.string  "out_position"
     t.integer "relationable_id"
     t.string  "relationable_type"
+  end
+
+  create_table "prizes", :force => true do |t|
+    t.string  "prize_name"
+    t.date    "prize_date"
+    t.string  "prize_giver"
+    t.integer "org_id"
   end
 
   create_table "programs", :force => true do |t|

@@ -156,9 +156,13 @@ Org.all.each do |seed_org|
   seed_org.ages << Age.find_by_description(AGES.sample)
   seed_org.legal = Legal.first
   seed_org.board = Board.create(btype: "executive board")
-  seed_org.affiliations << Affiliation.create(aff_name: "Fundacion Navarro Viola", aff_type: "Fundacion Nacional", aff_description: "Co-gestión del Concurso de Proyectos Socia
-les - 'nuestros Mayores'. ")
-  seed_org.affiliations << Affiliation.create(aff_name: "Embajada de Suiza", aff_type: "International Government", aff_description: "Colaboración en el desarrollo del Concurso 'Segundos para Todos'.")
+  seed_org.affiliations << Affiliation.create(aff_name: "Fundacion Navarro Viola", aff_type: "Fundacion Nacional", aff_description: "Co-gestion del Concurso de Proyectos Socia
+les - nuestros Mayores. ")
+  seed_org.affiliations << Affiliation.create(aff_name: "Embajada de Suiza", aff_type: "International Government", aff_description: "Colaboracion en el desarrollo del Concurso 'Segundos para Todos'.")
+  seed_org.networks << Network.create(net_name: "RACI", net_scope: "National", net_status: "Member")
+  seed_org.networks << Network.create(net_name: "AEDROS", net_scope: "National", net_status: "Member")
+  seed_org.prizes << Prize.create(prize_name: "Mejor Think Tanks de Argentina", prize_date: '31-12-2010' , prize_giver: "Universidad de Pennsylvania")
+  seed_org.prizes << Prize.create(prize_name: "Premio Juscelino Kubitchek", prize_date: '31-02-2010', prize_giver: "BID")
   seed_org.board.people << Person.create(name: Faker::Name.name)
   seed_org.board.people << Person.create(name: Faker::Name.name)
   seed_org.advisory = Advisory.create()

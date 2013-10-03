@@ -135,6 +135,21 @@ class CreateOrgs < ActiveRecord::Migration
       t.belongs_to :org
     end
 
+    create_table :networks do |t|
+      t.string :net_name
+      t.string :net_scope
+      t.string :net_status
+      t.belongs_to :org
+    end
+
+    create_table :prizes do |t|
+      t.string :prize_name
+      t.date :prize_date
+      t.string :prize_giver
+      t.belongs_to :org
+    end
+
+
 
  end
 end

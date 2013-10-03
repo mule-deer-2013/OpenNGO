@@ -12,6 +12,8 @@ describe Org do
   it { should have_one(:board)}
   it { should have_one(:advisory)}
   it { should have_many(:programs)}
+  it { should have_many{:affiliations}}
+  it { should have_many{:networks}}
 end
 
 
@@ -64,6 +66,14 @@ describe Objective do
 end
 
 describe Program do
+  it { should belong_to(:org)}
+end
+
+describe Affiliation do
+  it { should belong_to(:org)}
+end
+
+describe Network do
   it { should belong_to(:org)}
 end
 

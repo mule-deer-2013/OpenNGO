@@ -11,17 +11,23 @@
   <div class="fixed">
     <nav class="top-bar" data-options="is_hover:false">
       <ul class="title-area">
-        <li class="name"><a href="/"><%=image_tag 'Logo.png', :class => "logo" %></a></li>
+        <li class="name"><a href="/"><%=image_tag 'logo.png', :class => "logo" %></a></li>
       </ul>
+    
       <section class="top-bar-section" data-options="is_hover:false">
         <ul class="right">
           <li><%= link_to 'About', page_path('about')%></li>
-          <li><a href="#">Login</a></li>
-          <li><a href="/orgs/new" class="tiny button radius">Sign Up</a></li>
+          <% if user_signed_in? %>
+          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => "tiny button radius" %></li>
+          <% else %>
+          <li><%= link_to 'Sign In', new_user_session_path %></li>
+          <li><%= link_to 'Sign Up', new_user_registration_path, :class => "tiny button radius" %></li>
+          <% end %>
         </ul>
       </section>
     </nav>
   </div>
+  
   <div class="container">
     <%= yield %>
   </div>

@@ -1,4 +1,7 @@
-
+.show-container {
+  background-color: white;
+  min-height: 1300px;
+}
 
 .org-side-window-panel {
   width:100%;

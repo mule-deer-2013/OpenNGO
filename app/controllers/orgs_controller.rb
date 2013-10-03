@@ -1,7 +1,8 @@
 class OrgsController < ApplicationController
 
-respond_to :html, :xml, :json, :csv
+before_filter :authenticate_user!, :except => [:index, :search, :show]
 
+respond_to :html, :xml, :json, :csv
 
   def index
   end
@@ -81,11 +82,12 @@ respond_to :html, :xml, :json, :csv
     puts "*" * 100
     puts params
     puts "*" * 100
-    @org = Org.new(params[:org])
+    @org = current_user.build_org params[:org]
     @org.causes << Cause.where(:id => params[:causes])
     @org.ages << Age.where(:id => params[:ages])
     @org.locations << Location.where(:id => params[:provinces])
     @org.activities << Activity.where(:id => params[:activities])
+    @org.user 
 
     if @org.save
       redirect_to org_path(@org)

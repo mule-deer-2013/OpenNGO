@@ -2,7 +2,7 @@ include ApplicationHelper
 
 class Org < ActiveRecord::Base
   after_commit :schedule_solr_reindex
-  
+  belongs_to :user
   has_many :objectives
   has_many :branches
   has_many :locations

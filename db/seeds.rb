@@ -80,6 +80,18 @@ AGES = [
     "Confederacion"
   ]
 
+ INSTITUTION = [
+    "International Foundation",
+    "Business",
+    "National Foundation",
+    "International Government",
+    "Local Government",
+    "International Organization",
+    "ONG",
+    "Educational Institution"
+  ]
+
+
 
 
 LEVELS = [3,2,1,0]
@@ -130,7 +142,6 @@ ACTIVITIES.each {|act| Activity.create(description: act)}
 AGES.each {|age| Age.create(description: age)}
 LEGALS.each {|type| Legal.create(legal_type: type)}
 
-
 Org.all.each do |seed_org|
   3.times do
     myloc = Location.new(primary: false)
@@ -148,6 +159,12 @@ Org.all.each do |seed_org|
   seed_org.ages << Age.find_by_description(AGES.sample)
   seed_org.legal = Legal.first
   seed_org.board = Board.create(btype: "executive board")
+  seed_org.affiliations << Affiliation.create(aff_name: "Fundacion Navarro Viola", aff_type: "National Foundation", aff_description: "Co-gestion del Concurso de Proyectos Sociales - nuestros Mayores. ")
+  seed_org.affiliations << Affiliation.create(aff_name: "Embajada de Suiza", aff_type: "International Government", aff_description: "Colaboracion en el desarrollo del Concurso 'Segundos para Todos'.")
+  seed_org.networks << Network.create(net_name: "RACI", net_scope: "National", net_status: "Member")
+  seed_org.networks << Network.create(net_name: "AEDROS", net_scope: "National", net_status: "Member")
+  seed_org.prizes << Prize.create(prize_name: "Mejor Think Tanks de Argentina", prize_date: '31-12-2010' , prize_giver: "Universidad de Pennsylvania")
+  seed_org.prizes << Prize.create(prize_name: "Premio Juscelino Kubitchek", prize_date: '31-02-2010', prize_giver: "BID")
   seed_org.board.people << Person.create(name: Faker::Name.name)
   seed_org.board.people << Person.create(name: Faker::Name.name)
   seed_org.advisory = Advisory.create()

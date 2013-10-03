@@ -150,6 +150,9 @@ fieldset #search-submit {
   background-color: $awhite;
   text-align: center;
   padding-top: 15px;
+    div:last-child {
+      border: none;
+    }
     div {
     float:left;
     border-right: 1px solid #eee;
@@ -174,7 +177,8 @@ fieldset #search-submit {
     margin-top: 20px;
   }
   .apply{
-    margin-top: 0px;
+    font-size: 15px;
+    margin-top: 15px;
     margin-right: 25px;
     padding: 10px;
     padding-left: 15px;

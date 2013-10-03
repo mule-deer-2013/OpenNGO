@@ -35,6 +35,26 @@ ActiveRecord::Schema.define(:version => 20131003170453) do
     t.integer "age_id"
   end
 
+  create_table "balances", :force => true do |t|
+    t.integer "assets_total"
+    t.integer "assets_current"
+    t.integer "assets_long"
+    t.integer "liab_current"
+    t.integer "liab_long"
+    t.integer "net_equity"
+    t.date    "bal_date"
+    t.integer "org_id"
+  end
+
+  create_table "bigdonors", :force => true do |t|
+    t.string  "inst_name"
+    t.string  "int_type"
+    t.string  "purpose"
+    t.date    "year"
+    t.integer "amount"
+    t.integer "org_id"
+  end
+
   create_table "boards", :force => true do |t|
     t.string  "btype"
     t.integer "org_id"
@@ -52,6 +72,26 @@ ActiveRecord::Schema.define(:version => 20131003170453) do
   create_table "causes_orgs", :force => true do |t|
     t.integer "org_id"
     t.integer "cause_id"
+  end
+
+  create_table "incomes", :force => true do |t|
+    t.date    "start_date"
+    t.date    "end_date"
+    t.integer "total_revenue"
+    t.integer "ind_donors"
+    t.integer "member_fees"
+    t.integer "govt"
+    t.integer "companies"
+    t.integer "int_aid"
+    t.integer "sales"
+    t.integer "investments"
+    t.integer "other"
+    t.integer "total_expense"
+    t.integer "program_exp"
+    t.integer "admin_exp"
+    t.integer "fundraising_exp"
+    t.integer "net_income"
+    t.integer "org_id"
   end
 
   create_table "legals", :force => true do |t|
@@ -123,6 +163,20 @@ ActiveRecord::Schema.define(:version => 20131003170453) do
     t.string  "out_position"
     t.integer "relationable_id"
     t.string  "relationable_type"
+  end
+
+  create_table "programs", :force => true do |t|
+    t.string  "pro_name"
+    t.string  "pro_goal"
+    t.string  "pro_description"
+    t.string  "pro_target"
+    t.string  "pro_location"
+    t.string  "pro_budget"
+    t.string  "pro_funding_sources"
+    t.string  "pro_affiliations"
+    t.string  "pro_metrics"
+    t.string  "pro_results"
+    t.integer "org_id"
   end
 
   create_table "provinces", :force => true do |t|

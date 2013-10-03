@@ -42,6 +42,20 @@ class CreateOrgs < ActiveRecord::Migration
       t.integer :volunteers
       t.string :youtube
       t.string :twitter
+      t.string :linkedin
+      t.string :facebook
+      t.boolean :articles_web
+      t.boolean :articles_office
+      t.boolean :bylaws_web
+      t.boolean :bylaws_office
+      t.boolean :appts_web
+      t.boolean :appts_office
+      t.boolean :inscript_web
+      t.boolean :inscript_office
+      t.boolean :boardres_web
+      t.boolean :boardres_office
+      t.boolean :report_web
+      t.boolean :report_office
 
       t.timestamps
     end

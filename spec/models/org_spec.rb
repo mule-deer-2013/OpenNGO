@@ -11,6 +11,7 @@ describe Org do
   it { should have_many(:provinces).through(:locations) }
   it { should have_one(:board)}
   it { should have_one(:advisory)}
+  it { should have_many(:programs)}
 end
 
 
@@ -59,6 +60,10 @@ describe Legal do
 end
 
 describe Objective do
+  it { should belong_to(:org)}
+end
+
+describe Program do
   it { should belong_to(:org)}
 end
 

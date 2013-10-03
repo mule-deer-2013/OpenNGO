@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130928180859) do
+ActiveRecord::Schema.define(:version => 20131002231454) do
 
   create_table "activities", :force => true do |t|
     t.string "description"
@@ -76,7 +76,6 @@ ActiveRecord::Schema.define(:version => 20130928180859) do
     t.string   "preferred_name"
     t.string   "logo_url"
     t.string   "address"
-    t.string   "province"
     t.string   "city"
     t.boolean  "int_branch"
     t.string   "telephone"
@@ -95,10 +94,10 @@ ActiveRecord::Schema.define(:version => 20130928180859) do
     t.integer  "transparency"
     t.string   "trans_policy"
     t.boolean  "code_conduct"
-    t.string   "external_auditor"
+    t.boolean  "external_auditor"
     t.string   "auditor_name"
-    t.string   "annual_reporting"
-    t.string   "external_prog_eval"
+    t.boolean  "annual_reporting"
+    t.boolean  "external_prog_eval"
     t.integer  "num_prog_ind"
     t.integer  "num_prog_org"
     t.integer  "num_prog_pub"
@@ -113,6 +112,20 @@ ActiveRecord::Schema.define(:version => 20130928180859) do
     t.integer  "volunteers"
     t.string   "youtube"
     t.string   "twitter"
+    t.string   "linkedin"
+    t.string   "facebook"
+    t.boolean  "articles_web"
+    t.boolean  "articles_office"
+    t.boolean  "bylaws_web"
+    t.boolean  "bylaws_office"
+    t.boolean  "appts_web"
+    t.boolean  "appts_office"
+    t.boolean  "inscript_web"
+    t.boolean  "inscript_office"
+    t.boolean  "boardres_web"
+    t.boolean  "boardres_office"
+    t.boolean  "report_web"
+    t.boolean  "report_office"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end
@@ -125,10 +138,24 @@ ActiveRecord::Schema.define(:version => 20130928180859) do
     t.string  "relationable_type"
   end
 
+  create_table "programs", :force => true do |t|
+    t.string  "pro_name"
+    t.string  "pro_goal"
+    t.text  "pro_description"
+    t.string  "pro_target"
+    t.string  "pro_location"
+    t.integer  "pro_budget"
+    t.string  "pro_funding_sources"
+    t.string  "pro_affiliations"
+    t.string  "pro_metrics"
+    t.string  "pro_results"
+    t.integer "org_id"
+  end
+
   create_table "provinces", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
+  endnamepeople
 
 end

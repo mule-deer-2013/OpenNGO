@@ -35,6 +35,11 @@ respond_to :html, :xml, :json
   @org.objectives.build
   @org.branches.build
   @org.locations.build
+  @org.programs.build
+  board = @org.build_board
+  board.people.build
+  advisory = @org.build_advisory
+  advisory.people.build
 
   @org.build_legal
   # @org.ages.build
@@ -62,6 +67,7 @@ respond_to :html, :xml, :json
   @org.causes << Cause.where(:id => params[:causes])
   @org.ages << Age.where(:id => params[:ages])
   @org.locations << Location.where(:id => params[:provinces])
+  # @org.people << Person.where(:id => params[:people])
   @org.activities << Activity.where(:id => params[:activities])
   
  	if @org.save

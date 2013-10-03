@@ -46,6 +46,13 @@ class Org < ActiveRecord::Base
     self.youtube.include?("www.youtube.com/embed")
   end
 
+  def to_csv(option = {})
+    CSV.generate do |csv|
+      csv << self.attributes.keys
+      csv << self.attributes.values
+    end
+  end
+
   private
   def schedule_solr_reindex
     SolrReindexWorker.perform_async(self.class.name)

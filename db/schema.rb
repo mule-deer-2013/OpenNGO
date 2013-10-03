@@ -76,7 +76,6 @@ ActiveRecord::Schema.define(:version => 20131002185602) do
     t.string   "preferred_name"
     t.string   "logo_url"
     t.string   "address"
-    t.string   "province"
     t.string   "city"
     t.boolean  "int_branch"
     t.string   "telephone"

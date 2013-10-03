@@ -10,6 +10,7 @@ gem 'sidekiq'
 
 gem 'high_voltage'
 gem 'simple_form'
+gem 'devise'
 
 
 group :production do

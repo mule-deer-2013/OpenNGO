@@ -1,76 +1,22 @@
-
 <div class="filter">
-  <div class="transparency">
-    <p>TRANSPARENCY LEVEL</p>
-    <select id="customDropdown" class="small">
-      <option DISABLED>Transparency level</option>
-      <option>3</option>
-      <option>2</option>
-      <option>1</option>
-      <option>0</option>
-    </select>
-  </div>
-  <div class="cause">
-    <p>CAUSE</p>
-    <select id="customDropdown" class="small">
-      <option DISABLED>Cause</option>
-      <option>Sciene & Technology</option>
-      <option>Sports</option>
-      <option>Human Rights</option>
-      <option>Arts and Culture</option>
-      <option>Community Development</option>
-      <option>Disabilities</option>
-      <option>Education</option>
-      <option>Institutional Development</option>
-      <option>Gender & Equality</option>
-      <option>Ethnic & Indigenous Populations</option>
-      <option>Environment</option>
-      <option>Media & Communication</option>
-      <option>Health & Nutrition</option>
-      <option>Public Policy</option>
-      <option>Housing Development</option>
-      <option>Social Work</option>
-      <option>Other</option>
-    </select>
-  </div>
-  <div class="location">
-    <p>LOCATION</p>
-    <select id="customDropdown" class="small">
-      <option DISABLED>Location</option>
-      <option>Capital Federal</option>
-      <option>Buenos Aires</option>
-      <option>Catamarca</option>
-      <option>Chaco</option>
-      <option>Chubut</option>
-      <option>Cordoba</option>
-      <option>Corrientes</option>
-      <option>Entre Rios</option>
-      <option>Formosa</option>
-      <option>Jujuy</option>
-      <option>La Pampa</option>
-      <option>La Rioja</option>
-      <option>Mendoza</option>
-      <option>Misiones</option>
-      <option>Neuquen</option>
-      <option>Rio Negro</option>
-      <option>Salta</option>
-      <option>San Juan</option>
-      <option>San Luis</option>
-      <option>Santa Cruz</option>
-      <option>Santa Fe</option>
-      <option>Santiage del Estero</option>
-      <option>Tierra del Fuego</option>
-      <option>Tucuman</option>
-    </select>
-  </div>
+
+<%= form_tag :search_orgs, method: :get do %>
+  <% @filters.each do |filter| %>
+    <div class="transparency">
+      <p><%= filter[:name].upcase %></p>
+      <%= select("filter", filter[:name], filter[:options], {include_blank: 'None', :selected => @defaults[filter[:name].to_sym] || "None"}) %>
+    </div>
+  <% end %>
+
   <a href="#" data-dropdown="drop1" class="button dropdown secondary small radius">Advance</a><br>
   <ul id="drop1" class="f-dropdown">
     <li><a href="#">This is a link</a></li>
     <li><a href="#">This is another</a></li>
     <li><a href="#">Yet another</a></li>
   </ul>
-  <a href="#" class="small button radius alert apply">Apply</a>
-
+  
+  <%= submit_tag("Apply", :class => "small button radius alert apply") %>
+<% end %> 
 </div>
 
 <div class="search-sum">
@@ -84,9 +30,10 @@
       </select>
     </div>
     <div class="large-9 pull-3 columns">
+      <h5 class="subheader"><%= @search_results.count %> organizations found</h5>
     </div>
   </div>
- 
+
 </div>
 
 

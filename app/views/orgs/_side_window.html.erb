@@ -1,27 +1,28 @@
 
 <div class='org-side-window'>
   <div id='org-last-updated'><%=t(:Last_updated)+":" %></div>
+  <%if @org.has_valid_youtube? %>
   <div class='org-side-window-panel' id="youtube-panel">
-        <center><iframe width="300" height="225" src="//www.youtube.com/embed/LHKLS6TECTA?modestbranding=1&rel=0&showinfo=0&theme=light" frameborder="0" allowfullscreen></iframe>
+        <center><iframe width="300" height="225" src=<%=@org.youtube+ "?modestbranding=1&rel=0&showinfo=0&theme=light"%> frameborder="0" allowfullscreen alt=></iframe>
         <center>
   </div>
-<br>
-
+<br> 
+<%end%>
+  <%if @org.twitter? %>
    <div class="org-side-window-panel">
-
-
-<!-- Twitter widget below (http://twitterforweb.com) -->
-    <center>
-      <div style="width:300px;font-size:8px;text-align:right;"><script type="text/javascript">
-       document.write(unescape("%3Cscript src='http://twitterforweb.com/twitterbox.js?username=billclinton&settings=1,1,3,300,550,f4f4f4,1,,101010,1,1,336699' type='text/javascript'%3E%3C/script%3E"));</script>
-      </div>
-    <center>
-
-
-
+     <a class="twitter-timeline" height="400" href="https://twitter.com/<%=@org.twitter%>" data-widget-id="385510152339587072">Tweets by <%="@"+@org.twitter%></a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  <% end %>
    </div>
 
+   <div>
+    Download:
+    <%= link_to "CSV", org_path(format: "csv") %>
+    <%= link_to "Excel", org_path(format: "xls") %>
+   </div>
  </div>
+
+  
 
 
 

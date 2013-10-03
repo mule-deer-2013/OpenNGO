@@ -8,8 +8,13 @@ en:
   Branches: Branches
   Cause: Cause
   Causes: Causes
+  Income_Tax_Exempt: Income Tax Exempt
+  Individual: Individual
+  Individuals: Individuals
+  Financial: Financial
   Financials: Financials
   Full_time: Full time
+  General_Public: General Public
   Last_updated: Last_updated
   Mission: Mission
   Objective: Objectives
@@ -18,13 +23,14 @@ en:
   Organizations: Organizations
   Other: Other
   Part_time: Part time
-  Program: Programa
+  Program: Program
   Programs: Programs
   Search: Search
   Staff: Staff
+  Tax_Deductible: Tax-deductible for Argentine Donors
   Team: Team
   Test: Test
+  Transparency_Policy: Transparency Policy
+  VAT_Exempt: VAT exempt
   Volunteers: Volunteers
   Welcome: Welcome
-
-   

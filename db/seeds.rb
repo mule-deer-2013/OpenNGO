@@ -28,7 +28,7 @@ PROVINCES = [
 ]
 
 CAUSES = [
-  'Arts and Culture',
+  'Arts & Culture',
   'Crisis Response',
   'Science & Technology',
   'Sports',
@@ -125,9 +125,12 @@ LEVELS = [3,2,1,0]
   external_auditor: [true,false].sample,
   auditor_name: "Ernst & Young",
   annual_reporting: [true,false].sample,
-  external_prog_eval: [true,false].sample
-
-
+  external_prog_eval: [true,false].sample,
+  num_prog_ind: Random.rand(0..20),
+  num_prog_org:Random.rand(0..20),
+  num_prog_pub:Random.rand(0..20),
+  twitter:"CIPPEC"
+    
 )}
 
 

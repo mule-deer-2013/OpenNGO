@@ -56,6 +56,7 @@ class CreateOrgs < ActiveRecord::Migration
       t.boolean :boardres_office
       t.boolean :report_web
       t.boolean :report_office
+      t.boolean :approved
 
       t.timestamps
     end

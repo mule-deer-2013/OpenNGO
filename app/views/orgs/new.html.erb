@@ -135,18 +135,6 @@
 
 
 
-      <%= f.fields_for :objectives do |o| %>
-        <%= o.label(:summary, "Objectives:") %>
-        <%= o.text_area :summary, rows: 3, placeholder: "e.g. Asesorar a donantes (tanto individuos como organizaciones) en sus procesos de inversión social en la Argentina." %>
-      <% end %>  
-      <%= f.fields_for :objectives do |o| %>
-        <%= o.text_area :summary, rows: 3, placeholder: "e.g. Asesorar a donantes (tanto individuos como organizaciones) en sus procesos de inversión social en la Argentina." %>
-      <% end %>  
-      <%= f.fields_for :objectives do |o| %>
-        <%= o.text_area :summary, rows: 3, placeholder: "e.g. Asesorar a donantes (tanto individuos como organizaciones) en sus procesos de inversión social en la Argentina." %>
-      <% end %>  
-        <p class="markup-text">NEEDS TO SHOW ONE BOX AND DYNAMICALLY ADD NEW ONES</p>
-      
       <%= label_tag 'causes', 'Causes:' %>
       <% @causes.each do |cause| %>
         <%= check_box_tag "causes[]", cause.id %> <%= cause.description %><br>
@@ -167,18 +155,6 @@
 
 
       
-      <%= f.fields_for :branches do |ff| %>
-        <%= ff.label(:description, "Branches:") %>
-        <%= ff.text_area :description, rows: 3, placeholder: "e.g. Ctro de Recuperación Nutricional 'Madre Teresa de Calcuta'" %>
-      <% end %>
-      <%= f.fields_for :branches do |ff| %>
-        <%= ff.text_area :description, rows: 3, placeholder: "e.g. Ctro de Recuperación Nutricional 'Madre Teresa de Calcuta'" %>
-      <% end %>
-      <%= f.fields_for :branches do |ff| %>
-        <%= ff.text_area :description, rows: 3, placeholder: "e.g. Ctro de Recuperación Nutricional 'Madre Teresa de Calcuta'" %>
-      <% end %>
-      <p class="markup-text">NEEDS TO SHOW ONE BOX AND DYNAMICALLY ADD NEW ONES</p>
-
       <h3><%= f.label("Documentation Accessiblity") %></h3>
 
 
@@ -248,6 +224,37 @@
     <% end %>  
   
   <br><br>
+
+  <div class="objectives-form">
+  <%= f.fields_for :objectives do |o| %>
+    <%= o.label(:summary, "Objectives:") %>
+    <%= o.text_area :summary, rows: 3, placeholder: "e.g. Asesorar a donantes (tanto individuos como organizaciones) en sus procesos de inversión social en la Argentina." %>
+  <% end %>
+  </div>  
+    <div class="objectives-form">
+  <%= f.fields_for :objectives do |o| %>
+    <%= o.text_area :summary, rows: 3, placeholder: "e.g. Asesorar a donantes (tanto individuos como organizaciones) en sus procesos de inversión social en la Argentina." %>
+  <% end %>
+    </div>  
+    <div class="objectives-form">
+  <%= f.fields_for :objectives do |o| %>
+    <%= o.text_area :summary, rows: 3, placeholder: "e.g. Asesorar a donantes (tanto individuos como organizaciones) en sus procesos de inversión social en la Argentina." %>
+  <% end %>
+    </div>  
+    <div class="objectives-form">
+    <%= f.fields_for :objectives do |o| %>
+    <%= o.text_area :summary, rows: 3, placeholder: "e.g. Asesorar a donantes (tanto individuos como organizaciones) en sus procesos de inversión social en la Argentina." %>
+  <% end %>  
+    </div>
+    <div class="objectives-form">
+    <%= f.fields_for :objectives do |o| %>
+    <%= o.text_area :summary, rows: 3, placeholder: "e.g. Asesorar a donantes (tanto individuos como organizaciones) en sus procesos de inversión social en la Argentina." %>
+  <% end %>  
+    </div>
+
+  <a href="javascript:;" id="add-new-objective">Add New Objective </a>
+
+
   
   
     
@@ -372,6 +379,64 @@
 </fieldset>
 
 
+
+  <%= f.fields_for :branches do |ff| %>
+  <div class="branch-form" >
+    <%= ff.label(:description, "Branches:") %>
+    <%= ff.text_area :description, rows: 3, placeholder: "e.g. Ctro de Recuperación Nutricional 'Madre Teresa de Calcuta'" %>
+  </div>
+
+  <div class="branch-form" >
+    <%= ff.label(:description, "Branches:") %>
+    <%= ff.text_area :description, rows: 3, placeholder: "e.g. Ctro de Recuperación Nutricional 'Madre Teresa de Calcuta'" %>
+  </div>
+
+  <div class="branch-form" >
+    <%= ff.label(:description, "Branches:") %>
+    <%= ff.text_area :description, rows: 3, placeholder: "e.g. Ctro de Recuperación Nutricional 'Madre Teresa de Calcuta'" %>
+ </div>
+
+  <div class="branch-form" >
+    <%= ff.label(:description, "Branches:") %>
+    <%= ff.text_area :description, rows: 3, placeholder: "e.g. Ctro de Recuperación Nutricional 'Madre Teresa de Calcuta'" %>
+  </div>
+
+  <div class="branch-form" >
+    <%= ff.label(:description, "Branches:") %>
+    <%= ff.text_area :description, rows: 3, placeholder: "e.g. Ctro de Recuperación Nutricional 'Madre Teresa de Calcuta'" %>
+  </div>
+
+  <div class="branch-form" >
+    <%= ff.label(:description, "Branches:") %>
+    <%= ff.text_area :description, rows: 3, placeholder: "e.g. Ctro de Recuperación Nutricional 'Madre Teresa de Calcuta'" %>
+  </div>
+
+  <div class="branch-form" >
+    <%= ff.label(:description, "Branches:") %>
+    <%= ff.text_area :description, rows: 3, placeholder: "e.g. Ctro de Recuperación Nutricional 'Madre Teresa de Calcuta'" %>
+  </div>
+
+  <div class="branch-form" >
+    <%= ff.label(:description, "Branches:") %>
+    <%= ff.text_area :description, rows: 3, placeholder: "e.g. Ctro de Recuperación Nutricional 'Madre Teresa de Calcuta'" %>
+  </div>
+
+  <div class="branch-form" >
+    <%= ff.label(:description, "Branches:") %>
+    <%= ff.text_area :description, rows: 3, placeholder: "e.g. Ctro de Recuperación Nutricional 'Madre Teresa de Calcuta'" %>
+  </div>
+
+  <div class="branch-form" >
+    <%= ff.label(:description, "Branches:") %>
+    <%= ff.text_area :description, rows: 3, placeholder: "e.g. Ctro de Recuperación Nutricional 'Madre Teresa de Calcuta'" %>
+  </div>
+  <%end%>
+
+  <a href="javascript:;" id="add-new-branch">Add new Branch </a>
+  
+
+  
+  
 
 
 	<br /><br /><br />

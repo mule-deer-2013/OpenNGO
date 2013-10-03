@@ -8,6 +8,10 @@ es:
   Branches: Filiales
   Cause: Causa
   Causes: Causas
+  Income_Tax_Exempt: Exento Impuesto a las Ganacias
+  Individual: Individuo
+  Individuals: Individuos
+  Financial: Finanzas
   Financials: Finanzas
   Full_time: Permanente
   Part_time: Medio tiempo
@@ -21,11 +25,14 @@ es:
   Part_time: Medio tiempo
   Program: Programa
   Programs: Programas
+  General_Public: Publico General
   Search: Buscar
-  Staff: RRHH
+  Staff: RR.HH
+  Tax_Deductible: Desgravable para Donantes Argentinos
   Team: Equipo
   Test: Prueba
+  Transparency_Policy: Politica de Transparencia
+  VAT_Exempt: Exento de IVA
   Volunteer: Voluntario
   Volunteers: Voluntarios
   Welcome: Bienvenidos
- 

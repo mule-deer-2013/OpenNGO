@@ -42,7 +42,7 @@ class Org < ActiveRecord::Base
   attr_accessible :income_exempt, :tax_ded, :vat_exempt, :code_conduct, :external_auditor, :auditor_name, :annual_reporting, :external_prog_eval, :trans_policy
   attr_accessible :num_prog_ind, :num_prog_org, :num_prog_pub, :fte, :pte, :volunteers
   attr_accessible :certifier_name1, :certifier_name2, :certifier_title1, :certifier_title2, :leader_name, :leader_title
-  attr_accessible :articles_web, :articles_office, :bylaws_web, :bylaws_office, :appts_web, :appts_office, :inscript_web, :inscript_office, :boardres_web, :boardres_office, :report_web, :report_office
+  attr_accessible :articles_web, :approved, :articles_office, :bylaws_web, :bylaws_office, :appts_web, :appts_office, :inscript_web, :inscript_office, :boardres_web, :boardres_office, :report_web, :report_office
 
   has_many :people, :through => :board
   has_many :people, :through => :advisory
@@ -50,6 +50,7 @@ class Org < ActiveRecord::Base
 
   searchable :auto_index => true, :auto_remove => true do
     text :name, boost: 5
+    integer :transparency
   end
 
   def people
@@ -62,11 +63,17 @@ class Org < ActiveRecord::Base
 
   def board_members
     self.board ? self.board.people : []
+
+  def has_valid_youtube?
+    return false if self.youtube.nil? 
+    self.youtube.include?("www.youtube.com/embed")
   end
 
-  def has_video?
-    true  #setting this always to true for now.
-    #self.youtube
+  def to_csv(option = {})
+    CSV.generate do |csv|
+      csv << self.attributes.keys
+      csv << self.attributes.values
+    end
   end
 
   private

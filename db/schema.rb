@@ -27,10 +27,14 @@ ActiveRecord::Schema.define(:version => 20131003101338) do
   end
 
   create_table "affiliations", :force => true do |t|
-    t.string  "aff_name"
-    t.string  "aff_type"
-    t.string  "aff_description"
+    t.string "aff_name"
+    t.string "aff_type"
+    t.string "aff_description"
+  end
+
+  create_table "affiliations_orgs", :force => true do |t|
     t.integer "org_id"
+    t.integer "affiliation_id"
   end
 
   create_table "ages", :force => true do |t|
@@ -40,6 +44,17 @@ ActiveRecord::Schema.define(:version => 20131003101338) do
   create_table "ages_orgs", :force => true do |t|
     t.integer "org_id"
     t.integer "age_id"
+  end
+
+  create_table "balances", :force => true do |t|
+    t.integer "assets_total"
+    t.integer "assets_current"
+    t.integer "assets_long"
+    t.integer "liab_current"
+    t.integer "liab_long"
+    t.integer "net_equity"
+    t.date    "bal_date"
+    t.integer "org_id"
   end
 
   create_table "boards", :force => true do |t|
@@ -59,6 +74,26 @@ ActiveRecord::Schema.define(:version => 20131003101338) do
   create_table "causes_orgs", :force => true do |t|
     t.integer "org_id"
     t.integer "cause_id"
+  end
+
+  create_table "incomes", :force => true do |t|
+    t.date    "start_date"
+    t.date    "end_date"
+    t.integer "total_revenue"
+    t.integer "ind_donors"
+    t.integer "member_fees"
+    t.integer "govt"
+    t.integer "companies"
+    t.integer "int_aid"
+    t.integer "sales"
+    t.integer "investments"
+    t.integer "other"
+    t.integer "total_expense"
+    t.integer "program_exp"
+    t.integer "admin_exp"
+    t.integer "fundraising_exp"
+    t.integer "net_income"
+    t.integer "org_id"
   end
 
   create_table "instit_donors", :force => true do |t|
@@ -82,10 +117,14 @@ ActiveRecord::Schema.define(:version => 20131003101338) do
   end
 
   create_table "networks", :force => true do |t|
-    t.string  "net_name"
-    t.string  "net_scope"
-    t.string  "net_status"
+    t.string "net_name"
+    t.string "net_scope"
+    t.string "net_status"
+  end
+
+  create_table "networks_orgs", :force => true do |t|
     t.integer "org_id"
+    t.integer "network_id"
   end
 
   create_table "objectives", :force => true do |t|

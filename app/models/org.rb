@@ -7,8 +7,6 @@ class Org < ActiveRecord::Base
   has_many :branches
   has_many :locations
   has_many :programs
-  has_many :affiliations
-  has_many :networks
   has_many :prizes
   has_many :balances
   has_many :incomes
@@ -16,6 +14,8 @@ class Org < ActiveRecord::Base
   has_one :legal
   has_one :board
   has_one :advisory
+  has_and_belongs_to_many :affiliations
+  has_and_belongs_to_many :networks
   has_and_belongs_to_many :ages
   has_and_belongs_to_many :causes
   has_and_belongs_to_many :activities
@@ -33,8 +33,8 @@ class Org < ActiveRecord::Base
   accepts_nested_attributes_for :incomes, allow_destroy: true
   accepts_nested_attributes_for :instit_donors, allow_destroy: true
 
-
-  attr_accessible :legal_attributes, :objectives_attributes, :prizes_attributes, :networks_attributes, :affiliations_attributes, :programs_attributes, :causes_attributes, :branches_attributes, :board_attributes, :advisory_attributes, :activities_attributes, :ages_attributes, :locations_attributes
+  attr_accessible :networks_attributes, :affiliations_attributes 
+  attr_accessible :legal_attributes, :objectives_attributes, :prizes_attributes, :programs_attributes, :causes_attributes, :branches_attributes, :board_attributes, :advisory_attributes, :activities_attributes, :ages_attributes, :locations_attributes
   attr_accessible :balance_attributes, :income_attributes, :instit_donors_attributes
   attr_accessible :name, :initials, :preferred_name, :logo_url, :address, :mission, :objective, :transparency 
   attr_accessible :city, :int_branch, :telephone, :fax, :email, :website 

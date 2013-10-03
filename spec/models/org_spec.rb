@@ -12,8 +12,8 @@ describe Org do
   it { should have_one(:board)}
   it { should have_one(:advisory)}
   it { should have_many(:programs)}
-  it { should have_many{:affiliations}}
-  it { should have_many{:networks}}
+  it { should have_and_belong_to_many(:affiliations) }
+  it { should have_and_belong_to_many(:networks) }
 end
 
 
@@ -70,11 +70,11 @@ describe Program do
 end
 
 describe Affiliation do
-  it { should belong_to(:org)}
+  it { should have_and_belong_to_many(:orgs)}
 end
 
 describe Network do
-  it { should belong_to(:org)}
+  it { should have_and_belong_to_many(:orgs)}
 end
 
 describe Prize do

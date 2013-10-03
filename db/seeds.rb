@@ -156,8 +156,7 @@ Org.all.each do |seed_org|
   seed_org.ages << Age.find_by_description(AGES.sample)
   seed_org.legal = Legal.first
   seed_org.board = Board.create(btype: "executive board")
-  seed_org.affiliations << Affiliation.create(aff_name: "Fundacion Navarro Viola", aff_type: "Fundacion Nacional", aff_description: "Co-gestion del Concurso de Proyectos Socia
-les - nuestros Mayores. ")
+  seed_org.affiliations << Affiliation.create(aff_name: "Fundacion Navarro Viola", aff_type: "National Foundation", aff_description: "Co-gestion del Concurso de Proyectos Sociales - nuestros Mayores. ")
   seed_org.affiliations << Affiliation.create(aff_name: "Embajada de Suiza", aff_type: "International Government", aff_description: "Colaboracion en el desarrollo del Concurso 'Segundos para Todos'.")
   seed_org.networks << Network.create(net_name: "RACI", net_scope: "National", net_status: "Member")
   seed_org.networks << Network.create(net_name: "AEDROS", net_scope: "National", net_status: "Member")

@@ -10,9 +10,7 @@ class CreateBalances < ActiveRecord::Migration
         t.date :bal_date
         t.belongs_to :org
       end
-    end
 
-    def change
       create_table :incomes do |t|
         t.date :start_date
         t.date :end_date
@@ -32,9 +30,7 @@ class CreateBalances < ActiveRecord::Migration
         t.integer :net_income
         t.belongs_to :org
       end
-    end
 
-    def change
       create_table :instit_donors do |t|
         t.string :inst_name
         t.string :int_type
@@ -44,6 +40,5 @@ class CreateBalances < ActiveRecord::Migration
         t.belongs_to :org
       end
     end
-
 
 end

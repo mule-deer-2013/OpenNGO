@@ -132,14 +132,23 @@ class CreateOrgs < ActiveRecord::Migration
       t.string :aff_name
       t.string :aff_type
       t.string :aff_description
-      t.belongs_to :org
     end
+
+    create_table :affiliations_orgs do |t|
+      t.belongs_to :org
+      t.belongs_to :affiliation
+    end
+
 
     create_table :networks do |t|
       t.string :net_name
       t.string :net_scope
       t.string :net_status
+    end
+
+    create_table :networks_orgs do |t|
       t.belongs_to :org
+      t.belongs_to :network
     end
 
     create_table :prizes do |t|

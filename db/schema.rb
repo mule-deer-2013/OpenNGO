@@ -26,6 +26,17 @@ ActiveRecord::Schema.define(:version => 20131003170453) do
     t.integer "org_id"
   end
 
+  create_table "affiliations", :force => true do |t|
+    t.string "aff_name"
+    t.string "aff_type"
+    t.string "aff_description"
+  end
+
+  create_table "affiliations_orgs", :force => true do |t|
+    t.integer "org_id"
+    t.integer "affiliation_id"
+  end
+
   create_table "ages", :force => true do |t|
     t.string "description"
   end
@@ -105,6 +116,17 @@ ActiveRecord::Schema.define(:version => 20131003170453) do
     t.integer "province_id"
   end
 
+  create_table "networks", :force => true do |t|
+    t.string "net_name"
+    t.string "net_scope"
+    t.string "net_status"
+  end
+
+  create_table "networks_orgs", :force => true do |t|
+    t.integer "org_id"
+    t.integer "network_id"
+  end
+
   create_table "objectives", :force => true do |t|
     t.text    "summary"
     t.integer "org_id"
@@ -152,6 +174,21 @@ ActiveRecord::Schema.define(:version => 20131003170453) do
     t.integer  "volunteers"
     t.string   "youtube"
     t.string   "twitter"
+    t.string   "linkedin"
+    t.string   "facebook"
+    t.boolean  "articles_web"
+    t.boolean  "articles_office"
+    t.boolean  "bylaws_web"
+    t.boolean  "bylaws_office"
+    t.boolean  "appts_web"
+    t.boolean  "appts_office"
+    t.boolean  "inscript_web"
+    t.boolean  "inscript_office"
+    t.boolean  "boardres_web"
+    t.boolean  "boardres_office"
+    t.boolean  "report_web"
+    t.boolean  "report_office"
+    t.boolean  "approved"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.integer  "user_id"
@@ -163,6 +200,13 @@ ActiveRecord::Schema.define(:version => 20131003170453) do
     t.string  "out_position"
     t.integer "relationable_id"
     t.string  "relationable_type"
+  end
+
+  create_table "prizes", :force => true do |t|
+    t.string  "prize_name"
+    t.date    "prize_date"
+    t.string  "prize_giver"
+    t.integer "org_id"
   end
 
   create_table "programs", :force => true do |t|

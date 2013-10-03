@@ -1,14 +1,14 @@
 <table id="org-data-table">
   <thead>
-    <td><%= t(:Full_time) %></td>
-    <td><%= t(:Part_time) %></td>
-    <td><%= t("Volunteers") %></td>
+    <td><%= t("Individuals") %></td>
+    <td><%= t("Organizations") %></td>
+    <td><%= t(:General_Public) %></td>
   </thead>
 
   <tr>
-    <td><%= @org.fte %></td>
-    <td><%= @org.pte %></td>
-    <td><%= @org.volunteers %></td>
+    <td><%= @org.num_prog_ind %></td>
+    <td><%= @org.num_prog_org %></td>
+    <td><%= @org.num_prog_pub %></td>
   </tr>
 
 </table>

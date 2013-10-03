@@ -7,13 +7,15 @@
        <%=image_tag("linkedin-s.png", class: 'desaturate') %>
        
     </div>
-
-      <%= @org.name %><br>
-      <%= @org.address %><br>
-      <%= @org.city %>,<%= @province %><br>
-      <%= @org.telephone %><br>
-      <%= @org.email %><br>
-      <%= @org.website %>
+      <ul>
+        <li><%= @org.name %></li>
+        <li><%= @org.address %></li>
+        <li><%= @org.city %>,<%=" "+ @org.locations.find_by_primary(true).province.name %></li>
+        <li><%= @org.telephone %></li>
+        <li><%= @org.email %></li>
+        <li><%= @org.website %></li>
+      </ul>
+  
     
   </div>
 

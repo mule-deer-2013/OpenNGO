@@ -26,6 +26,13 @@ ActiveRecord::Schema.define(:version => 20131002231454) do
     t.integer "org_id"
   end
 
+  create_table "affiliations", :force => true do |t|
+    t.string  "aff_name"
+    t.string  "aff_type"
+    t.string  "aff_description"
+    t.integer "org_id"
+  end
+
   create_table "ages", :force => true do |t|
     t.string "description"
   end
@@ -141,10 +148,10 @@ ActiveRecord::Schema.define(:version => 20131002231454) do
   create_table "programs", :force => true do |t|
     t.string  "pro_name"
     t.string  "pro_goal"
-    t.text  "pro_description"
+    t.string  "pro_description"
     t.string  "pro_target"
     t.string  "pro_location"
-    t.integer  "pro_budget"
+    t.string  "pro_budget"
     t.string  "pro_funding_sources"
     t.string  "pro_affiliations"
     t.string  "pro_metrics"
@@ -156,6 +163,6 @@ ActiveRecord::Schema.define(:version => 20131002231454) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  endnamepeople
+  end
 
 end

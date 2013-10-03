@@ -7,6 +7,7 @@ class Org < ActiveRecord::Base
   has_many :branches
   has_many :locations
   has_many :programs
+  has_many :affiliations
   has_one :legal
   has_one :board
   has_one :advisory
@@ -24,8 +25,9 @@ class Org < ActiveRecord::Base
   # accepts_nested_attributes_for :activities, allow_destroy: true
   # accepts_nested_attributes_for :ages, allow_destroy: true
   accepts_nested_attributes_for :locations, allow_destroy: true
-  
-  attr_accessible :legal_attributes, :objectives_attributes, :programs_attributes, :causes_attributes, :branches_attributes, :board_attributes, :advisory_attributes, :activities_attributes, :ages_attributes, :locations_attributes
+  accepts_nested_attributes_for :affiliations, allow_destroy: true
+
+  attr_accessible :legal_attributes, :objectives_attributes, :affiliations_attributes, :programs_attributes, :causes_attributes, :branches_attributes, :board_attributes, :advisory_attributes, :activities_attributes, :ages_attributes, :locations_attributes
   attr_accessible :name, :initials, :preferred_name, :logo_url, :address, :mission, :objective, :transparency 
   attr_accessible :city, :int_branch, :telephone, :fax, :email, :website 
   attr_accessible :founding_date, :starting_date, :legal_num, :cuit, :youtube, :twitter, :linkedin, :facebook, :legal_type

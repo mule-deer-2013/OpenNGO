@@ -314,6 +314,14 @@
 
 <fieldset>
   <h2>AFFILIATIONS</h2>
+  <%= f.fields_for :affiliations do |a| %>
+    <%= a.label(:aff_name, "Name:") %>
+    <%= a.text_field :aff_name, placeholder: "e.g. Fundación Navarro Viola" %>
+    <%= a.label(:aff_type, "Type of Institution:") %>
+    <%= a.select(:aff_type, @affilitypes) %>
+    <%= a.label(:aff_description, "Description of the collaboration:") %>
+    <%= a.text_area :aff_description, placeholder: "e.g. Co-gestión del Concurso de Proyectos Sociales (“nuestros Mayores”)." %>
+  <% end %>
 </fieldset>
 
 

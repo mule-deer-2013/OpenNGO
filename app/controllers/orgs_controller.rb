@@ -45,6 +45,8 @@ respond_to :html, :xml, :json
   # @org.ages.build
 
   @legalnames = Legal.pluck(:legal_type)
+  @affilitypes = ["International Foundation", "Business", "National Foundation", "International Government", "Local Government",
+  "International Organization", "ONG", "Educational Institution"]
   
   @provincenames = Province.pluck(:name)
   @provinceids = Province.pluck(:id)
@@ -69,6 +71,7 @@ respond_to :html, :xml, :json
   @org.locations << Location.where(:id => params[:provinces])
   # @org.people << Person.where(:id => params[:people])
   @org.activities << Activity.where(:id => params[:activities])
+  @org.affiliations << affiliations.where(:id => params[:affiliations])
   
  	if @org.save
  		redirect_to org_path(@org)

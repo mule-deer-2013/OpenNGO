@@ -3,7 +3,7 @@
 <%= form_tag :search_orgs, method: :get do %>
   <% @filters.each do |filter| %>
     <div class="transparency">
-      <p><%= filter[:name] %></p>
+      <p><%= filter[:name].upcase %></p>
       <%= select("filter", filter[:name], filter[:options], {include_blank: 'None', :selected => @defaults[filter[:name].to_sym] || "None"}) %>
     </div>
   <% end %>

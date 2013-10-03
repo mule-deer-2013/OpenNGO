@@ -116,18 +116,35 @@
   <%= f.text_field(:cuit, placeholder: "e.g. 30-70854145-8") %>
 
 
-
+  <div class="objectives-form">
   <%= f.fields_for :objectives do |o| %>
     <%= o.label(:summary, "Objectives:") %>
     <%= o.text_area :summary, rows: 3, placeholder: "e.g. Asesorar a donantes (tanto individuos como organizaciones) en sus procesos de inversión social en la Argentina." %>
-  <% end %>  
+  <% end %>
+  </div>  
+    <div class="objectives-form">
   <%= f.fields_for :objectives do |o| %>
     <%= o.text_area :summary, rows: 3, placeholder: "e.g. Asesorar a donantes (tanto individuos como organizaciones) en sus procesos de inversión social en la Argentina." %>
-  <% end %>  
+  <% end %>
+    </div>  
+    <div class="objectives-form">
   <%= f.fields_for :objectives do |o| %>
     <%= o.text_area :summary, rows: 3, placeholder: "e.g. Asesorar a donantes (tanto individuos como organizaciones) en sus procesos de inversión social en la Argentina." %>
+  <% end %>
+    </div>  
+    <div class="objectives-form">
+    <%= f.fields_for :objectives do |o| %>
+    <%= o.text_area :summary, rows: 3, placeholder: "e.g. Asesorar a donantes (tanto individuos como organizaciones) en sus procesos de inversión social en la Argentina." %>
   <% end %>  
-    <p class="markup-text">NEEDS TO SHOW ONE BOX AND DYNAMICALLY ADD NEW ONES</p>
+    </div>
+    <div class="objectives-form">
+    <%= f.fields_for :objectives do |o| %>
+    <%= o.text_area :summary, rows: 3, placeholder: "e.g. Asesorar a donantes (tanto individuos como organizaciones) en sus procesos de inversión social en la Argentina." %>
+  <% end %>  
+    </div>
+
+  <a href="javascript:;" id="add-new-objective">Add New Objective </a>
+
   
   <%= label_tag 'causes', 'Causes:' %>
   <% @causes.each do |cause| %>
@@ -149,15 +166,71 @@
 
 
   <%= f.fields_for :branches do |ff| %>
+  <div class="branch-form" >
     <%= ff.label(:description, "Branches:") %>
     <%= ff.text_area :description, rows: 3, placeholder: "e.g. Ctro de Recuperación Nutricional 'Madre Teresa de Calcuta'" %>
-  <% end %>
-  <%= f.fields_for :branches do |ff| %>
+  </div>
+
+  <div class="branch-form" >
+    <%= ff.label(:description, "Branches:") %>
     <%= ff.text_area :description, rows: 3, placeholder: "e.g. Ctro de Recuperación Nutricional 'Madre Teresa de Calcuta'" %>
-  <% end %>
-  <%= f.fields_for :branches do |ff| %>
+  </div>
+
+  <div class="branch-form" >
+    <%= ff.label(:description, "Branches:") %>
     <%= ff.text_area :description, rows: 3, placeholder: "e.g. Ctro de Recuperación Nutricional 'Madre Teresa de Calcuta'" %>
-  <% end %>
+ </div>
+
+  <div class="branch-form" >
+    <%= ff.label(:description, "Branches:") %>
+    <%= ff.text_area :description, rows: 3, placeholder: "e.g. Ctro de Recuperación Nutricional 'Madre Teresa de Calcuta'" %>
+  </div>
+
+  <div class="branch-form" >
+    <%= ff.label(:description, "Branches:") %>
+    <%= ff.text_area :description, rows: 3, placeholder: "e.g. Ctro de Recuperación Nutricional 'Madre Teresa de Calcuta'" %>
+  </div>
+
+  <div class="branch-form" >
+    <%= ff.label(:description, "Branches:") %>
+    <%= ff.text_area :description, rows: 3, placeholder: "e.g. Ctro de Recuperación Nutricional 'Madre Teresa de Calcuta'" %>
+  </div>
+
+  <div class="branch-form" >
+    <%= ff.label(:description, "Branches:") %>
+    <%= ff.text_area :description, rows: 3, placeholder: "e.g. Ctro de Recuperación Nutricional 'Madre Teresa de Calcuta'" %>
+  </div>
+
+  <div class="branch-form" >
+    <%= ff.label(:description, "Branches:") %>
+    <%= ff.text_area :description, rows: 3, placeholder: "e.g. Ctro de Recuperación Nutricional 'Madre Teresa de Calcuta'" %>
+  </div>
+
+  <div class="branch-form" >
+    <%= ff.label(:description, "Branches:") %>
+    <%= ff.text_area :description, rows: 3, placeholder: "e.g. Ctro de Recuperación Nutricional 'Madre Teresa de Calcuta'" %>
+  </div>
+
+  <div class="branch-form" >
+    <%= ff.label(:description, "Branches:") %>
+    <%= ff.text_area :description, rows: 3, placeholder: "e.g. Ctro de Recuperación Nutricional 'Madre Teresa de Calcuta'" %>
+  </div>
+  <%end%>
+
+  <a href="javascript:;" id="add-new-branch">Add new Branch </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+
   <p class="markup-text">NEEDS TO SHOW ONE BOX AND DYNAMICALLY ADD NEW ONES</p>
   <br /><br />
   

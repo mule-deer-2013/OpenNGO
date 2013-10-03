@@ -2,7 +2,8 @@ class OrgsController < ApplicationController
 
 before_filter :authenticate_user!, :except => [:index, :search, :show]
 
-respond_to :html, :xml, :json
+respond_to :html, :xml, :json, :csv
+
   def index
   end
 
@@ -17,13 +18,23 @@ respond_to :html, :xml, :json
     @filters = []
     @filters << { :name => "transparency", :options => [0,1,2,3] }
     @filters << { :name => "cause", :options => Cause.uniq.pluck(:description) }
-    @filters << { :name => "location", :options => Org.uniq.pluck(:province) }
+    @filters << { :name => "location", :options => Province.uniq.pluck(:name) }
 
     @search_results = Search.results_for(params)
+    respond_with(@search_results) do |format|
+      format.html { render }
+      format.json { render }
+    end
   end
   
   def show
     @org = Org.find(params[:id])
+    respond_with(@org) do |format|
+      format.html { render }
+      format.json { render }
+      format.csv { send_data @org.to_csv }
+      format.xls { send_data @org.to_csv(col_sep: "\t") }
+    end
   end
 
   def new

@@ -27,6 +27,7 @@ respond_to :html, :xml, :json, :csv
     end
   end
   
+
   def show
     @org = Org.find(params[:id])
     respond_with(@org) do |format|
@@ -37,21 +38,34 @@ respond_to :html, :xml, :json, :csv
     end
   end
 
+
   def new
     @org = Org.new
+
+    @legalnames = Legal.pluck(:legal_type)
+    @affilitypes = ["International Foundation", "Business", "National Foundation", "International Government", "Local Government",
+    "International Organization", "ONG", "Educational Institution"]  
+    @provincenames = Province.pluck(:name)
+    @provinceids = Province.pluck(:id)
+    @provincearray = @provincenames.zip(@provinceids)
+    @legalnames = Legal.pluck(:legal_type)
 
     @org.objectives.build
     @org.branches.build
     @org.locations.build
-
+    @org.programs.build
+    @org.affiliations.build
+    @org.networks.build
+    @org.prizes.build
+    @org.incomes.build
+    @org.balances.build
+    @org.bigdonors.build
+    board = @org.build_board
+    board.people.build
+    advisory = @org.build_advisory
+    advisory.people.build
     @org.build_legal
     # @org.ages.build
-
-    @legalnames = Legal.pluck(:legal_type)
-
-    @provincenames = Province.pluck(:name)
-    @provinceids = Province.pluck(:id)
-    @provincearray = @provincenames.zip(@provinceids)
 
     @causes = Cause.all
     @ages = Age.all
@@ -61,6 +75,7 @@ respond_to :html, :xml, :json, :csv
     @agegroups = Age.pluck(:description)
   end
 
+    
 
   def create
 
@@ -78,7 +93,12 @@ respond_to :html, :xml, :json, :csv
       redirect_to org_path(@org)
     else
       @errors = @org.errors.full_messages
+      puts "*" * 80
+      puts @errors
+      puts "*" * 80
       redirect_to new_org_path  
     end
   end
 end
+
+

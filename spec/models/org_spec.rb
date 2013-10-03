@@ -11,6 +11,9 @@ describe Org do
   it { should have_many(:provinces).through(:locations) }
   it { should have_one(:board)}
   it { should have_one(:advisory)}
+  it { should have_many(:programs)}
+  it { should have_and_belong_to_many(:affiliations) }
+  it { should have_and_belong_to_many(:networks) }
 end
 
 
@@ -62,3 +65,30 @@ describe Objective do
   it { should belong_to(:org)}
 end
 
+describe Program do
+  it { should belong_to(:org)}
+end
+
+describe Affiliation do
+  it { should have_and_belong_to_many(:orgs)}
+end
+
+describe Network do
+  it { should have_and_belong_to_many(:orgs)}
+end
+
+describe Prize do
+  it { should belong_to(:org)}
+end
+
+describe Balance do
+  it { should belong_to(:org)}
+end
+
+describe Income do
+  it { should belong_to(:org)}
+end
+
+describe Bigdonor do
+  it { should belong_to(:org)}
+end

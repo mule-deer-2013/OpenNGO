@@ -4,6 +4,7 @@ class CreateBalances < ActiveRecord::Migration
         t.integer :assets_total
         t.integer :assets_current
         t.integer :assets_long
+        t.integer :liab_total
         t.integer :liab_current
         t.integer :liab_long
         t.integer :net_equity

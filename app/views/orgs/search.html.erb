@@ -1,0 +1,69 @@
+<div class="filter">
+
+<%= form_tag :search_orgs, method: :get do %>
+  <% @filters.each do |filter| %>
+    <div class="transparency">
+      <p><%= filter[:name].upcase %></p>
+      <%= select("filter", filter[:name], filter[:options], {include_blank: 'None', :selected => @defaults[filter[:name].to_sym] || "None"}) %>
+    </div>
+  <% end %>
+
+  <a href="#" data-dropdown="drop1" class="button dropdown secondary small radius">Advance</a><br>
+  <ul id="drop1" class="f-dropdown">
+    <li><a href="#">This is a link</a></li>
+    <li><a href="#">This is another</a></li>
+    <li><a href="#">Yet another</a></li>
+  </ul>
+  
+  <%= submit_tag("Apply", :class => "small button radius alert apply") %>
+<% end %> 
+</div>
+
+<div class="search-sum">
+  <div class="row">
+    <div class="large-3 push-9 columns">
+     <label for="customDropdown1">Sort by</label>
+      <select id="customDropdown1" class="small">
+        <option>Transparency Level</option>
+        <option>This is another option too</option>
+        <option>Look, a third option</option>
+      </select>
+    </div>
+    <div class="large-9 pull-3 columns">
+      <h5 class="subheader"><%= @search_results.count %> organizations found</h5>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="results-container">
+  <div class="row small-6 large-centered columns">
+    <% @search_results.each do |result| %>
+    <div class="row list-container">
+        <div class="large-9 push-3 columns">
+            <h4><%= link_to "#{result.name}", controller: :orgs, action: :show, id: "#{result.id}" %>
+              <% result.transparency.times do %>
+                <i class='fi-star star'></i>
+              <% end %>
+            </h4>
+
+            <ul>
+              <li>Provinces: <%= result.provinces.map {|p| p.name }.join(', ')%></li>
+              <li>Causes: <%= result.causes.map { |c| c.description }.join(', ') %></li>
+              <li>2013 Budget: XXXX peso</li>
+            </ul>
+        </div>
+        <div class="large-3 pull-9 columns"><img class"org-logo" src="http://wallpaperan.com/wallpaper/3581-cute-pictures-wallpapers.jpg">
+
+        </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+ 

@@ -89,6 +89,6 @@ describe Income do
   it { should belong_to(:org)}
 end
 
-describe Instit_donor do
+describe Bigdonor do
   it { should belong_to(:org)}
 end

@@ -1,6 +1,8 @@
 class OrgsController < ApplicationController
 
 respond_to :html, :xml, :json, :csv
+
+
   def index
   end
 
@@ -56,7 +58,7 @@ respond_to :html, :xml, :json, :csv
     @org.prizes.build
     @org.incomes.build
     @org.balances.build
-    @org.instit_donors.build
+    @org.bigdonors.build
     board = @org.build_board
     board.people.build
     advisory = @org.build_advisory
@@ -89,7 +91,12 @@ respond_to :html, :xml, :json, :csv
       redirect_to org_path(@org)
     else
       @errors = @org.errors.full_messages
+      puts "*" * 80
+      puts @errors
+      puts "*" * 80
       redirect_to new_org_path  
     end
   end
 end
+
+

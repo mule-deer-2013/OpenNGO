@@ -31,7 +31,7 @@ class CreateBalances < ActiveRecord::Migration
         t.belongs_to :org
       end
 
-      create_table :instit_donors do |t|
+      create_table :bigdonors do |t|
         t.string :inst_name
         t.string :int_type
         t.string :purpose

@@ -77,3 +77,18 @@ describe Network do
   it { should belong_to(:org)}
 end
 
+describe Prize do
+  it { should belong_to(:org)}
+end
+
+describe Balance do
+  it { should belong_to(:org)}
+end
+
+describe Income do
+  it { should belong_to(:org)}
+end
+
+describe Instit_donor do
+  it { should belong_to(:org)}
+end

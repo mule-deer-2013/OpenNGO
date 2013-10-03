@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131003012057) do
+ActiveRecord::Schema.define(:version => 20131003170453) do
 
   create_table "activities", :force => true do |t|
     t.string "description"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(:version => 20131003012057) do
     t.string   "preferred_name"
     t.string   "logo_url"
     t.string   "address"
+    t.string   "province"
     t.string   "city"
     t.boolean  "int_branch"
     t.string   "telephone"
@@ -114,6 +115,7 @@ ActiveRecord::Schema.define(:version => 20131003012057) do
     t.string   "twitter"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+    t.integer  "user_id"
   end
 
   create_table "people", :force => true do |t|

@@ -1,8 +1,8 @@
-
+<div class="new-org">
 
 
 <div class="row">
-  <div class='small-11 small-centered columns'>
+  <div class='small-11 small-centered columns inner-div'>
   <fieldset>
 <h1 class = "form-heading"> <b>+ ADD YOUR ORGANIZATION</b> </h4>
 <h4 class = "form-heading"> <b>Please fill out the following form to add your organization to the database:</b> </h4><br /><br />
@@ -34,7 +34,7 @@
 
       <%= f.fields_for :locations do |ff| %>
         <%= ff.label(:primary_province, "Province: (primary)") %>
-        <%= ff.select :province_id, @provincearray %>
+        <%= ff.select :province_id, @provincearray, :id => "customDropdown", :class => "medium" %>
         <%= ff.hidden_field :primary, value: true  %><br /><br />
       <% end %>
 
@@ -454,4 +454,5 @@
 <% end %>
     </fieldset>
   </div>
+</div>
 </div>

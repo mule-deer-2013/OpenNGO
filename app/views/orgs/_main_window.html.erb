@@ -3,19 +3,19 @@
 
   <div class="org-main-window-panel">
 
-    <div class ="org-info-display"  id="org-homepage">   
+    <div class ="org-info-display"  id="org-homepage">
       <div class="org-info-list">
-        <ol> 
+        <ol>
           <li><span><%=t("Mission")%></span>
             <p>
               <%= @org.mission %>
             </p></li>
 
-          <li><span><%=t("Causes") %></span>  
+          <li><span><%=t("Causes") %></span>
             <p>
             <%= @org.causes.map { |cause| cause.description }.add_commas %>
             </p></li>
-            
+
           <li><span><%=t("Objectives")%></span>
             <p>
             <% @org.objectives.each do |obj| %>
@@ -50,14 +50,14 @@
                 <b><%="Founding Date"+": "%><font class="org-text-padding"> </b><%=@org.founding_date.strftime("%d-%m-%Y") %></font><br>
                 <b><%="Starting Date"+": "%><font class="org-text-padding"> </b><%= @org.starting_date.strftime("%d-%m-%Y") %></font><br>
                 <b><%="Type of Legal Entity"+": "%><font class="org-text-padding"> </b><%= @org.legal_type %></font><br>
-                <b><%="Legal Entity No"+": "%><font class="org-text-padding"> </b><%= @org.legal_num %></font><br> 
+                <b><%="Legal Entity No"+": "%><font class="org-text-padding"> </b><%= @org.legal_num %></font><br>
                 <b><%="CUIT:   " %><font class="org-text-padding"> </b><%= @org.cuit %></font></br>
             </p></li>
-         
+
 
 
           <li><span><%"intentionally left blank"%></span>
-             
+
              <p>
 
               <% if @org.trans_policy %>
@@ -74,7 +74,7 @@
               <%= image_tag("cross.png", class: "check-or-cross") %>
               <% end %>
               <span class="org-text-padding">Written Code of Conduct</span>
-              
+
               <br>
               <% if @org.vat_exempt %>
               <%= image_tag("check.png", class: "check-or-cross") %>
@@ -82,7 +82,7 @@
               <%= image_tag("cross.png", class: "check-or-cross") %>
               <% end %>
               <span class="org-text-padding"><%=t(:VAT_Exempt)%></span>
-            
+
               <br>
               <% if @org.income_exempt %>
               <%= image_tag("check.png", class: "check-or-cross") %>
@@ -107,7 +107,7 @@
               <%= image_tag("cross.png", class: "check-or-cross") %>
               <% end %>
               <span class="org-text-padding">Annual External audit of finances
-                <% if @org.auditor_name %> 
+                <% if @org.auditor_name %>
                 <br><font size="small"><%="-  "%></font>
                 <% end %>
               </span>
@@ -130,39 +130,56 @@
               <span class="org-text-padding">Annual External Program Evaluation</span>
 
 
-        
+
             </p></li>
 
-        </ol> 
+        </ol>
      </div>
    </div>
 
 
     <div class="org-info-display" id="org-programs" >
       <div class="org-info-list">
-        <ol> 
-
-    
+        <ol>
             <li><span><%=t("Programs")%></span>
             <p>
               <%= render partial: 'program_table' %>
             </p></li>
 
-        </ol> 
+            <p><%= @org.programs %></p>
+
+
+
+
+
+
+
+
+        </ol>
       </div>
+
+
+
+
+
+
+
+
+
     </div>
+
 
     <div class="org-info-display" id="org-financials">
 
    <div class="org-info-list">
-        <ol> 
+        <ol>
           <li><span>Budget</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur. Fusce nec leo ut massa viverra venenatis. Nam accumsan libero a elit aliquet quis ullamcorper arcu tincidunt. Praesent purus turpis, consectetur quis congue vel, pulvinar at lorem. Vivamus varius condimentum dolor, quis ultricies ipsum porta quis. </p></li>
           <li><span>Objectives</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
           <li><span>Staff</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laot. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
           <li><span>Staff</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
            <li><span>Staff</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
             <li><span>Staff</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
-        </ol> 
+        </ol>
      </div>
     </div>
 
@@ -171,14 +188,14 @@
     <div class="org-info-display" id="org-team">
 
   <div class="org-info-list">
-        <ol> 
+        <ol>
           <li><span>Activities</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur. Fusce nec leo ut massa viverra venenatis. Nam accumsan libero a elit aliquet quis ullamcorper arcu tincidunt. Praesent purus turpis, consectetur quis congue vel, pulvinar at lorem. Vivamus varius condimentum dolor, quis ultricies ipsum porta quis. </p></li>
           <li><span>Objectives</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
           <li><span>Staff</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, acdiet. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
           <li><span>Staff</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
            <li><span>Staff</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
             <li><span>Staff</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
-        </ol> 
+        </ol>
      </div>
     </div>
 
@@ -186,23 +203,23 @@
    <div class="org-info-display" id="org-affiliations">
 
 <div class="org-info-list">
-        <ol> 
+        <ol>
           <li><span>Mission</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci . </p></li>
           <li><span>Objectives</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
           <li><span>Staff</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoring. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
           <li><span>Staff</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreadipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
            <li><span>Staff</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, am adipiscing. Nam quis justo in augue auctor imperdiet. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
             <li><span>Staff</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac t. Curabitur aliquet orci sit amet est posuere consectetur.  </p></li>
-        </ol> 
+        </ol>
      </div>
 
     </div>
-   
 
 
 
-      
-  
+
+
+
 
 
 

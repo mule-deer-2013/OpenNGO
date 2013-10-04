@@ -1,6 +1,10 @@
 <div class='org-top-header'>
   <div class="org-header-left">
-        <%= image_tag("http://cdn.styleforum.net/c/c7/c7b62ada_UN_Logo_OW.gif", :alt => "no logo", :class => "org-logo-image") %>
+    <% if @org.logo_url %>
+        <%= image_tag(@org.logo_url, :alt =>"", :class=>"org-logo-image") %>
+     <% else %>
+       <%= image_tag("http://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/800px-Flag_of_Argentina.svg.png",:alt=>"", :class=> "org-logo-image") %>
+     <% end %>
 
        <span class='my-resizer' id='org-header-title'> <%=@org.name%><br> </span>
 
@@ -10,5 +14,6 @@
          <%= " ☆ " * (3 - @transparency) %>
        </span></p>
   </div>
+
 
 </div>

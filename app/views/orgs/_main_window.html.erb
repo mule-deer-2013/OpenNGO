@@ -146,15 +146,12 @@
               <%= render partial: 'program_table' %>
             </p></li>
 
-            <p><%= @org.programs %></p>
-
-
-
-
-
-
-
-
+           <% @org.programs.each do |program| %>
+            <b><li><span>---Program: <%= program.pro_name %></span><p>.</p></li><b>
+            <li><p> &#8594 <%=program.pro_goal %></p></li>
+            <li><p> &#8594 <%=program.pro_description %></p></li>
+            <li><p> &#8594 <%=program.pro_budget %></p></li>
+            <% end %>
         </ol>
       </div>
 

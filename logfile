@@ -724,3 +724,45 @@ FATAL:  database "OpenNGO_test" does not exist
 FATAL:  database "OpenNGO_development" does not exist
 FATAL:  database "OpenNGO_test" does not exist
 FATAL:  database "OpenNGO_test" does not exist
+LOG:  database system was shut down at 2013-10-03 14:04:21 PDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  database "OpenNGO_development" does not exist
+FATAL:  database "OpenNGO_test" does not exist
+FATAL:  database "OpenNGO_development" does not exist
+FATAL:  database "OpenNGO_test" does not exist
+FATAL:  database "OpenNGO_development" does not exist
+FATAL:  database "OpenNGO_test" does not exist
+LOG:  autovacuum launcher shutting down
+LOG:  received smart shutdown request
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2013-10-03 18:48:48 PDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  database "OpenNGO_development" does not exist
+FATAL:  database "OpenNGO_test" does not exist
+FATAL:  database "OpenNGO_development" does not exist
+FATAL:  database "OpenNGO_development" does not exist
+FATAL:  database "OpenNGO_test" does not exist
+FATAL:  database "OpenNGO_development" does not exist
+FATAL:  database "OpenNGO_test" does not exist
+FATAL:  database "OpenNGO_development" does not exist
+FATAL:  database "OpenNGO_development" does not exist
+FATAL:  database "OpenNGO_test" does not exist
+FATAL:  database "OpenNGO_test" does not exist
+FATAL:  database "OpenNGO_development" does not exist
+FATAL:  database "OpenNGO_test" does not exist
+FATAL:  database "OpenNGO_test" does not exist
+FATAL:  database "OpenNGO_development" does not exist
+FATAL:  database "OpenNGO_test" does not exist
+FATAL:  database "OpenNGO_development" does not exist
+FATAL:  database "OpenNGO_test" does not exist
+ERROR:  value too long for type character varying(255)
+STATEMENT:  INSERT INTO "programs" ("org_id", "pro_affiliations", "pro_budget", "pro_description", "pro_funding_sources", "pro_goal", "pro_location", "pro_metrics", "pro_name", "pro_results", "pro_target") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"
+ERROR:  value too long for type character varying(255)
+STATEMENT:  INSERT INTO "programs" ("org_id", "pro_affiliations", "pro_budget", "pro_description", "pro_funding_sources", "pro_goal", "pro_location", "pro_metrics", "pro_name", "pro_results", "pro_target") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"
+ERROR:  value too long for type character varying(255)
+STATEMENT:  INSERT INTO "programs" ("org_id", "pro_affiliations", "pro_budget", "pro_description", "pro_funding_sources", "pro_goal", "pro_location", "pro_metrics", "pro_name", "pro_results", "pro_target") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"
+ERROR:  value too long for type character varying(255)
+STATEMENT:  INSERT INTO "programs" ("org_id", "pro_affiliations", "pro_budget", "pro_description", "pro_funding_sources", "pro_goal", "pro_location", "pro_metrics", "pro_name", "pro_results", "pro_target") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"

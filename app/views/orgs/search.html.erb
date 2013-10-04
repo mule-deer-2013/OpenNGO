@@ -8,7 +8,7 @@
       </div>
     <% end %>
     <%= submit_tag("Apply", :class => "small button radius alert apply") %>
-  <% end %> 
+  <% end %>
   </div>
 </div>
 
@@ -45,10 +45,10 @@
             <ul>
               <li>Provinces: <%= result.provinces.map {|p| p.name }.join(', ')%></li>
               <li>Causes: <%= result.causes.map { |c| c.description }.join(', ') %></li>
-              <li>2013 Budget: XXXX peso</li>
+              <li>2013 Budget: P$XXXXX</li>
             </ul>
         </div>
-        <div class="large-3 pull-9 columns"><img class"org-logo" src="http://wallpaperan.com/wallpaper/3581-cute-pictures-wallpapers.jpg">
+        <div class="large-3 pull-9 columns"><img class"org-logo" src=<%= result.logo_url%>>
 
         </div>
     </div>
@@ -60,4 +60,4 @@
 
 
 
- 
+

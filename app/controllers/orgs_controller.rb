@@ -26,10 +26,13 @@ respond_to :html, :xml, :json, :csv
       format.json { render }
     end
   end
-  
+
 
   def show
     @org = Org.find(params[:id])
+    @primary_prov = @org.primary_province
+
+
     respond_with(@org) do |format|
       format.html { render }
       format.json { render }
@@ -44,7 +47,7 @@ respond_to :html, :xml, :json, :csv
 
     @legalnames = Legal.pluck(:legal_type)
     @affilitypes = ["International Foundation", "Business", "National Foundation", "International Government", "Local Government",
-    "International Organization", "ONG", "Educational Institution"]  
+    "International Organization", "ONG", "Educational Institution"]
     @provincenames = Province.pluck(:name)
     @provinceids = Province.pluck(:id)
     @provincearray = @provincenames.zip(@provinceids)
@@ -75,7 +78,7 @@ respond_to :html, :xml, :json, :csv
     @agegroups = Age.pluck(:description)
   end
 
-    
+
 
   def create
 
@@ -87,7 +90,7 @@ respond_to :html, :xml, :json, :csv
     @org.ages << Age.where(:id => params[:ages])
     @org.locations << Location.where(:id => params[:provinces])
     @org.activities << Activity.where(:id => params[:activities])
-    @org.user 
+    @org.user
 
     if @org.save
       redirect_to org_path(@org)
@@ -96,7 +99,7 @@ respond_to :html, :xml, :json, :csv
       puts "*" * 80
       puts @errors
       puts "*" * 80
-      redirect_to new_org_path  
+      redirect_to new_org_path
     end
   end
 end

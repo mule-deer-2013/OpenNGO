@@ -4,10 +4,10 @@
     <% @filters.each do |filter| %>
       <div class="transparency">
         <p><%= filter[:name].upcase %></p>
-        <%= select("filter", filter[:name], filter[:options], {include_blank: 'None', :selected => @defaults[filter[:name].to_sym] || "None"}) %>
+        <%= select("filter", t(filter[:name]), filter[:options], {include_blank: 'None', :selected => @defaults[filter[:name].to_sym] || "None"}) %>
       </div>
     <% end %>
-    <%= submit_tag("Apply", :class => "small button radius alert apply") %>
+    <%= submit_tag(t("Apply"), :class => "small button radius alert apply") %>
   <% end %>
   </div>
 </div>
@@ -43,9 +43,9 @@
             </h4>
 
             <ul>
-              <li>Provinces: <%= result.provinces.map {|p| p.name }.join(', ')%></li>
-              <li>Causes: <%= result.causes.map { |c| c.description }.join(', ') %></li>
-              <li>2013 Budget: P$XXXXX</li>
+              <li><%=t("Provinces")%>: <%= result.provinces.map {|p| p.name }.join(', ')%></li>
+              <li><%=t("Causes")%>: <%= result.causes.map { |c| c.description }.join(', ') %></li>
+              <li>2013 <%=t("Budget")%>: P$XXXXX</li>
             </ul>
         </div>
         <div class="large-3 pull-9 columns"><img class"org-logo" src=<%= result.logo_url%>>

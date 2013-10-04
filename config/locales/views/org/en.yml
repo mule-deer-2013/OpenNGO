@@ -1,9 +1,12 @@
 en:
+  Apply: Apply
+  About: About
   Activity: Activity
   Activities: Activities
   Affiliation: Affiliation
   Affiliations: Affiliations
   Age_Group: Age Group
+  Budget: Budget
   Branch: Branch
   Branches: Branches
   Cause: Cause
@@ -17,6 +20,7 @@ en:
   Full_time: Full time
   General_Public: General Public
   Last_updated: Last_updated
+  Location: Location
   Mission: Mission
   Objective: Objectives
   Objectives: Objectives
@@ -26,7 +30,10 @@ en:
   Part_time: Part time
   Program: Program
   Programs: Programs
+  Province: Province
+  Provinces: Provinces
   Search: Search
+  Search_by: Search by organization name / province / cause
   Staff: Staff
   Tax_Deductible: Tax-deductible for Argentine Donors
   Team: Team
@@ -35,3 +42,4 @@ en:
   VAT_Exempt: VAT exempt
   Volunteers: Volunteers
   Welcome: Welcome
+  Transparency: Transparency

@@ -251,7 +251,7 @@ Org.all.each do |seed_org|
   seed_org.advisory.people << Person.create(name: Faker::Name.name)
   3.times{seed_org.objectives << Objective.create(summary:Faker::Lorem.paragraph)}
 
-  3.times{seed_org.programs << Program.create(pro_name: Faker::Name, pro_goal:Faker::Name, pro_description: "new program", pro_target: "343", pro_location:"Buenos Aires", pro_budget: "US$100,000", pro_funding_sources:"government grant", pro_affiliations:"none", pro_metrics:"none", pro_results:"pending")}
+  3.times{seed_org.programs << Program.create(pro_name: Faker::Name.name, pro_goal:Faker::Name.name, pro_description: Faker::Name.name, pro_target: "343", pro_location:"Buenos Aires", pro_budget: "US$100,000", pro_funding_sources:"government grant", pro_affiliations:"none", pro_metrics:"none", pro_results:"pending")}
 
 
 end

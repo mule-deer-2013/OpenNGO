@@ -1,5 +1,7 @@
 es:
-  Actividad: Activity
+  Apply: Aplicar Filtros
+  About: Quienes Somos
+  Activity: Actividad
   Activities: Actividades
   Affiliation: Afiliación
   Affiliations: Afiliaciones
@@ -17,6 +19,7 @@ es:
   Full_time: Permanente
   Part_time: Medio tiempo
   Last_updated: ultima actualización
+  Location: Ubicación
   Mission: Misión
   Objective: Objetivo
   Objectives: Objetivos
@@ -26,8 +29,14 @@ es:
   Part_time: Medio tiempo
   Program: Programa
   Programs: Programas
+  Province: Provincia
+  Provincias: Provincias
   General_Public: Publico General
   Search: Buscar
+  Search_by: Buscar por nombre / provincia / causa de la ONG
+  Sign_In: Usuarios
+  Sign_Out: Cerrar Session
+  Sign_Up: Inscribirse
   Staff: RR.HH
   Tax_Deductible: Desgravable para Donantes Argentinos
   Team: Equipo
@@ -37,3 +46,4 @@ es:
   Volunteer: Voluntario
   Volunteers: Voluntarios
   Welcome: Bienvenidos
+  Transparency: Transparencia

@@ -7,27 +7,27 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>  
+<body>
   <div class="fixed">
     <nav class="top-bar" data-options="is_hover:false">
       <ul class="title-area">
         <li class="name"><a href="/"><%=image_tag 'logo.png', :class => "logo" %></a></li>
       </ul>
-    
+
       <section class="top-bar-section" data-options="is_hover:false">
         <ul class="right">
-          <li><%= link_to 'About', page_path('about')%></li>
+          <li><%= link_to t('About'), page_path('about')%></li>
           <% if user_signed_in? %>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => "tiny button radius" %></li>
+          <li><%= link_to t('Sign Out'), destroy_user_session_path, method: :delete, :class => "tiny button radius" %></li>
           <% else %>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
-          <li><%= link_to 'Sign Up', new_user_registration_path, :class => "tiny button radius" %></li>
+          <li><%= link_to t('Sign_In'), new_user_session_path %></li>
+          <li><%= link_to t('Sign_Up'), new_user_registration_path, :class => "tiny button radius" %></li>
           <% end %>
         </ul>
       </section>
     </nav>
   </div>
-  
+
   <div class="container">
     <%= yield %>
   </div>
@@ -36,7 +36,7 @@
 
     <%= link_to_unless I18n.locale == :es, (image_tag ('AR.svg'), :class => "flag") , :locale => :es %>
     <%= link_to_unless I18n.locale == :en, (image_tag ('US.png'), :class => "flag"), :locale  => :en %>
-    <p>Dev Bootcamp Students Contribution to Help Agentina (2013)</p>
+    <p> Site by Dev Bootcamp - October 2012 </p>
   </div>
   <script>
     $(document).foundation();

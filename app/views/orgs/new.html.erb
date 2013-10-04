@@ -372,29 +372,72 @@
   <%= f.fields_for :incomes  do |b| %>
     <%= b.label(:start_date, "Start Date: (of most current full year)") %>
     <%= b.date_select(:start_date, order: [:day, :month, :year]) %>
-    <%= b.label(:end_date, "End Date:" %>
+    <%= b.label(:end_date, "End Date:") %>
     <%= b.date_select(:end_date, order: [:day, :month, :year]) %>
-    
-    <%= b.label(:total_revenue, "Total Assets:") %>
+    <%= b.label(:total_revenue, "Total Revenues:") %>
     <%= b.number_field(:total_revenue, placeholder: "A$") %>
-    <%= b.label(:, "Current Assets:") %>
-    <%= b.number_field(:, placeholder: "A$") %>
-    <%= b.label(:, "Long Term Assets:") %>
-    <%= b.number_field(:, placeholder: "A$") %>
-    <%= b.label(:, "Total Liabilities:") %>
-    <%= b.number_field(:, placeholder: "A$") %>
-    <%= b.label(:, "Current Liabilities:") %>
-    <%= b.number_field(:, placeholder: "A$") %>
-    <%= b.label(:, "Long Term Liabilities:") %>
-    <%= b.number_field(:, placeholder: "A$") %>
-    <%= b.label(:, "Net Equity:") %>
-    <%= b.number_field(:, placeholder: "A$") %>
+    <%= b.label(:ind_donors, "Individual Donors:") %>
+    <%= b.number_field(:ind_donors, placeholder: "% total") %>
+    <%= b.label(:member_fees, "Member Support:") %>
+    <%= b.number_field(:member_fees, placeholder: "% total") %>
+    <%= b.label(:govt, "Government Funding:") %>
+    <%= b.number_field(:govt, placeholder: "% total") %>
+    <%= b.label(:companies, "Companies/Local foundations:") %>
+    <%= b.number_field(:companies, placeholder: "% total") %>
+    <%= b.label(:int_aid, "International Aid:") %>
+    <%= b.number_field(:int_aid, placeholder: "% total") %>
+    <%= b.label(:sales, "Sales of products and services:") %>
+    <%= b.number_field(:investments, placeholder: "% total") %>
+    <%= b.label(:investments, "Income from investment:") %>
+    <%= b.number_field(:other, placeholder: "% total") %>
+    <%= b.label(:other, "Other:") %>
+    <%= b.number_field(:other, placeholder: "% total") %>
+    <%= b.label(:total_expense, "Total Expenses:") %>
+    <%= b.number_field(:total_expense, placeholder: "A$") %>
+    <%= b.label(:program_exp, "Program-related:") %>
+    <%= b.number_field(:program_exp, placeholder: "% total") %>
+    <%= b.label(:admin_exp, "Admin:") %>
+    <%= b.number_field(:admin_exp, placeholder: "% total") %>
+    <%= b.label(:fundraising_exp, "Fundraising:") %>
+    <%= b.number_field(:fundraising_exp, placeholder: "% total") %>
+    <%= b.label(:net_income, "Net Income:") %>
+    <%= b.number_field(:net_income, placeholder: "A$") %>
   <% end %>
   <br><br><br>
   <%= f.fields_for :incomes  do |b| %>
-    <%= b.label(:bal_date, "Preceeding year:") %>
-    <%= b.date_select(:bal_date, order: [:day, :month, :year]) %>
-      <% end %>
+    <%= b.label(:start_date, "Preceeding year:") %>
+    <%= b.date_select(:start_date, order: [:day, :month, :year]) %>
+    <%= b.label(:end_date, "End Date:") %>
+    <%= b.date_select(:end_date, order: [:day, :month, :year]) %>
+    <%= b.label(:total_revenue, "Total Revenues:") %>
+    <%= b.number_field(:total_revenue, placeholder: "A$") %>
+    <%= b.label(:ind_donors, "Individual Donors:") %>
+    <%= b.number_field(:ind_donors, placeholder: "% total") %>
+    <%= b.label(:member_fees, "Member Support:") %>
+    <%= b.number_field(:member_fees, placeholder: "% total") %>
+    <%= b.label(:govt, "Government Funding:") %>
+    <%= b.number_field(:govt, placeholder: "% total") %>
+    <%= b.label(:companies, "Companies/Local foundations:") %>
+    <%= b.number_field(:companies, placeholder: "% total") %>
+    <%= b.label(:int_aid, "International Aid:") %>
+    <%= b.number_field(:int_aid, placeholder: "% total") %>
+    <%= b.label(:sales, "Sales of products and services:") %>
+    <%= b.number_field(:investments, placeholder: "% total") %>
+    <%= b.label(:investments, "Income from investment:") %>
+    <%= b.number_field(:other, placeholder: "% total") %>
+    <%= b.label(:other, "Other:") %>
+    <%= b.number_field(:other, placeholder: "% total") %>
+    <%= b.label(:total_expense, "Total Expenses:") %>
+    <%= b.number_field(:total_expense, placeholder: "A$") %>
+    <%= b.label(:program_exp, "Program-related:") %>
+    <%= b.number_field(:program_exp, placeholder: "% total") %>
+    <%= b.label(:admin_exp, "Admin:") %>
+    <%= b.number_field(:admin_exp, placeholder: "% total") %>
+    <%= b.label(:fundraising_exp, "Fundraising:") %>
+    <%= b.number_field(:fundraising_exp, placeholder: "% total") %>
+    <%= b.label(:net_income, "Net Income:") %>
+    <%= b.number_field(:net_income, placeholder: "A$") %>
+  <% end %>
 
 
   <h4>Institutional Donations</h4>

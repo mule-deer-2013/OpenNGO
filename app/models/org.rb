@@ -33,11 +33,11 @@ class Org < ActiveRecord::Base
   accepts_nested_attributes_for :incomes, allow_destroy: true
   accepts_nested_attributes_for :bigdonors, allow_destroy: true
 
-  attr_accessible :networks_attributes, :affiliations_attributes 
+  attr_accessible :networks_attributes, :affiliations_attributes
   attr_accessible :legal_attributes, :objectives_attributes, :prizes_attributes, :programs_attributes, :causes_attributes, :branches_attributes, :board_attributes, :advisory_attributes, :activities_attributes, :ages_attributes, :locations_attributes
   attr_accessible :balance_attributes, :income_attributes, :bigdonors_attributes
-  attr_accessible :name, :initials, :preferred_name, :logo_url, :address, :mission, :objective, :transparency 
-  attr_accessible :city, :int_branch, :telephone, :fax, :email, :website 
+  attr_accessible :name, :initials, :preferred_name, :logo_url, :address, :mission, :objective, :transparency
+  attr_accessible :city, :int_branch, :telephone, :fax, :email, :website
   attr_accessible :founding_date, :starting_date, :legal_num, :cuit, :youtube, :twitter, :linkedin, :facebook, :legal_type
   attr_accessible :income_exempt, :tax_ded, :vat_exempt, :code_conduct, :external_auditor, :auditor_name, :annual_reporting, :external_prog_eval, :trans_policy
   attr_accessible :num_prog_ind, :num_prog_org, :num_prog_pub, :fte, :pte, :volunteers
@@ -57,6 +57,10 @@ class Org < ActiveRecord::Base
     (self.advisory_members + self.board_members).uniq
   end
 
+  def primary_province
+    self.locations.find_by_primary(true).province.name
+  end
+
   def advisory_members
     self.advisory ? self.advisory.people : []
   end
@@ -66,7 +70,7 @@ class Org < ActiveRecord::Base
   end
 
   def has_valid_youtube?
-    return false if self.youtube.nil? 
+    return false if self.youtube.nil?
     self.youtube.include?("www.youtube.com/embed")
   end
 

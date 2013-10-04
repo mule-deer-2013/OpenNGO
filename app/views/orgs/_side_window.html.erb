@@ -1,12 +1,12 @@
 
 <div class='org-side-window'>
-  <div id='org-last-updated'><%=t(:Last_updated)+":" %></div>
+  <div class='org-floaters'><%=t(:Last_updated)+": "+@org.updated_at.strftime("%d %b %Y") %></div>
   <%if @org.has_valid_youtube? %>
   <div class='org-side-window-panel' id="youtube-panel">
         <center><iframe width="300" height="225" src=<%=@org.youtube+ "?modestbranding=1&rel=0&showinfo=0&theme=light"%> frameborder="0" allowfullscreen alt=></iframe>
         <center>
   </div>
-<br> 
+<br>
 <%end%>
   <%if @org.twitter? %>
    <div class="org-side-window-panel">
@@ -14,15 +14,11 @@
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
   <% end %>
    </div>
+      <div class="org-floaters"><%= t("Download") +":" %> <%= link_to "CSV", org_path(format: "csv") %></div>
 
-   <div>
-    Download:
-    <%= link_to "CSV", org_path(format: "csv") %>
-    <%= link_to "Excel", org_path(format: "xls") %>
-   </div>
  </div>
 
-  
+
 
 
 

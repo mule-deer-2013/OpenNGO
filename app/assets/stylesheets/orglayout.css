@@ -1,14 +1,12 @@
 .show-container {
   background-color: white;
-  min-height: 1300px;
+  min-height: 1400px;
 }
 
 .org-side-window-panel {
   width:100%;
   padding:5px;
   margin: 0 auto;
-  /*border-color:#C0C0C0;*/
-  /*border: 2px solid;*/
   border-radius: 10px;
   overflow:hidden;
 }
@@ -73,6 +71,7 @@
 }
 
 #org-stars{
+  margin-top:20px;
   padding-left:20px;
   color:#274873;
   font-size:x-large;
@@ -153,7 +152,7 @@ a { color:black;}
   display:inline;
 }
 
-#org-last-updated {
+.org-floaters {
   padding:0;
   margin:9px;
   color:#898989;
@@ -234,4 +233,4 @@ img.desaturate{
   height:20px;
 }
 
- 
+

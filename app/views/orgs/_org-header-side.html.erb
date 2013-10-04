@@ -2,21 +2,21 @@
   <div class='org-header-right'>
     <br>
       <div class='org-profile-icons' >
-       <%=image_tag("facebook-s.png",class: 'desaturate' )%><br>
+       <%=link_to image_tag("facebook-s.png",class: 'desaturate' ),@org.facebook %><br>
        <%=image_tag("googleplus-s.png", class: 'desaturate') %><br>
-       <%=image_tag("linkedin-s.png", class: 'desaturate') %>
-       
+       <%=link_to image_tag("linkedin-s.png", class: 'desaturate'), @org.linkedin %>
+
     </div>
       <ul>
         <li><%= @org.name %></li>
         <li><%= @org.address %></li>
-        <li><%= @org.city %>,<%=" "+ @org.locations.find_by_primary(true).province.name %></li>
+        <li><%= @org.city %>,<%=" "+ @primary_prov %></li>
         <li><%= @org.telephone %></li>
         <li><%= @org.email %></li>
         <li><%= @org.website %></li>
       </ul>
-  
-    
+
+
   </div>
 
  </div>

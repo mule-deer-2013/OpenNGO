@@ -4,7 +4,7 @@
     <% @filters.each do |filter| %>
       <div class="transparency">
         <p><%= filter[:name].upcase %></p>
-        <%= select("filter", t(filter[:name]), filter[:options], {include_blank: 'None', :selected => @defaults[filter[:name].to_sym] || "None"}) %>
+        <%= select("filter", filter[:name], filter[:options], {include_blank: 'None', :selected => @defaults[filter[:name].to_sym] || "None"}) %>
       </div>
     <% end %>
     <%= submit_tag(t("Apply"), :class => "small button radius alert apply") %>

@@ -46,7 +46,7 @@
               <% end %>
             </h4>
             <table>
-              <td class="search-results-image-box"> <img class"org-logo" src=<%= result.logo_url%>> </td>
+              <td class="search-results-image-box"><%= image_tag(result.logo_url, :alt =>"") %> </td>
               <td class="search-results-content-box">
                 <ul>
                   <li><%=t("Provinces")%>: <%= result.provinces.map {|p| p.name }.join(', ')%></li>

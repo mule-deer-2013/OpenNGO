@@ -58,8 +58,7 @@ class Org < ActiveRecord::Base
     text :mission
     integer :transparency
     date :updated_at
-    handle_asynchronously :solr_index
-    handle_asynchronously :remove_from_index
+
   end
 
   def people

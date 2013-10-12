@@ -96,7 +96,7 @@ AGES = [
 LEVELS = [3,2,1,0]
 
 50.times {Org.create(
-  name: "Example Org",
+  name: "Example Org #{rand(0..1000000)}",
   initials: "EO",
   city: "Buenos Aires",
   address: "1242 Av Libertador, 5-D",

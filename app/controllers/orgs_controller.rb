@@ -11,6 +11,7 @@ respond_to :html, :xml, :json, :csv
   def search
     @search = Org.search do 
       fulltext params[:search_terms]
+      paginate :page => params[:page], :per_page=> 15
       order_by :transparency, :desc
       order_by :updated_at, :desc
       facet(:transparency)

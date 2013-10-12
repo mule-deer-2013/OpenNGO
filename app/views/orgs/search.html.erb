@@ -1,5 +1,10 @@
 <div class="resultspage_wrapper"> 
   <div id="left-search">
+    
+    <div class="facets" id="facet_transparency">
+    <h5><%= will_paginate @search_results %></h5>
+    </div>
+
     <div class="facets" id="facet_transparency">
     <h3>Transparency</h3>
     <ul>
@@ -33,23 +38,22 @@
 
 
 <div id="right-search">
- 
     <% @search_results.each do |result| %>
      <div class="results-container">
-            <h4><%= link_to "#{result.name}", controller: :orgs, action: :show, id: "#{result.id}" %>
+            <h5><%= link_to "#{result.name}", controller: :orgs, action: :show, id: "#{result.id}" %>
               <% result.transparency.times do %>
                 <i class='fi-star star'></i>
               <% end %>
             </h4>
             <table>
-              <td> <img class"org-logo" src=<%= result.logo_url%>> </td>
-              <td>
+              <td class="search-results-image-box"> <img class"org-logo" src=<%= result.logo_url%>> </td>
+              <td class="search-results-content-box">
                 <ul>
                   <li><%=t("Provinces")%>: <%= result.provinces.map {|p| p.name }.join(', ')%></li>
                   <li><%=t("Causes")%>: <%= result.causes.map { |c| c.description }.join(', ') %></li>
                   <li>2013 <%=t("Budget")%>: P$XXXXX</li>
                 </ul>
-              </td>
+              </td >
             </table>
     
   </div>

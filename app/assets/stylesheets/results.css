@@ -74,5 +74,14 @@ overflow:auto;
   float:left;
   width:100%;
   width:500px;
+}
+
+.search-results-image-box{
+  min-width:100px;
+
+}
+
+.search-results-content-box{
+  width:100%;
 
 }

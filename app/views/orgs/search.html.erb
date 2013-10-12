@@ -40,11 +40,15 @@
 <div id="right-search">
     <% @search_results.each do |result| %>
      <div class="results-container">
+        <% if result.transparency == 0 %>
+        <h5> <%= result.name %> </h5> 
+        <%else%>
             <h5><%= link_to "#{result.name}", controller: :orgs, action: :show, id: "#{result.id}" %>
               <% result.transparency.times do %>
                 <i class='fi-star star'></i>
-              <% end %>
-            </h4>
+        <% end %>
+    <% end %>
+            </h5>
             <table>
               <td class="search-results-image-box"><%= image_tag(result.logo_url, :alt =>"") %> </td>
               <td class="search-results-content-box">

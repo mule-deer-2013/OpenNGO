@@ -1,7 +1,7 @@
 <div class="resultspage_wrapper"> 
   <div id="left-search">
     
-    <div class="facets" id="facet_transparency">
+    <div class="facets">
     <h5><%= will_paginate @search_results %></h5>
     </div>
 
@@ -22,7 +22,7 @@
   </div>
 
   <div class="facets" id="facet_locations">
-  <h3> Causes </h3>
+  <h3> Location </h3>
   <ul>
     <% @search.facet(:locations).rows.each do |row| %>
       <li>
@@ -35,7 +35,6 @@
     <% end %>
   </ul>
   </div>
-</div>
 
   <div class="facets" id="facet_causes">
   <h3> Causes </h3>

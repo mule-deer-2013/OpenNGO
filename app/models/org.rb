@@ -56,7 +56,7 @@ class Org < ActiveRecord::Base
       locations.map{|location| provinces.find(location.province_id).name}
     end
     string :causes, :multiple=>true do
-      causes.map{&:description}
+      causes.map(&:description)
     end
     integer :transparency
     date :updated_at

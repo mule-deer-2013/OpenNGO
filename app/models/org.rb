@@ -52,8 +52,8 @@ class Org < ActiveRecord::Base
     text :name, boost: 5
     text :preferred_name, boost:4
     text :mission
-    string :causes, :multiple=>true do
-      causes.map(&:description)
+    text :causes, :multiple=>true do
+      causes.map(|cause| cause.description)
     end
     text :mission
     integer :transparency

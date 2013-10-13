@@ -59,7 +59,7 @@
     <% @search_results.each do |result| %>
      <div class="results-container">
         <% if result.transparency == 0 %>
-        <h5> <%= result.name %> </h5> 
+        <h5><font color="grey"> <%= result.name %> (profile pending approval)</font> </h5> 
         <%else%>
             <h5><%= link_to "#{result.name}", controller: :orgs, action: :show, id: "#{result.id}" %>
               <% result.transparency.times do %>

@@ -5,6 +5,7 @@
     <h5><%= will_paginate @search_results %></h5>
     </div>
 
+
     <div class="facets" id="facet_transparency">
     <h3>Transparency</h3>
     <ul>
@@ -19,6 +20,22 @@
     <% end %>
   </ul>
   </div>
+
+  <div class="facets" id="facet_locations">
+  <h3> Causes </h3>
+  <ul>
+    <% @search.facet(:locations).rows.each do |row| %>
+      <li>
+        <% if params[:locations].blank? %>
+          <%= link_to row.value, :locations => row.value %> (<%= row.count %>)
+        <% else %>
+          <strong><%= row.value %></strong> (<%= link_to "remove", :locations => nil %>)
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+  </div>
+</div>
 
   <div class="facets" id="facet_causes">
   <h3> Causes </h3>
@@ -35,6 +52,8 @@
   </ul>
   </div>
 </div>
+
+
 
 
 <div id="right-search">

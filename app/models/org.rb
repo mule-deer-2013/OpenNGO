@@ -53,7 +53,7 @@ class Org < ActiveRecord::Base
     text :preferred_name, boost:4
     text :mission
     text :causes_search do 
-      causes.first.description + causes.limit(2).description.last + causes.last.description
+      causes.first.description
     end
     string :causes, :multiple=>true do
       causes.map{|cause| cause.description}

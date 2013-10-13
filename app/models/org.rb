@@ -52,6 +52,12 @@ class Org < ActiveRecord::Base
     text :name, boost: 5
     text :preferred_name, boost:4
     text :mission
+    text :causes do
+      causes.map(&:description)
+    end
+    text :locations do 
+      locations.map{|location| provinces.find(location.province_id).name}
+    end
     string :locations, :multiple=>true do 
       locations.map{|location| provinces.find(location.province_id).name}
     end

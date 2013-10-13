@@ -12,7 +12,7 @@
     <% @search.facet(:transparency).rows.each do |row| %>
       <li>
         <% if params[:transparency].blank? %>
-          <%= link_to " ★ "*row.value + " ☆ " * (3 - row.value), :transparency => row.value %> (<%= row.count %>)
+          <%= link_to " ★ "*row.value + " ☆ " * (3 - row.value), {:transparency => row.value, :locations => params[:locations]} %> (<%= row.count %>)
         <% else %>
           <strong><%= " ★ "*row.value + " ☆ " * (3 - row.value) %></strong> (<%= link_to "remove", :transparency => nil %>)
         <% end %>
@@ -27,7 +27,7 @@
     <% @search.facet(:locations).rows.each do |row| %>
       <li>
         <% if params[:locations].blank? %>
-          <%= link_to row.value, :locations => row.value %> (<%= row.count %>)
+          <%= link_to row.value, :locations => row.value,  %> (<%= row.count %>)
         <% else %>
           <strong><%= row.value %></strong> (<%= link_to "remove", :locations => nil %>)
         <% end %>

@@ -27,7 +27,7 @@
     <% @search.facet(:locations).rows.each do |row| %>
       <li>
         <% if params[:locations].blank? %>
-          <%= link_to row.value, :locations => row.value,  %> (<%= row.count %>)
+          <%= link_to row.value, :locations => row.value  %> (<%= row.count %>)
         <% else %>
           <strong><%= row.value %></strong> (<%= link_to "remove", :locations => nil %>)
         <% end %>

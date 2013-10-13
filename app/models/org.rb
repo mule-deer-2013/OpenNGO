@@ -52,10 +52,12 @@ class Org < ActiveRecord::Base
     text :name, boost: 5
     text :preferred_name, boost:4
     text :mission
-    text :causes, :multiple=>true do
+    text :causes_search do 
+      causes.first.description + causes.limit(2).description.last + causes.last.description
+    end
+    string :causes, :multiple=>true do
       causes.map{|cause| cause.description}
     end
-    text :mission
     integer :transparency
     date :updated_at
 

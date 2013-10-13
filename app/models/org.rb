@@ -52,11 +52,11 @@ class Org < ActiveRecord::Base
     text :name, boost: 5
     text :preferred_name, boost:4
     text :mission
-    text :causes_search do 
-      causes.first.description
+    string :locations, :multiple=>true do 
+      locations.map{|location| provinces.find(location.province_id).name}
     end
     string :causes, :multiple=>true do
-      causes.map{|cause| cause.description}
+      causes.map{&:description}
     end
     integer :transparency
     date :updated_at

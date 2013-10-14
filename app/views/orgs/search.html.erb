@@ -1,13 +1,22 @@
 <div class="resultspage_wrapper"> 
   <div id="left-search">
-    
+
+ 
     <div class="facets">
-    <h5><%= will_paginate @search_results %></h5>
+    <%= will_paginate @search_results %>
+    </div>
+
+    <div class="facets">
+      <h5><%= t("Search")%> <%=t("Organizations")%></h5>
+      <%= form_tag :search_orgs, method: :get do %>
+      <%= text_field_tag :search_terms, nil, placeholder: t("Search_by") %>
+      <%= submit_tag t("Search") %>
+      <% end %>
     </div>
 
 
-    <div class="facets" id="facet_transparency">
-    <h4>Transparency</h4>
+    <div class="facets">
+    <h5>Transparency</h5>
     <ul>
     <% @search.facet(:transparency).rows.each do |row| %>
       <li>
@@ -21,8 +30,8 @@
   </ul>
   </div>
 
-  <div class="facets" id="facet_locations">
-  <h4> Location </h4>
+  <div class="facets">
+  <h5> Location </h5>
   <ul>
     <% @search.facet(:locations).rows.each do |row| %>
       <li>
@@ -36,8 +45,8 @@
   </ul>
   </div>
 
-  <div class="facets" id="facet_causes">
-  <h4> Causes </h4>
+  <div class="facets">
+  <h5> Causes </h5>
   <ul>
     <% @search.facet(:causes).rows.each do |row| %>
       <li>

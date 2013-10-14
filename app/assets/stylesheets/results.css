@@ -25,6 +25,8 @@ overflow:auto;
   font-size:small;
 }
 
+.facets:empty { display:none;}
+
 .facets ul{
   columns:2;
   -webkit-columns:2;

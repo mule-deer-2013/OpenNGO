@@ -38,7 +38,7 @@
   facebook: "www.facebook.com",
   linkedin: "www.linkedin.com",
   twitter:"CIPPEC",
-  logo_url: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ9tf5cX2cqeC-Xd8o_S2uCadlMDyYx7THn76V0S36rVe9DagYf"
+  logo_url: "/assets/logos/"+Dir.entries("public/assets/logos").sample 
 
 )}
 

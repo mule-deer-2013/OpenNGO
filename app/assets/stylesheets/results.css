@@ -25,6 +25,8 @@ overflow:auto;
   font-size:small;
 }
 
+.facets:empty { display:none;}
+
 .facets ul{
   columns:2;
   -webkit-columns:2;
@@ -63,5 +65,6 @@ overflow:auto;
 
 .search-results-content-box{
   width:100%;
+  padding-left:15px;
 
 }

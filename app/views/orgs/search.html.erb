@@ -2,9 +2,7 @@
   <div id="left-search">
 
  
-    <div class="facets">
-    <%= will_paginate @search_results %>
-    </div>
+    <div class="facets"><%= will_paginate @search_results %></div>
 
     <div class="facets">
       <h5><%= t("Search")%> <%=t("Organizations")%></h5>
@@ -21,9 +19,9 @@
     <% @search.facet(:transparency).rows.each do |row| %>
       <li>
         <% if params[:transparency].blank? %>
-          <%= link_to " ★ "*row.value + " ☆ " * (3 - row.value), :transparency => row.value %> (<%= row.count %>)
+          <%= link_to " ★ "*row.value + " ☆ " * (3 - row.value), {:transparency => row.value, :locations=>params[:locations]} %> (<%= row.count %>)
         <% else %>
-          <strong><%= " ★ "*row.value + " ☆ " * (3 - row.value) %></strong> (<%= link_to "remove", :transparency => nil %>)
+          <strong><%= " ★ "*row.value + " ☆ " * (3 - row.value) %></strong> (<%= link_to "remove", {:transparency => nil, :locations => params[:locations]} %>)
         <% end %>
       </li>
     <% end %>
@@ -36,9 +34,9 @@
     <% @search.facet(:locations).rows.each do |row| %>
       <li>
         <% if params[:locations].blank? %>
-          <%= link_to row.value, :locations => row.value  %> (<%= row.count %>)
+          <%= link_to row.value, {:locations => row.value, :transparency=>params[:transparency]}  %> (<%= row.count %>)
         <% else %>
-          <strong><%= row.value %></strong> (<%= link_to "remove", :locations => nil %>)
+          <strong><%= row.value %></strong> (<%= link_to "remove", {:locations => nil, :transparency=>params[:transparency]} %>)
         <% end %>
       </li>
     <% end %>
@@ -65,7 +63,9 @@
 
 
 <div id="right-search">
-    <% @search_results.each do |result| %>
+  <% if @search_results.empty? %>
+  <h5 class="results-container"><%= t(:No_Results) %> <% end %></h5>
+  <% @search_results.each do |result| %>
      <div class="results-container">
         <% if result.transparency == 0 %>
         <h5><font color="grey"> <%= result.name %> (profile pending approval)</font> </h5> 

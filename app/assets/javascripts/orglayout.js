@@ -9,7 +9,7 @@ $(function() {
       console.log(span.width())
         fontSize--;
         span.css('font-size', fontSize.toString() + 'px');
-    } while (span.width() >= 290);
+    } while (span.width() >= 270);
 });
 
 
@@ -21,12 +21,15 @@ $(document).ready(function(){
 
   $('#org-homepage').show()
 
+
   $(".org-header-left").click(function() {
     $('#org-homepage').show()
     $('#org-programs').hide()
     $("#org-financials").hide()
     $("#org-team").hide()
     $("#org-affiliations").hide()
+    $('#piechart').hide()
+    $('#youtube-panel').show()
   });
 
 
@@ -36,6 +39,7 @@ $(document).ready(function(){
     $("#org-financials").hide()
     $("#org-team").hide()
     $("#org-affiliations").hide()
+    $('#piechart').hide()
   });
 
   $("#org-financials-butt").click(function() {
@@ -44,6 +48,8 @@ $(document).ready(function(){
     $("#org-programs").hide()
     $("#org-team").hide()
     $("#org-affiliations").hide()
+    $('#piechart').show()
+    $('#youtube-panel').hide()
   });
 
   $("#org-team-butt").click(function() {
@@ -52,6 +58,7 @@ $(document).ready(function(){
     $("#org-programs").hide()
     $("#org-team").show()
     $("#org-affiliations").hide()
+    $('#piechart').hide()
   });
 
   $("#org-affiliations-butt").click(function() {
@@ -60,13 +67,11 @@ $(document).ready(function(){
     $("#org-programs").hide()
     $("#org-team").hide()
     $("#org-affiliations").show()
+    $('#piechart').hide()
   });
 
 
-
-
 });
-
 
 
 

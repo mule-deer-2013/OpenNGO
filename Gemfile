@@ -12,7 +12,7 @@ gem 'high_voltage'
 gem 'simple_form'
 gem 'devise'
 gem 'will_paginate','~>3.0.5'
-
+gem "highcharts-rails", "~> 3.0.6"
 
 group :production do
   gem 'thin'  

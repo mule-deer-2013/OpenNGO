@@ -229,5 +229,8 @@ img.desaturate{
   height:20px;
 }
 
-
+#piechart{
+  height:300px; 
+  margin-bottom:10px;
+}
 

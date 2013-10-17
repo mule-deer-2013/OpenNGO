@@ -40,6 +40,8 @@ $(document).ready(function(){
     $("#org-team").hide()
     $("#org-affiliations").hide()
     $('#piechart').hide()
+    $('#youtube-panel').show()
+    $('#twitter-panel').show()
   });
 
   $("#org-financials-butt").click(function() {
@@ -50,7 +52,9 @@ $(document).ready(function(){
     $("#org-affiliations").hide()
     $('#piechart').show()
     $('#youtube-panel').hide()
+    $('#twitter-panel').hide()
   });
+
 
   $("#org-team-butt").click(function() {
     $('#org-homepage').hide()
@@ -59,6 +63,7 @@ $(document).ready(function(){
     $("#org-team").show()
     $("#org-affiliations").hide()
     $('#piechart').hide()
+    $('#twitter-panel').show()
   });
 
   $("#org-affiliations-butt").click(function() {
@@ -68,6 +73,8 @@ $(document).ready(function(){
     $("#org-team").hide()
     $("#org-affiliations").show()
     $('#piechart').hide()
+    $('#youtube-panel').show()
+    $('#twitter-panel').show()
   });
 
 

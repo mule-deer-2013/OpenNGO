@@ -21,7 +21,6 @@ $(document).ready(function(){
 
   $('#org-homepage').show()
 
-
   $(".org-header-left").click(function() {
     $('#org-homepage').show()
     $('#org-programs').hide()
@@ -30,6 +29,8 @@ $(document).ready(function(){
     $("#org-affiliations").hide()
     $('#piechart').hide()
     $('#youtube-panel').show()
+    ('#twitter-panel').show()
+
   });
 
 

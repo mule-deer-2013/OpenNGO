@@ -3,7 +3,9 @@
   <div class='org-floaters'><%=t(:Last_updated)+": "+@org.updated_at.strftime("%d %b %Y") %></div>
   
 
-<%= render partial: 'chart1' %>
+<%= @chart %>
+<div class="org-side-window-panel" id="piechart"></div>
+<script>  $(function() { $('#piechart').hide() });</script>
 
 
   <%if @org.has_valid_youtube? %>

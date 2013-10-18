@@ -73,6 +73,7 @@
   padding-left:20px;
   color:#274873;
   font-size:x-large;
+  float:left;
 
 }
 
@@ -159,6 +160,7 @@ a { color:black;}
    background: black;
    padding:0px;
    padding-bottom:5px;
+   margin-bottom:10px;
 }
 
 .org-profile-icons {
@@ -228,5 +230,8 @@ img.desaturate{
   height:20px;
 }
 
-
+#piechart{
+  height:300px; 
+  margin-bottom:10px;
+}
 

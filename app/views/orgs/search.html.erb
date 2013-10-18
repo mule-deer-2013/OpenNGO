@@ -19,9 +19,9 @@
     <% @search.facet(:transparency).rows.each do |row| %>
       <li>
         <% if params[:transparency].blank? %>
-          <%= link_to " ★ "*row.value + " ☆ " * (3 - row.value), {:transparency => row.value, :locations=>params[:locations]} %> (<%= row.count %>)
+          <%= link_to " ★ "*row.value + " ☆ " * (3 - row.value), {:transparency => row.value, :locations=>params[:locations], :causes=>params[:causes]} %> (<%= row.count %>)
         <% else %>
-          <strong><%= " ★ "*row.value + " ☆ " * (3 - row.value) %></strong> (<%= link_to "remove", {:transparency => nil, :locations => params[:locations]} %>)
+          <strong><%= " ★ "*row.value + " ☆ " * (3 - row.value) %></strong> (<%= link_to "remove", {:transparency => nil, :locations => params[:locations], :causes=>params[:causes]} %>)
         <% end %>
       </li>
     <% end %>
@@ -34,9 +34,9 @@
     <% @search.facet(:locations).rows.each do |row| %>
       <li>
         <% if params[:locations].blank? %>
-          <%= link_to row.value, {:locations => row.value, :transparency=>params[:transparency]}  %> (<%= row.count %>)
+          <%= link_to row.value, {:locations => row.value, :transparency=>params[:transparency], :causes => params[:causes]}  %> (<%= row.count %>)
         <% else %>
-          <strong><%= row.value %></strong> (<%= link_to "remove", {:locations => nil, :transparency=>params[:transparency]} %>)
+          <strong><%= row.value %></strong> (<%= link_to "remove", {:locations => nil, :transparency=>params[:transparency], :causes=>params[:causes]} %>)
         <% end %>
       </li>
     <% end %>
@@ -49,9 +49,9 @@
     <% @search.facet(:causes).rows.each do |row| %>
       <li>
         <% if params[:causes].blank? %>
-          <%= link_to row.value, :causes => row.value %> (<%= row.count %>)
+          <%= link_to row.value, {:causes => row.value, :locations=>params[:locations], :transparency=>params[:transparency]} %> (<%= row.count %>)
         <% else %>
-          <strong><%= row.value %></strong> (<%= link_to "remove", :causes => nil %>)
+          <strong><%= row.value %></strong> (<%= link_to "remove", {:locations=>params[:locations], :transparency=>params[:transparency],:causes => nil} %>)
         <% end %>
       </li>
     <% end %>

@@ -2,14 +2,14 @@
 // text resizer:
 $(function() {
     var span = $('#my-resizer');
-    var fontSize = parseInt(span.css('font-size'));
-    console.log("starting")
+    var fontSize = 50
+    console.log("starting resizing")
 
     do {
-      console.log(span.width())
+      console.log('resized')
         fontSize--;
         span.css('font-size', fontSize.toString() + 'px');
-    } while (span.width() >= 290);
+    } while (span.width() >= 265);
 });
 
 
@@ -27,6 +27,10 @@ $(document).ready(function(){
     $("#org-financials").hide()
     $("#org-team").hide()
     $("#org-affiliations").hide()
+    $('#piechart').hide()
+    $('#youtube-panel').show()
+    ('#twitter-panel').show()
+
   });
 
 
@@ -36,6 +40,9 @@ $(document).ready(function(){
     $("#org-financials").hide()
     $("#org-team").hide()
     $("#org-affiliations").hide()
+    $('#piechart').hide()
+    $('#youtube-panel').show()
+    $('#twitter-panel').show()
   });
 
   $("#org-financials-butt").click(function() {
@@ -44,7 +51,11 @@ $(document).ready(function(){
     $("#org-programs").hide()
     $("#org-team").hide()
     $("#org-affiliations").hide()
+    $('#piechart').show()
+    $('#youtube-panel').hide()
+    $('#twitter-panel').hide()
   });
+
 
   $("#org-team-butt").click(function() {
     $('#org-homepage').hide()
@@ -52,6 +63,8 @@ $(document).ready(function(){
     $("#org-programs").hide()
     $("#org-team").show()
     $("#org-affiliations").hide()
+    $('#piechart').hide()
+    $('#twitter-panel').show()
   });
 
   $("#org-affiliations-butt").click(function() {
@@ -60,13 +73,13 @@ $(document).ready(function(){
     $("#org-programs").hide()
     $("#org-team").hide()
     $("#org-affiliations").show()
+    $('#piechart').hide()
+    $('#youtube-panel').show()
+    $('#twitter-panel').show()
   });
 
 
-
-
 });
-
 
 
 

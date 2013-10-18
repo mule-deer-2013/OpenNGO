@@ -2,14 +2,14 @@
 // text resizer:
 $(function() {
     var span = $('#my-resizer');
-    var fontSize = parseInt(span.css('font-size'));
-    console.log("starting")
+    var fontSize = 50
+    console.log("starting resizing")
 
     do {
-      console.log(span.width())
+      console.log('resized')
         fontSize--;
         span.css('font-size', fontSize.toString() + 'px');
-    } while (span.width() >= 270);
+    } while (span.width() >= 265);
 });
 
 
